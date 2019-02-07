@@ -1,0 +1,61 @@
+//add multiline backgorund for inline elements;
+
+.multiline-bg {
+  color: $white;
+  background-color: $juniper-80-op;
+  box-shadow: .5em 0 0 $juniper-80-op, -.5em 0 0 $juniper-80-op;
+  line-height: 1.2;
+}
+
+@supports (-webkit-box-decoration-break: clone) or (box-decoration-break: clone) {
+
+  .multiline-bg {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    box-shadow: none;
+    padding: 0 .3em;
+  }
+}
+
+.vert-lg-margin {
+  margin: $space-xxxl auto;
+}
+
+.is-hidden-up {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+}
+
+.is-hidden-down {
+  opacity: 0;
+  transform: translate3d(0, -50px, 0);
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.fade-in {
+  transition: opacity .35s cubic-bezier(0.33, 0.66, 0.66, 1) .2s, transform .35s cubic-bezier(0.33, 0.66, 0.66, 1) .2s;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.v-a-bottom {
+  vertical-align: bottom;
+}
+
+.defs-only {
+  position: absolute;
+  display: block;
+  height: 0;
+  width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+}
+
