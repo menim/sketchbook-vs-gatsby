@@ -1,14 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
-
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+const Header = ({videoEnabled }) => (
+  <header className={videoEnabled ? "header--video" : "header--simple"}>
     <div
       style={{
         margin: `0 auto`,
@@ -24,7 +18,6 @@ const Header = ({ siteTitle }) => (
             textDecoration: `none`,
           }}
         >
-          {siteTitle}
         </Link>
       </h1>
     </div>
@@ -32,11 +25,11 @@ const Header = ({ siteTitle }) => (
 )
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  videoEnabled: PropTypes.bool,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  videoEnabled: false,
 }
 
 export default Header
