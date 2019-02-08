@@ -1,15 +1,12 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+
+import Nav from './nav'
+
 const Header = ({videoEnabled }) => (
-  <header className={videoEnabled ? "header--video" : "header--simple"}>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <header className={videoEnabled ? 'header header--video' : 'header header--simple'}>
+      <Nav />
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -20,7 +17,6 @@ const Header = ({videoEnabled }) => (
         >
         </Link>
       </h1>
-    </div>
   </header>
 )
 
