@@ -8,6 +8,7 @@ import webpVideo from "../video/sketch-ai.webm"
 import Nav from "./nav"
 import Logo from "./logo";
 import Container from './flex-container'
+import MultilineBg from './multilineBg';
 
 const Header = ({videoEnabled }) => (
   <header className={videoEnabled ? "header header--video" : "header header--simple"}>
@@ -22,13 +23,17 @@ const Header = ({videoEnabled }) => (
         <Nav />
       </div>
       <div className="header__description">
-        <h1 className="header__title"><span className="multiline-bg">Скетчбук - книга для записів та замальовок.</span></h1>
+        <h1 className="header__title">
+          <MultilineBg>
+            Скетчбук - книга для записів та замальовок.
+          </MultilineBg>
+        </h1>
         <p className="header__content">
-          <span className="multiline-bg">
+          <MultilineBg>
             Це книга для сучасних людей, що шукають яскравих, креативних форм розвитку особистості, прагнуть збагатити своє життя
             художніми образами. За її допомогою кожний зможе відкрити для себе нові обрії творчої свідомості, розкрити потенціал
             підсвідомості та вивільнити уяву. Довіртесь своїй інтуїцїї — і перетворіть пошуки себе в витвір мистецтва.
-          </span>
+          </MultilineBg>
         </p>
       </div>
     </Container>
