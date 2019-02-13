@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Container from './flex-container'
+import Container from './container'
 import Nav from './nav'
 import Logo from './logo'
 

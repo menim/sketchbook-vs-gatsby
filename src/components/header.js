@@ -7,7 +7,7 @@ import webpVideo from "../video/sketch-ai.webm"
 
 import Nav from "./nav"
 import Logo from "./logo";
-import Container from './flex-container'
+import Container from './container'
 import MultilineBg from './multilineBg';
 
 const Header = ({videoEnabled }) => (
