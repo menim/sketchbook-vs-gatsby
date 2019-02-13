@@ -11,7 +11,9 @@ import Container from './flex-container'
 import MultilineBg from './multilineBg';
 
 const Header = ({videoEnabled }) => (
-  <header className={videoEnabled ? "header header--video" : "header header--simple"}>
+  videoEnabled ? 
+  (
+    <header className="header header--video">
     <div className="overlay"></div>
     <video loop autoPlay muted className="header__video">
       <source src={mp4Video} type="video/mp4" /> 
@@ -35,6 +37,15 @@ const Header = ({videoEnabled }) => (
             підсвідомості та вивільнити уяву. Довіртесь своїй інтуїцїї — і перетворіть пошуки себе в витвір мистецтва.
           </MultilineBg>
         </p>
+      </div>
+    </Container>
+  </header>
+  ) :
+  <header className="header header--simple">
+    <Container>
+      <div className="header__top">
+        <Logo />
+        <Nav />
       </div>
     </Container>
   </header>
