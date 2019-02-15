@@ -9,7 +9,7 @@ const Footer = () => (
     <Container>
       <div className="footer__top">
         <section className="footer__section">
-          <Logo />
+          <Logo logoSize />
         </section>
         <section className="footer__section">
           <h4 className="footer__title">
@@ -28,7 +28,7 @@ const Footer = () => (
           <a className="telephone" href="tel: +38050-364-26-87">050-364-26-87</a>
         </section>
         <section className="footer__section">
-          <h4 class="footer__title">Email</h4>
+          <h4 className="footer__title">Email</h4>
           mail@okobook.com
         </section>
       </div>
