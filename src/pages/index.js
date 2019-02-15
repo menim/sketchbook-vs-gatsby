@@ -8,6 +8,7 @@ import Footer from '../components/footer'
 import Container from '../components/container'
 import FlexContainer from "../components/flex-container";
 import Main from '../components/main'
+import Product from '../components/product'
 
 import "../sass/main.scss";
 
@@ -17,6 +18,7 @@ const IndexPage = () => (
     <Main>
       <Container>
         <FlexContainer>
+          <Product />
         </FlexContainer>
       </Container>
     </Main>
