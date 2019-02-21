@@ -1,37 +1,22 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby';
-import Img from "gatsby-image";
+import { withPrefix } from 'gatsby'
+import Pict from './pict';
 
-const Product = () => (
-  <StaticQuery query={query} render={
-    data => (
+const Product = ({productData}) => (
       <div className="l-item">
         <div className="sketchbook">
-          <Img className="sketchbook__preview" fixed={data.file.childImageSharp.fixed} />
+         {productData.cover.map((item, index) => (
+         <Pict className="sketchbook__preview" key={index} src={withPrefix(item)} />
+         ))}
           <h2 className="sketchbook__title">
             <span className="sketchbook__subtitle">Скетчбук</span>
-            Малюємо море
+            {productData.title}
           </h2>
           <div className="sketchbook__bottom-wrapper">
             <a className="btn" href="">Детальніше</a>
-            <span className="sketchbook__price">180 грн</span>
+            <span className="sketchbook__price"> {productData.price} грн</span>
           </div>
         </div>
       </div>
     )
-  }/>
-)
-const str = "basic-skills2-ua.png"
-
-export const query = graphql`
-query {
-  file(relativePath: { eq: "basic-skills2-ua.png"} ) {
-    childImageSharp {
-      fixed {
-        ...GatsbyImageSharpFixed_withWebp
-      }
-    }
-  }
-}
-`
 export default Product
