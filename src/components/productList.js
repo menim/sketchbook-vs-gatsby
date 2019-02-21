@@ -1,13 +1,28 @@
 import React from 'react'
-import { graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import Product from './product'
 
-const ProductList = ({data }) => (
-  data.map((cover) => {
-    <Product srcData={cover} />
-  })
+const ProductList = () => (
+  <StaticQuery query={graphql`
+  query {
+    allDataJson {
+      edges {
+        node {
+          title
+          cover
+          price
+        }
+      }
+    }
+  }
+  `}
+  render={ (data) => (
+    data.allDataJson.edges.map((product, index) => (
+        <Product key={index} productData={product.node} />
+      ))
+    )
+  }  
+  />
 )
-
-
 
 export default ProductList
