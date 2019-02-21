@@ -1,146 +1,162 @@
-{
-  "architecture-sketchbook": {
-    "title": "Скетчбук. Малюємо архітектуру. Базовий курс",
+[
+  {
+    "slug": "architecture-sketchbook",
+    "title": "Малюємо архітектуру. Базовий курс",
     "price": 180,
     "description": "Что вы найдете в этом скетчбуке? Разнообразные подходы к изображению архитектурных объектов - от набросков по впечатлениям от тури-стической поездки до первых вариантов создания собственных компьютерных миров. Планы и фасады зданий, акценты и детали в различных графических стилях - от эскизов до тщательных зарисовок. Приемы архитектурной графики, правила создания эффектной композиции, рекомендации по выгодной подаче объекта.",
     "lang": ["ua","en","ru"],
     "color": ["red"],
-    "cover": ["img/architecture-sk/draw-architecture-cover"],
-    "spreadImg": ["img/architecture-sk/draw-architecture-cover","img/architecture-sk/draw-architecture-1","img/architecture-sk/draw-architecture-2","img/architecture-sk/draw-architecture-3","img/architecture-sk/draw-architecture-4","img/architecture-sk/draw-architecture-5","img/architecture-sk/draw-architecture-6"]
+    "cover": ["architecture-sk/draw-architecture-cover"],
+    "spreadImg": ["architecture-sk/draw-architecture-cover","img/architecture-sk/draw-architecture-1","img/architecture-sk/draw-architecture-2","img/architecture-sk/draw-architecture-3","img/architecture-sk/draw-architecture-4","img/architecture-sk/draw-architecture-5","img/architecture-sk/draw-architecture-6"]
   },
-  "animator-sketchbook": {
+  {
+    "slug": "animator-sketchbook",
     "title": "Скетчбук аніматора. Експрес-курс",
     "price": 180,
     "description": "Данный артблокнот станет достойным помощником для будущих аниматоров. Здесь вы найдете полезные примеры, как шаг за шагом нарисовать любые движения, персонажей, нюансы мультипликационной мимики и эмоций. Так же есть много чистых страниц, которые оставляют простор для вашего воображения и позволят на полную проявить свою креативность.",
     "lang": ["ua", "ru"],
     "color": ["yellow"],
-    "cover": ["img/sketch-animator"],
-    "spreadImg": ["animator-sk/sketch-animator","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "cover": ["animator-sk/sketch-animator-cover"],
+    "spreadImg": ["animator-sk/sketch-animator-1","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "designer-sketchbook": {
+  {  
+    "slug": "designer-sketchbook",
     "title": "Скетчбук дизайнера. Експрес-курс",
     "price": 180,
     "description": "Данный артблокнот станет достойным помощником для будущих дизайнеров. Здесь вы найдете полезные советы, данный блокнот несет базовы знания, и введет вас в курс професии. Так же есть много чистых страниц, которые оставляют простор для вашего воображения и позволят на полную проявить свою креативность.",
     "lang": ["ua", "ru"],
     "color": ["blue"],
-    "cover": ["img/sketch-designer"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "cover": ["designer-sk/sketch-designer-cover"],
+    "spreadImg": ["designer-sk/sketch-animator-1","designer-sk/sketch-animator-2","designer-sk/sketch-animator-3","designer-sk/sketch-animator-4","designer-sk/sketch-animator-5","designer-sk/sketch-animator-6" ]
   },
-   "draw-fantastic-beasts-sketchbook": {
-    "title": "Скетчбук. Малюємо фантастичних істот",
+  {
+    "slug": "draw-fantastic-beasts-sketchbook",  
+    "title": "Малюємо фантастичних істот",
     "price": 180,
     "description": "Интересный блокнот-скетчбук-учебник по рисованию. Учимся рисовать необычных фантастических существ: драконов, кентавров, лепреконов и др. Подойдет для всех, кто хочет получить максимум знаний в расширенном объеме. Научит рисованию и поможет закрепить имеющиеся художественные способности, подготовит к решению непростых креативных задач, разовьет фантазию и др.",
     "lang": ["ua", "ru"],
     "color": ["blue"],
-    "cover": ["img/draw-fantastic-beasts-cover"],
+    "cover": ["fantastic-beasts-sk/draw-fantastic-beasts-cover"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-sea-sketchbook": {
-    "title": "Скетчбук. Малюємо море",
+  {   
+    "slug": "draw-sea-sketchbook",
+    "title": "Малюємо море",
     "price": 180,
     "description": "Интересный блокнот-скетчбук-учебник по рисованию. Учимся рисовать необычных фантастических существ: драконов, кентавров, лепреконов и др. Подойдет для всех, кто хочет получить максимум знаний в расширенном объеме. Научит рисованию и поможет закрепить имеющиеся художественные способности, подготовит к решению непростых креативных задач, разовьет фантазию и др.",
     "lang": ["ua", "ru"],
     "color": ["blue"],
-    "cover": ["img/draw-sea-cover-ua"],
+    "cover": ["draw-sea-sk/draw-sea-cover"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-comics-sketchbook": {
-    "title": "Скетчбук. Малюємо комікси",
+  {
+    "slug": "draw-comics-sketchbook", 
+    "title": "Малюємо комікси",
     "price": 180,
     "description": "Хотите рисовать комиксы? Этот скетчбук-учебник научит вам основным приёмам, изложенным по методу поэтапного усвоения.",
     "lang": ["ua", "ru"],
     "color": ["roze"],
-    "cover": ["img/draw-comics-cover-ua"],
+    "cover": ["draw-comics-sk/draw-comics-cover"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-flowers-sketchbook": {
-    "title": "Скетчбук. Малюємо квіти",
+  {
+    "slug": "draw-flowers-sketchbook",
+    "title": "Малюємо квіти",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["roze"],
-    "cover": ["img/draw-flowers-cover-ua"],
+    "cover": ["draw-flowers-sk/draw-flowers-cover"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-beautiful-letters-sketchbook": {
-    "title": "Скетчбук. Малюємо красиві літери",
+  {
+    "slug": "draw-beautiful-letters-sketchbook",
+    "title": "Малюємо красиві літери",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["roze"],
-    "cover": ["img/draw-beautiful-font-cover-ua"],
+    "cover": ["draw-beautiful-letters-sk/draw-beautiful-letters-cover"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "art-simple-calligraphy-sketchbook": {
-    "title": "Скетчбук. Мистецтво простої каліграфії",
+  {
+    "slug": "art-simple-calligraphy-sketchbook",
+    "title": "Мистецтво простої каліграфії",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["red", "pink"],
-    "cover": ["img/simple-calligraphy-cover-ua","img/simple-calligraphy-cover2-ua"],
+    "cover": ["art-simple-calligraphy-sk/simple-calligraphy-cover","art-simple-calligraphy-sk/simple-calligraphy-cover2"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "basic-skills-sketchbook": {
-    "title": "Скетчбук. Основні навички",
+  {
+    "slug": "basic-skills-sketchbook",
+    "title": "Основні навички",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["orange", "brown"],
-    "cover": ["img/basic-skills-cover-ua","img/basic-skills-cover2-ua"],
+    "cover": ["basic-skills-sk/basic-skills-cover","basic-skills-sk/basic-skills-cover2"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "base-level-sketchbook": {
-    "title": "Скетчбук. Базовий рівень",
+  {
+    "slug": "base-level-sketchbook",
+    "title": "Базовий рівень",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["pink", "brown"],
-    "cover": ["img/basic-level-cover-ua","img/basic-level-cover2-ua"],
+    "cover": ["basic-level-sk/basic-level-cover","basic-level-sk/basic-level-cover2"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "advanced-techniques-sketchbook": {
-    "title": "Скетчбук. Досвідчений рівень",
+  {
+    "slug": "advanced-techniques-sketchbook",
+    "title": "Досвідчений рівень",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["purple", "blue"],
-    "cover": ["img/advanced-techniques-cover-ua","img/advanced-techniques-cover2-ua"],
+    "cover": ["advanced-techniques-sk/advanced-techniques-cover","advanced-techniques-sk/advanced-techniques-cover2"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-animals-sketchbook": {
-    "title": "Скетчбук. Малюємо тварин",
+  { 
+    "slug": "draw-animals-sketchbook",
+    "title": "Малюємо тварин",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["purple", "lime", "green"],
-    "cover": ["img/draw-animals-cover-ru","img/draw-animals-cover2-ua","img/draw-animals-cover3-ua"],
+    "cover": ["draw-animals-sk/draw-animals-cover","draw-animals-sk/draw-animals-cover2","draw-animals-sk/draw-animals-cover3"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-human-sketchbook": {
-    "title": "Скетчбук. Малюємо людину",
+  { 
+    "slug": "draw-human-sketchbook",
+    "title": "Малюємо людину",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["pink", "green", "blue"],
-    "cover": ["img/draw-human-cover-ru","img/draw-human-cover2-ua","img/draw-human-cover3-ua"],
+    "cover": ["draw-human-sk/draw-human-cover","draw-human-sk/draw-human-cover2","draw-human-sk/draw-human-cover3"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "visual-express-course-sketchbook": {
-    "title": "Скетчбук. Візуальний експрес-курс малювання",
+  { 
+    "slug": "visual-express-course-sketchbook",
+    "title": "Візуальний експрес-курс малювання",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["black", "pink", "red"],
-    "cover": ["img/visual-cover-ru","img/visual-cover2-ua","img/visual-cover3-ua"],
+    "cover": ["visual-express-course-sk/visual-cover","visual-express-course-sk/visual-cover2","visual-express-course-sk/visual-cover3"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   },
-  "draw-landscape-sketchbook": {
-    "title": "Скетчбук. Малюємо пейзаж",
+  {
+    "slug": "draw-landscape-sketchbook",
+    "title": "Малюємо пейзаж",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["brown", "yellow"],
-    "cover": ["img/draw-landscape-cover-ua","img/draw-landscape-cover2-ua"],
+    "cover": ["draw-landscape-sk/draw-landscape-cover","draw-landscape-sk/draw-landscape-cover2"],
     "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
   }
-} 
+]
