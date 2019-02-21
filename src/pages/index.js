@@ -8,7 +8,7 @@ import Footer from '../components/footer'
 import Container from '../components/container'
 import FlexContainer from "../components/flex-container";
 import Main from '../components/main'
-import Product from '../components/product'
+import ProductList from '../components/productList'
 
 import "../sass/main.scss";
 
@@ -18,13 +18,12 @@ const IndexPage = () => (
     <Main>
       <Container>
         <FlexContainer>
-          <Product />
+          <ProductList />
         </FlexContainer>
       </Container>
     </Main>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <Link to="/page-2/">Go to page 2</Link>
-    <Footer />
+  <Footer />
   </>
 )
 
