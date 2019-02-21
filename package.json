@@ -37,5 +37,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "gatsby-transformer-json": "^2.1.8"
   }
 }
