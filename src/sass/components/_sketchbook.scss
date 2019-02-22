@@ -24,7 +24,7 @@
 
   &--theme-janna {
 
-    @include linear-gradient-add(#f4e4d7, 56%);
+    @include linear-gradient-add(#f4e4d7);
   }
 
   &--theme-scorpion {
@@ -44,7 +44,7 @@
   
   &--theme-bitterlemon {
 
-    @include linear-gradient-add(#e6e60c, 56%);
+    @include linear-gradient-add(#e6e60c);
   }
 
   &--theme-illusion {
@@ -59,12 +59,12 @@
 
   &--theme-cherub {
 
-    @include linear-gradient-add(#fadceb, 56%);
+    @include linear-gradient-add(#fadceb);
   }
 
   &--theme-palecanary {
 
-    @include linear-gradient-add(#fffe9f, 59%);
+    @include linear-gradient-add(#fffe9f);
   }
 
   &--theme-orangepeel {
@@ -89,22 +89,22 @@
 
   &--theme-shalimar {
 
-    @include linear-gradient-add(#ffd600, 59%);
+    @include linear-gradient-add(#ffd600);
   }
 
   &--theme-parisdaisy {
 
-    @include linear-gradient-add(#f9ff75, 59%);
+    @include linear-gradient-add(#f9ff75);
   }
 
   &--theme-visvis {
 
-    @include linear-gradient-add(#ffee9e, 59%);
+    @include linear-gradient-add(#ffee9e);
   }
 
   &--theme-serenade {
 
-    @include linear-gradient-add(#fff4e6,56%);
+    @include linear-gradient-add(#fff4e6);
   }
 
   &--theme-lima {

@@ -15,7 +15,7 @@ const Product = ({productData}) => {
   }
 return (
       <div className="l-item">
-        <div className={`sketchbook sketchbook--${productData.title}`}>
+        <div className={`sketchbook sketchbook--${productData.theme}`}>
         {productData.cover.length > 1 
           ?  
            <Swiper  {...params}>

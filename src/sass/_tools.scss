@@ -141,8 +141,8 @@ $breakpoints: (
   }
 }
 
-@mixin linear-gradient-add($color, $size:55%) {
-  background: linear-gradient($color 0%, $color $size, $white $size, $white 100%);
+@mixin linear-gradient-add($color) {
+  background: linear-gradient($color 0%, $color 55%, $white 55%, $white 100%);
 }
 
 

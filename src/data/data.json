@@ -7,7 +7,8 @@
     "lang": ["ua","en","ru"],
     "color": ["red"],
     "cover": ["architecture-sk/draw-architecture-cover"],
-    "spreadImg": ["architecture-sk/draw-architecture-cover","img/architecture-sk/draw-architecture-1","img/architecture-sk/draw-architecture-2","img/architecture-sk/draw-architecture-3","img/architecture-sk/draw-architecture-4","img/architecture-sk/draw-architecture-5","img/architecture-sk/draw-architecture-6"]
+    "spreadImg": ["architecture-sk/draw-architecture-cover","img/architecture-sk/draw-architecture-1","img/architecture-sk/draw-architecture-2","img/architecture-sk/draw-architecture-3","img/architecture-sk/draw-architecture-4","img/architecture-sk/draw-architecture-5","img/architecture-sk/draw-architecture-6"],
+    "theme": "theme-serenade"
   },
   {
     "slug": "animator-sketchbook",
@@ -17,7 +18,8 @@
     "lang": ["ua", "ru"],
     "color": ["yellow"],
     "cover": ["animator-sk/sketch-animator-cover"],
-    "spreadImg": ["animator-sk/sketch-animator-1","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["animator-sk/sketch-animator-1","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-bitterlemon"
   },
   {  
     "slug": "designer-sketchbook",
@@ -27,7 +29,8 @@
     "lang": ["ua", "ru"],
     "color": ["blue"],
     "cover": ["designer-sk/sketch-designer-cover"],
-    "spreadImg": ["designer-sk/sketch-animator-1","designer-sk/sketch-animator-2","designer-sk/sketch-animator-3","designer-sk/sketch-animator-4","designer-sk/sketch-animator-5","designer-sk/sketch-animator-6" ]
+    "spreadImg": ["designer-sk/sketch-animator-1","designer-sk/sketch-animator-2","designer-sk/sketch-animator-3","designer-sk/sketch-animator-4","designer-sk/sketch-animator-5","designer-sk/sketch-animator-6" ],
+    "theme": "theme-janna"
   },
   {
     "slug": "draw-fantastic-beasts-sketchbook",  
@@ -37,7 +40,8 @@
     "lang": ["ua", "ru"],
     "color": ["blue"],
     "cover": ["fantastic-beasts-sk/draw-fantastic-beasts-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-cherub"
   },
   {   
     "slug": "draw-sea-sketchbook",
@@ -47,7 +51,8 @@
     "lang": ["ua", "ru"],
     "color": ["blue"],
     "cover": ["draw-sea-sk/draw-sea-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-palecanary"
   },
   {
     "slug": "draw-comics-sketchbook", 
@@ -57,7 +62,8 @@
     "lang": ["ua", "ru"],
     "color": ["roze"],
     "cover": ["draw-comics-sk/draw-comics-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-parisdaisy"
   },
   {
     "slug": "draw-flowers-sketchbook",
@@ -67,7 +73,8 @@
     "lang": ["ua", "ru"],
     "color": ["roze"],
     "cover": ["draw-flowers-sk/draw-flowers-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-shalimar"
   },
   {
     "slug": "draw-beautiful-letters-sketchbook",
@@ -77,7 +84,8 @@
     "lang": ["ua", "ru"],
     "color": ["roze"],
     "cover": ["draw-beautiful-letters-sk/draw-beautiful-letters-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-visvis"
   },
   {
     "slug": "art-simple-calligraphy-sketchbook",
@@ -87,7 +95,8 @@
     "lang": ["ua", "ru"],
     "color": ["red", "pink"],
     "cover": ["art-simple-calligraphy-sk/simple-calligraphy-cover","art-simple-calligraphy-sk/simple-calligraphy-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-bostonblue"
   },
   {
     "slug": "basic-skills-sketchbook",
@@ -97,7 +106,8 @@
     "lang": ["ua", "ru"],
     "color": ["orange", "brown"],
     "cover": ["basic-skills-sk/basic-skills-cover","basic-skills-sk/basic-skills-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-spray"
   },
   {
     "slug": "base-level-sketchbook",
@@ -107,7 +117,8 @@
     "lang": ["ua", "ru"],
     "color": ["pink", "brown"],
     "cover": ["basic-level-sk/basic-level-cover","basic-level-sk/basic-level-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-lima"
   },
   {
     "slug": "advanced-techniques-sketchbook",
@@ -117,7 +128,8 @@
     "lang": ["ua", "ru"],
     "color": ["purple", "blue"],
     "cover": ["advanced-techniques-sk/advanced-techniques-cover","advanced-techniques-sk/advanced-techniques-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-hawaiiantan"
   },
   { 
     "slug": "draw-animals-sketchbook",
@@ -127,7 +139,8 @@
     "lang": ["ua", "ru"],
     "color": ["purple", "lime", "green"],
     "cover": ["draw-animals-sk/draw-animals-cover","draw-animals-sk/draw-animals-cover2","draw-animals-sk/draw-animals-cover3"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-lavenderpink"
   },
   { 
     "slug": "draw-human-sketchbook",
@@ -137,7 +150,8 @@
     "lang": ["ua", "ru"],
     "color": ["pink", "green", "blue"],
     "cover": ["draw-human-sk/draw-human-cover","draw-human-sk/draw-human-cover2","draw-human-sk/draw-human-cover3"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-gold"
   },
   { 
     "slug": "visual-express-course-sketchbook",
@@ -147,7 +161,8 @@
     "lang": ["ua", "ru"],
     "color": ["black", "pink", "red"],
     "cover": ["visual-express-course-sk/visual-cover","visual-express-course-sk/visual-cover2","visual-express-course-sk/visual-cover3"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-sushi"
   },
   {
     "slug": "draw-landscape-sketchbook",
@@ -157,6 +172,7 @@
     "lang": ["ua", "ru"],
     "color": ["brown", "yellow"],
     "cover": ["draw-landscape-sk/draw-landscape-cover","draw-landscape-sk/draw-landscape-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"]
+    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "theme": "theme-orangepeel"
   }
 ]

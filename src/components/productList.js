@@ -11,6 +11,7 @@ const ProductList = () => (
           title
           cover
           price
+          theme
         }
       }
     }
