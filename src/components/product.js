@@ -8,10 +8,14 @@ const Product = ({productData}) => {
   const params = {
     spaceBetween: 25,
     centeredSlides: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
   }
 return (
       <div className="l-item">
-        <div className="sketchbook">
+        <div className={`sketchbook sketchbook--${productData.title}`}>
         {productData.cover.length > 1 
           ?  
            <Swiper  {...params}>

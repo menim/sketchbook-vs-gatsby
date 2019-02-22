@@ -15,9 +15,12 @@
 
   .swiper-wrapper {
     padding-top: $space-md;
-    padding-bottom: $space-md
+    padding-bottom: $space-md;
   }
 
+  .swiper-container-horizontal>.swiper-pagination-bullets {
+    bottom: 3px;
+  }
 
   &--theme-janna {
 
@@ -144,7 +147,7 @@
     color: $black;
     font-size: $text-base-size;
     margin-bottom: 0;
-    margin-top: $space-xs;
+    margin-top: $space-md;
     text-align: center;
   }
 
