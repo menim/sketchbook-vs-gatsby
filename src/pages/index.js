@@ -6,11 +6,12 @@ import SEO from "../components/seo"
 import Header from "../components/header"
 import Footer from '../components/footer'
 import Container from '../components/container'
-import FlexContainer from "../components/flex-container";
+import FlexContainer from "../components/flex-container"
 import Main from '../components/main'
 import ProductList from '../components/productList'
 
-import "../sass/main.scss";
+import "../sass/main.scss"
+import "../sass/generic/_swiper.scss"
 
 const IndexPage = () => (
   <>

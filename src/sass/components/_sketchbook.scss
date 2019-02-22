@@ -1,13 +1,23 @@
 .sketchbook {
-  align-items: center;
   background-color: $white;
   border: 2px solid #f2f2f2;
   border-radius: 5px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   padding: $space-md;
   width: 250px;
+
+  //for fixing sketchbook__preview element drop-shadow cut in slider wrapper
+  .swiper-container {
+    margin: -$space-md;
+  }
+
+  .swiper-wrapper {
+    padding-top: $space-md;
+    padding-bottom: $space-md
+  }
+
 
   &--theme-janna {
 
@@ -147,6 +157,7 @@
   }
 
   &__bottom-wrapper {
+    align-self: flex-end;
     align-items: center;
     display: flex;
     justify-content: space-between;
