@@ -20,6 +20,7 @@
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "react-id-swiper": "^1.6.8",
+    "react-rellax": "^1.0.2",
     "react-visibility-sensor": "^5.0.2"
   },
   "keywords": [
