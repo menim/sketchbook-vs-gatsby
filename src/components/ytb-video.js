@@ -1,24 +1,29 @@
 import React, { Component } from 'react'
-import { throws } from 'assert';
-
+import VisibilitySensor from 'react-visibility-sensor'
 
 class ytbVideo extends Component {
 
   constructor(props) {
     super(props)
     this.props = props
-    this.state = {isPLay: false}
+    this.state = {isPLay: false, visibility: false}
   }
 
 
   init = () => {
-    // e.preventDefault();
     this.setState({isPlay: true})
   }
+  
+  onChangeVisibility = (isVisible) => {
+    this.setState({visibility: isVisible})
+  }
+
 
   render() {
     return (
-      <div className="video">
+      <VisibilitySensor onChange={this.onChangeVisibility} active={!this.state.visibility}>  
+        {({ isVisible }) =>
+          (<div className={!isVisible ? 'video fade-in is-hidden-down' : 'video fade-in is-visible'}>
         <div className="video__resp-container" onClick={this.init}>
         {!this.state.isPlay  ? 
         (<>
@@ -41,7 +46,9 @@ class ytbVideo extends Component {
 
           }
           </div>
-        </div>
+        </div>)
+        }
+        </VisibilitySensor>
       )
   }
 }
