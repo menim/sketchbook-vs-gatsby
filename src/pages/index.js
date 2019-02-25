@@ -9,9 +9,12 @@ import Container from '../components/container'
 import FlexContainer from "../components/flex-container"
 import Main from '../components/main'
 import ProductList from '../components/productList'
+import WhtSketch from '../components/wht-sketch'
+import YtbVideo from '../components/ytb-video'
 
 import "../sass/main.scss"
 import "../sass/generic/_swiper.scss"
+
 
 const IndexPage = () => (
   <>
@@ -21,6 +24,12 @@ const IndexPage = () => (
         <FlexContainer>
           <ProductList />
         </FlexContainer>
+      </Container>
+      <Container>
+        <FlexContainer withVerticalOffset> 
+          <WhtSketch />
+          <YtbVideo id="iMOM4CXQn00" />
+        </FlexContainer> 
       </Container>
     </Main>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
