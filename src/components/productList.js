@@ -12,6 +12,7 @@ const ProductList = () => (
           cover
           price
           theme
+          slug
         }
       }
     }
