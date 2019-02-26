@@ -14,11 +14,20 @@ html {
 
 body {
   font: #{$text-base-size} / #{$line-height-default} 'raleway thin', sans-serif;
-  display: flex;
-  flex-direction: column;
 }
 
 [href^="mailto"] {
   color: $white;
   text-decoration: none;
+}
+
+#___gatsby {
+  height: 100%;
+
+  >div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 }

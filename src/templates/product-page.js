@@ -8,6 +8,7 @@ import FlexContainer from "../components/flex-container"
 
 const ProductPage = ({data}) => {
  const product = data.allDataJson.edges[0].node
+ document.body.classList.add('h-100')
  
  return (
     <>
