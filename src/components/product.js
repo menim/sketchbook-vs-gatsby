@@ -13,7 +13,10 @@ const Product = ({productData}) => {
       clickable: true
     }
   }
-return (
+ 
+  const slug = `/${productData.slug}/`;
+
+  return (
       <div className="l-item">
         <div className={`sketchbook sketchbook--${productData.theme}`}>
         {productData.cover.length > 1 
@@ -33,7 +36,7 @@ return (
             {productData.title}
           </h2>
           <div className="sketchbook__bottom-wrapper">
-            <Link className="btn" to={productData.slug}>Детальніше</Link>
+            <Link className="btn" to={slug}>Детальніше</Link>
             <span className="sketchbook__price"> {productData.price} грн</span>
           </div>
         </div>
