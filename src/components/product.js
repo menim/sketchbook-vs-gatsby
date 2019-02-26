@@ -1,7 +1,7 @@
-import React from 'react'
-import { withPrefix } from 'gatsby'
-import Pict from './pict';
-import Swiper from 'react-id-swiper';
+import React from "react"
+import { withPrefix, Link } from "gatsby"
+import Pict from "./pict";
+import Swiper from "react-id-swiper";
 
 
 const Product = ({productData}) => {
@@ -9,7 +9,7 @@ const Product = ({productData}) => {
     spaceBetween: 25,
     centeredSlides: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: ".swiper-pagination",
       clickable: true
     }
   }
@@ -33,7 +33,7 @@ return (
             {productData.title}
           </h2>
           <div className="sketchbook__bottom-wrapper">
-            <a className="btn" href="">Детальніше</a>
+            <Link className="btn" to={productData.slug}>Детальніше</Link>
             <span className="sketchbook__price"> {productData.price} грн</span>
           </div>
         </div>
