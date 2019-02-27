@@ -10,7 +10,8 @@ class ytbVideo extends Component {
   }
 
 
-  init = () => {
+  init = (e) => {
+     e.preventDefault()
     this.setState({isPlay: true})
   }
   
