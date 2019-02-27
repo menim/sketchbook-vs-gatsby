@@ -3,6 +3,7 @@
   
   &__view {
     width: 65%;
+    padding-right: $space-md; 
   }
 
   &__description {
@@ -20,7 +21,7 @@
 
   &__overview {
     line-height: 1.4;
-    margin: $space-md auto; 
+    margin: $space-md auto;
     text-align: left;
   }
 
