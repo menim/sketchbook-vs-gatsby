@@ -7,7 +7,7 @@
     "lang": ["ua","en","ru"],
     "color": ["red"],
     "cover": ["architecture-sk/draw-architecture-cover"],
-    "spreadImg": ["architecture-sk/draw-architecture-cover","img/architecture-sk/draw-architecture-1","img/architecture-sk/draw-architecture-2","img/architecture-sk/draw-architecture-3","img/architecture-sk/draw-architecture-4","img/architecture-sk/draw-architecture-5","img/architecture-sk/draw-architecture-6"],
+    "spreadImg": ["architecture-sk/draw-architecture-spread-cover","architecture-sk/draw-architecture-1","architecture-sk/draw-architecture-2","architecture-sk/draw-architecture-3","architecture-sk/draw-architecture-4","architecture-sk/draw-architecture-5"],
     "theme": "theme-serenade"
   },
   {
@@ -17,8 +17,8 @@
     "description": "Данный артблокнот станет достойным помощником для будущих аниматоров. Здесь вы найдете полезные примеры, как шаг за шагом нарисовать любые движения, персонажей, нюансы мультипликационной мимики и эмоций. Так же есть много чистых страниц, которые оставляют простор для вашего воображения и позволят на полную проявить свою креативность.",
     "lang": ["ua", "ru"],
     "color": ["yellow"],
-    "cover": ["animator-sk/sketch-animator-cover"],
-    "spreadImg": ["animator-sk/sketch-animator-1","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "cover": ["animator-sk/animator-sketch-cover"],
+    "spreadImg": ["animator-sk/animator-sketch-1","animator-sk/animator-sketch-2","animator-sk/animator-sketch-3","animator-sk/animator-sketch-4","animator-sk/animator-sketch-5"],
     "theme": "theme-bitterlemon"
   },
   {  
@@ -29,7 +29,7 @@
     "lang": ["ua", "ru"],
     "color": ["blue"],
     "cover": ["designer-sk/sketch-designer-cover"],
-    "spreadImg": ["designer-sk/sketch-animator-1","designer-sk/sketch-animator-2","designer-sk/sketch-animator-3","designer-sk/sketch-animator-4","designer-sk/sketch-animator-5","designer-sk/sketch-animator-6" ],
+    "spreadImg": ["designer-sk/designer-sketch-spread-cover","designer-sk/designer-sketch-1","designer-sk/designer-sketch-2","designer-sk/designer-sketch-3","designer-sk/designer-sketch-4","designer-sk/designer-sketch-5"],
     "theme": "theme-janna"
   },
   {
@@ -39,8 +39,8 @@
     "description": "Интересный блокнот-скетчбук-учебник по рисованию. Учимся рисовать необычных фантастических существ: драконов, кентавров, лепреконов и др. Подойдет для всех, кто хочет получить максимум знаний в расширенном объеме. Научит рисованию и поможет закрепить имеющиеся художественные способности, подготовит к решению непростых креативных задач, разовьет фантазию и др.",
     "lang": ["ua", "ru"],
     "color": ["blue"],
-    "cover": ["fantastic-beasts-sk/draw-fantastic-beasts-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "cover": ["draw-fantastic-beasts-sk/draw-fantastic-beasts-cover"],
+    "spreadImg": ["draw-fantastic-beasts-sk/draw-fantastic-beasts-spread-cover","draw-fantastic-beasts-sk/draw-fantastic-beasts-1","draw-fantastic-beasts-sk/draw-fantastic-beasts-2","draw-fantastic-beasts-sk/draw-fantastic-beasts-3","draw-fantastic-beasts-sk/draw-fantastic-beasts-4","draw-fantastic-beasts-sk/draw-fantastic-beasts-5"],
     "theme": "theme-cherub"
   },
   {   
@@ -51,7 +51,7 @@
     "lang": ["ua", "ru"],
     "color": ["blue"],
     "cover": ["draw-sea-sk/draw-sea-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-sea-sk/draw-sea-spread-cover","draw-sea-sk/draw-sea-1","draw-sea-sk/draw-sea-2","draw-sea-sk/draw-sea-3","draw-sea-sk/draw-sea-4","draw-sea-sk/draw-sea-5"],
     "theme": "theme-palecanary"
   },
   {
@@ -62,7 +62,7 @@
     "lang": ["ua", "ru"],
     "color": ["roze"],
     "cover": ["draw-comics-sk/draw-comics-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-comics-sk/draw-comics-spread-cover","draw-comics-sk/draw-comics-1","draw-comics-sk/draw-comics-2","draw-comics-sk/draw-comics-3","draw-comics-sk/draw-comics-4","draw-comics-sk/draw-comics-5"],
     "theme": "theme-parisdaisy"
   },
   {
@@ -73,7 +73,7 @@
     "lang": ["ua", "ru"],
     "color": ["roze"],
     "cover": ["draw-flowers-sk/draw-flowers-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-flowers-sk/draw-flowers-spread-cover","draw-flowers-sk/draw-flowers-1","draw-flowers-sk/draw-flowers-2","draw-flowers-sk/draw-flowers-3","draw-flowers-sk/draw-flowers-4","draw-flowers-sk/draw-flowers-5"],
     "theme": "theme-shalimar"
   },
   {
@@ -84,7 +84,7 @@
     "lang": ["ua", "ru"],
     "color": ["roze"],
     "cover": ["draw-beautiful-letters-sk/draw-beautiful-letters-cover"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-beautiful-letters-sk/draw-beautiful-letters-spread-cover","draw-beautiful-letters-sk/draw-beautiful-letters-1","draw-beautiful-letters-sk/draw-beautiful-letters-2","draw-beautiful-letters-sk/draw-beautiful-letters-3","draw-beautiful-letters-sk/draw-beautiful-letters-4","draw-beautiful-letters-sk/draw-beautiful-letters-5"],
     "theme": "theme-visvis"
   },
   {
@@ -95,7 +95,7 @@
     "lang": ["ua", "ru"],
     "color": ["red", "pink"],
     "cover": ["art-simple-calligraphy-sk/simple-calligraphy-cover","art-simple-calligraphy-sk/simple-calligraphy-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["art-simple-calligraphy-sk/simple-calligraphy-spread-cover","art-simple-calligraphy-sk/simple-calligraphy-spread-cover2","art-simple-calligraphy-sk/art-simple-calligraphy-1","art-simple-calligraphy-sk/art-simple-calligraphy-2","art-simple-calligraphy-sk/art-simple-calligraphy-3","art-simple-calligraphy-sk/art-simple-calligraphy-4", "art-simple-calligraphy-sk/art-simple-calligraphy-5"],
     "theme": "theme-bostonblue"
   },
   {
@@ -106,18 +106,18 @@
     "lang": ["ua", "ru"],
     "color": ["orange", "brown"],
     "cover": ["basic-skills-sk/basic-skills-cover","basic-skills-sk/basic-skills-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["basic-skills-sk/basic-skills-spread-cover","basic-skills-sk/basic-skills-soread-cover2","basic-skills-sk/basic-skills-1","basic-skills-sk/basic-skills-2","basic-skills-sk/basic-skills-3","basic-skills-sk/basic-skills-4","basic-skills-sk/basic-skills-5"],
     "theme": "theme-spray"
   },
   {
-    "slug": "base-level-sketchbook",
+    "slug": "basic-level-sketchbook",
     "title": "Базовий рівень",
     "price": 180,
     "description": "Скетчбук - это книга для современных людей, ищущих яркие, креативные формы развития личности, желающих обогатить свою жизнь художественными образами. С ее помощью каждый сумеет открыть для себя новые горизонты творческого сознания, раскрыть потенциал подсознания и раскрепостить воображение. Доверьтесь своей интуиции - и превратите поиски себя в произведение искусства.",
     "lang": ["ua", "ru"],
     "color": ["pink", "brown"],
     "cover": ["basic-level-sk/basic-level-cover","basic-level-sk/basic-level-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["basic-level-sk/basic-level-1","basic-level-sk/basic-level-2","basic-level-sk/basic-level-3","basic-level-sk/basic-level-4","basic-level-sk/basic-level-5"],
     "theme": "theme-lima"
   },
   {
@@ -128,7 +128,7 @@
     "lang": ["ua", "ru"],
     "color": ["purple", "blue"],
     "cover": ["advanced-techniques-sk/advanced-techniques-cover","advanced-techniques-sk/advanced-techniques-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["advanced-techniques-sk/advanced-techniques-cover-spread-1","advanced-techniques-sk/advanced-techniques-cover-spread-2","advanced-techniques-sk/advanced-techniques-2","advanced-techniques-sk/advanced-techniques-3","advanced-techniques-sk/advanced-techniques-4", "advanced-techniques-sk/advanced-techniques-5"],
     "theme": "theme-hawaiiantan"
   },
   { 
@@ -139,7 +139,7 @@
     "lang": ["ua", "ru"],
     "color": ["purple", "lime", "green"],
     "cover": ["draw-animals-sk/draw-animals-cover","draw-animals-sk/draw-animals-cover2","draw-animals-sk/draw-animals-cover3"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-animals-sk/draw-animals-spread-cover","draw-animals-sk/draw-animals-spread-cover2","draw-animals-sk/draw-animals-spread-cover3","draw-animals-sk/draw-animals-1","draw-animals-sk/draw-animals-2","draw-animals-sk/draw-animals-3","draw-animals-sk/draw-animals-4","draw-animals-sk/draw-animals-5"],
     "theme": "theme-lavenderpink"
   },
   { 
@@ -150,7 +150,7 @@
     "lang": ["ua", "ru"],
     "color": ["pink", "green", "blue"],
     "cover": ["draw-human-sk/draw-human-cover","draw-human-sk/draw-human-cover2","draw-human-sk/draw-human-cover3"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-human-sk/draw-human-spread-cover","draw-human-sk/draw-human-spread-cover2","draw-human-sk/draw-human-spread-cover3","draw-human-sk/draw-human-1","draw-human-sk/draw-human-2","draw-human-sk/draw-human-3","draw-human-sk/draw-human-4","draw-human-sk/draw-human-5","draw-human-sk/draw-human-6"],
     "theme": "theme-gold"
   },
   { 
@@ -161,7 +161,7 @@
     "lang": ["ua", "ru"],
     "color": ["black", "pink", "red"],
     "cover": ["visual-express-course-sk/visual-cover","visual-express-course-sk/visual-cover2","visual-express-course-sk/visual-cover3"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["visual-express-course-sk/visual-express-course-spread-cover","visual-express-course-sk/visual-express-course-spread-cover2","visual-express-course-sk/visual-express-course-spread-cover3","visual-express-course-sk/visual-express-course-1","visual-express-course-sk/visual-express-course-2","visual-express-course-sk/visual-express-course-3","visual-express-course-sk/visual-express-course-4","visual-express-course-sk/visual-express-course-5"],
     "theme": "theme-sushi"
   },
   {
@@ -172,7 +172,7 @@
     "lang": ["ua", "ru"],
     "color": ["brown", "yellow"],
     "cover": ["draw-landscape-sk/draw-landscape-cover","draw-landscape-sk/draw-landscape-cover2"],
-    "spreadImg": ["","animator-sk/sketch-animator-2","animator-sk/sketch-animator-3","animator-sk/sketch-animator-4","animator-sk/sketch-animator-5"],
+    "spreadImg": ["draw-landscape-sk/draw-landscape-spread-cover","draw-landscape-sk/draw-landscape-spread-cover2","draw-landscape-sk/draw-landscape-1","draw-landscape-sk/draw-landscape-2","draw-landscape-sk/draw-landscape-3","draw-landscape-sk/draw-landscape-5","draw-landscape-sk/draw-landscape-6"],
     "theme": "theme-orangepeel"
   }
 ]
