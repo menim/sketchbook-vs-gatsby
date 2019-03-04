@@ -8,6 +8,7 @@ import "../sass/generic/_slick-theme.scss";
 
 export default class SimpleSlider extends Component {
   render() {
+    console.log(this.props);
     const settings = {
       arrows: true,
       speed: 500,
@@ -15,11 +16,12 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       swipeToSlide: true,
+      adaptiveHeight: true,
     };
     return (
         <Slider {...settings}>
           {this.props.imgs.map((item, index) => (
-            <Pict key={index} src={withPrefix(item)} />
+            <Pict key={index} src={withPrefix(item)} fallbackFormat="jpg" />
           ))}
         </Slider>
     );

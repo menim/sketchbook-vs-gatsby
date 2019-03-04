@@ -1,8 +1,7 @@
 import React from "react"
 import { withPrefix, Link } from "gatsby"
 import Pict from "./pict";
-import Swiper from "react-id-swiper";
-
+import Swiper from "react-id-swiper"
 
 const Product = ({productData}) => {
   const params = {
@@ -23,10 +22,9 @@ const Product = ({productData}) => {
           ?  
            <Swiper  {...params}>
               {productData.cover.map((item, index) => (
-                <div key={index}><Pict className="sketchbook__preview" src={withPrefix(item)} /></div>
+                <div key={index}><Pict className="sketchbook__preview" src={withPrefix(item)} fallbackFormat="png" /></div>
               ))}
             </Swiper> 
-
           : 
             <Pict className="sketchbook__preview" src={withPrefix(productData.cover[0])} />
         }
