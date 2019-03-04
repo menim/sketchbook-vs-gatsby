@@ -1,11 +1,13 @@
-import React, { Fragment } from 'react'
-import Header from '../components/header'
+import React from "react"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const Contact = () => (
-  <Fragment>
+  <>
     <Header />
     <div>Hello from contact page</div>
-  </Fragment>
+    <Footer />
+  </>
 )
 
 export default Contact
