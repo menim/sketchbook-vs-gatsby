@@ -6,7 +6,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import Main from "../components/main"
 import Container from "../components/container"
-import SimpleSlider from "../components/slick-gallery";
+import SimpleSlider from "../components/swiper-gallery";
 
 const ProductPage = ({data}) => {
 const product = data.allDataJson.edges[0].node
