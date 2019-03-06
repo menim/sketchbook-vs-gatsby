@@ -6,6 +6,7 @@ import Pict from "./pict"
 export default class SimpleSlider extends Component {
   render() {
     const params = {
+      threshold: 50,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev'
