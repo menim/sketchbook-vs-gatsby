@@ -18,6 +18,10 @@
   padding: 0;
   /* Fix of Webkit flickering */
   z-index: 1;
+
+  // &:last-child .swiper-slide {
+  //   width: 100px;
+  // }
 }
 
 .swiper-container-no-flexbox .swiper-slide {
@@ -82,6 +86,10 @@
   -o-transition-property: transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .swiper-slide-invisible-blank {
@@ -556,5 +564,18 @@ button.swiper-pagination-bullet {
     .swiper-slide-active {
       pointer-events: auto;
     }
+  }
+}
+
+.thumbnail {
+  padding-top: 1.25em;
+
+  .swiper-slide {
+    width: 150px;
+  }
+  
+  .swiper-slide-active {
+    border-radius: 5px;
+    border: 1px solid red;
   }
 }
