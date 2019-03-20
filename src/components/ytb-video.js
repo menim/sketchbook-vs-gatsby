@@ -30,9 +30,9 @@ class ytbVideo extends Component {
         (<>
            <a className="video__link" href={`https://www.youtube.com/embed/${this.props.id}`}>
               <picture>  
-                <source srcSet={`https://i.ytimg.com/vi_webp/${this.props.id}/sddefault.webp`} type="image/webp" />
-                <img className="video__media" width='700' height='453' src={`https://i.ytimg.com/vi/${this.props.id}/sddefault.jpg`} alt="" />
-              </picture>
+                <source srcSet={`https://i3.ytimg.com/vi_webp/${this.props.id}/hqdefault.webp`} type="image/webp" />
+                <img className="video__media" width='700' height='453' src={`https://i3.ytimg.com/vi/${this.props.id}/hqdefault.jpg`} alt="" />
+              </picture> 
             </a>
             <button className="video__button" type="button" aria-label="Запустить видео">
               <svg width="68" height="48" viewBox="0 0 68 48">
