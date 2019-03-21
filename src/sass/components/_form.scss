@@ -1,8 +1,8 @@
 .form {
 
   &__label {
-    display: inline-block;
     font-size: $text-base-size;
+    display: block;
   }
 
   &__input {
@@ -16,9 +16,18 @@
     &--textarea {
       height: 150px;
     }
+
+    &--error {
+      box-shadow: 1px 1px 10px rgba(255,0,0,.5);
+      border: 1px solid red;
+    }
   }
 
   &__btn {
     margin-top: 0;
+  }
+
+  &__error {
+    color: red;
   }
 }
