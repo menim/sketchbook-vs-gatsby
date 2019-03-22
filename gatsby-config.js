@@ -34,7 +34,16 @@ module.exports = {
         icon: `./src/favicons/favicon-96x96.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [require('autoprefixer')({
+          browsers: ['last 10 version'],
+        })],
+      },
+    },
+
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
