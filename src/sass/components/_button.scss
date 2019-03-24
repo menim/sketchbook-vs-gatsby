@@ -1,13 +1,24 @@
 .btn {
-  border-radius: 7px;
+  border-radius: 20px;
   color: $white;
-  background-color: $juniper;
   border: 2px solid transparent;
-  font-size: $text-base-size;
+  font-size: $text-sm;
   font-family: raleway, sans-serif;
-  padding: $space-xxs $space-sm;
+  padding: .73em 2.2em;
   text-decoration: none;
   transition: color 300ms ease-out, border 300ms;
+
+  &--primary-theme {
+    background-color: $carnation;
+    &:hover {
+      border: 2px solid $carnation;
+      color: $carnation;
+    } 
+  }
+
+  &--seconday-theme {
+    background-color: $mountain-meadow;
+  }
 
   &--lg {
     font-size: $text-md;
@@ -20,8 +31,6 @@
   }
 
   &:hover {
-    color: $juniper;
     background-color: $white;
-    border: 2px solid $juniper; 
   }
 }
