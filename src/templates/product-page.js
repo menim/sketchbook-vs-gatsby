@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, Link} from "gatsby"
 
+import "../sass/main.scss"
+import "../sass/generic/_swiper.scss"
 
 import Header from "../components/header"
 import Footer from "../components/footer"

@@ -1,11 +1,14 @@
 import React from "react"
+
+import "../sass/main.scss"
+import "../sass/generic/_swiper.scss"
+
 import Header from "../components/header"
 import Main from "../components/main"
 import Container from "../components/container"
 import Footer from "../components/footer"
-
 import Headline from "../components/headline"
-import MultilineBg from "../components/multilineBg"
+
 
 const Delivery = () => (
   <>

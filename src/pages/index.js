@@ -1,7 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Image from "../components/image"
+import "../sass/main.scss"
+import "../sass/generic/_swiper.scss"
+
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Footer from '../components/footer'
@@ -11,10 +12,6 @@ import Main from '../components/main'
 import ProductList from '../components/productList'
 import WhtSketch from '../components/wht-sketch'
 import YtbVideo from '../components/ytb-video'
-
-import "../sass/main.scss"
-import "../sass/generic/_swiper.scss"
-
 
 const IndexPage = () => (
   <>

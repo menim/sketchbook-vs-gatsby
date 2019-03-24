@@ -1,4 +1,8 @@
 import React from "react"
+
+import "../sass/main.scss"
+import "../sass/generic/_swiper.scss"
+
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Container from "../components/container"
@@ -6,6 +10,7 @@ import FlexContainer from "../components/flex-container"
 import Main from "../components/main"
 import Headline from "../components/headline"
 import Form from "../components/simple-form"
+
 
 const Contact = () => (
   <>
