@@ -1,6 +1,6 @@
 import React from "react"
 import { withPrefix, Link } from "gatsby"
-import Pict from "./pict";
+import Pict from "./pict"
 import Swiper from "react-id-swiper"
 
 const Product = ({productData}) => {
@@ -22,19 +22,18 @@ const Product = ({productData}) => {
           ?  
            <Swiper  {...params}>
               {productData.cover.map((item, index) => (
-                <div key={index}><Pict className="sketchbook__preview" src={withPrefix(item)} fallbackFormat="png" /></div>
+                <div key={index}><Pict className="sketchbook__preview" height="260" src={withPrefix(item)} fallbackFormat="png" /></div>
               ))}
             </Swiper> 
           : 
-            <Pict className="sketchbook__preview" src={withPrefix(productData.cover[0])} />
+            <Pict className="sketchbook__preview" height="260" src={withPrefix(productData.cover[0])} />
         }
 
           <h2 className="sketchbook__title">
-            <span className="sketchbook__subtitle">Скетчбук</span>
             {productData.title}
           </h2>
           <div className="sketchbook__bottom-wrapper">
-            <Link className="btn" to={slug}>Детальніше</Link>
+            <Link className="btn btn--primary-theme" to={slug}>Детальніше</Link>
             <span className="sketchbook__price"> {productData.price} грн</span>
           </div>
         </div>
