@@ -8,7 +8,8 @@
     "color": ["red"],
     "cover": ["architecture-sk/draw-architecture-cover"],
     "spreadImg": ["architecture-sk/draw-architecture-spread-cover","architecture-sk/draw-architecture-1","architecture-sk/draw-architecture-2","architecture-sk/draw-architecture-3","architecture-sk/draw-architecture-4","architecture-sk/draw-architecture-5"],
-    "theme": "theme-fantasy"
+    "theme": "theme-fantasy",
+    "complexity": 4
   },
   {
     "slug": "animator-sketchbook",
@@ -19,7 +20,8 @@
     "color": ["yellow"],
     "cover": ["animator-sk/animator-sketch-cover"],
     "spreadImg": ["animator-sk/animator-sketch-1","animator-sk/animator-sketch-2","animator-sk/animator-sketch-3","animator-sk/animator-sketch-4","animator-sk/animator-sketch-5"],
-    "theme": "theme-mercury"
+    "theme": "theme-mercury",
+    "complexity": 3
   },
   {  
     "slug": "designer-sketchbook",
@@ -30,7 +32,8 @@
     "color": ["blue"],
     "cover": ["designer-sk/sketch-designer-cover"],
     "spreadImg": ["designer-sk/designer-sketch-spread-cover","designer-sk/designer-sketch-1","designer-sk/designer-sketch-2","designer-sk/designer-sketch-3","designer-sk/designer-sketch-4","designer-sk/designer-sketch-5"],
-    "theme": "theme-link-water"
+    "theme": "theme-link-water",
+    "complexity": 2
   },
   {
     "slug": "draw-fantastic-beasts-sketchbook",  
@@ -41,7 +44,8 @@
     "color": ["blue"],
     "cover": ["draw-fantastic-beasts-sk/draw-fantastic-beasts-cover"],
     "spreadImg": ["draw-fantastic-beasts-sk/draw-fantastic-beasts-spread-cover","draw-fantastic-beasts-sk/draw-fantastic-beasts-1","draw-fantastic-beasts-sk/draw-fantastic-beasts-2","draw-fantastic-beasts-sk/draw-fantastic-beasts-3","draw-fantastic-beasts-sk/draw-fantastic-beasts-4","draw-fantastic-beasts-sk/draw-fantastic-beasts-5"],
-    "theme": "theme-gray-nurse"
+    "theme": "theme-gray-nurse",
+    "complexity": 3
   },
   {   
     "slug": "draw-sea-sketchbook",
@@ -52,7 +56,8 @@
     "color": ["blue"],
     "cover": ["draw-sea-sk/draw-sea-cover"],
     "spreadImg": ["draw-sea-sk/draw-sea-spread-cover","draw-sea-sk/draw-sea-1","draw-sea-sk/draw-sea-2","draw-sea-sk/draw-sea-3","draw-sea-sk/draw-sea-4","draw-sea-sk/draw-sea-5"],
-    "theme": "theme-fantasy"
+    "theme": "theme-fantasy",
+    "complexity": 4
   },
   {
     "slug": "draw-comics-sketchbook", 
@@ -63,7 +68,8 @@
     "color": ["roze"],
     "cover": ["draw-comics-sk/draw-comics-cover"],
     "spreadImg": ["draw-comics-sk/draw-comics-spread-cover","draw-comics-sk/draw-comics-1","draw-comics-sk/draw-comics-2","draw-comics-sk/draw-comics-3","draw-comics-sk/draw-comics-4","draw-comics-sk/draw-comics-5"],
-    "theme": "theme-mercury"
+    "theme": "theme-mercury",
+    "complexity": 4
   },
   {
     "slug": "draw-flowers-sketchbook",
@@ -74,7 +80,8 @@
     "color": ["roze"],
     "cover": ["draw-flowers-sk/draw-flowers-cover"],
     "spreadImg": ["draw-flowers-sk/draw-flowers-spread-cover","draw-flowers-sk/draw-flowers-1","draw-flowers-sk/draw-flowers-2","draw-flowers-sk/draw-flowers-3","draw-flowers-sk/draw-flowers-4","draw-flowers-sk/draw-flowers-5"],
-    "theme": "theme-link-water"
+    "theme": "theme-link-water",
+    "complexity": 2
   },
   {
     "slug": "draw-beautiful-letters-sketchbook",
@@ -85,7 +92,8 @@
     "color": ["roze"],
     "cover": ["draw-beautiful-letters-sk/draw-beautiful-letters-cover"],
     "spreadImg": ["draw-beautiful-letters-sk/draw-beautiful-letters-spread-cover","draw-beautiful-letters-sk/draw-beautiful-letters-1","draw-beautiful-letters-sk/draw-beautiful-letters-2","draw-beautiful-letters-sk/draw-beautiful-letters-3","draw-beautiful-letters-sk/draw-beautiful-letters-4","draw-beautiful-letters-sk/draw-beautiful-letters-5"],
-    "theme": "theme-gray-nurse"
+    "theme": "theme-gray-nurse",
+    "complexity": 4
   },
   {
     "slug": "art-simple-calligraphy-sketchbook",
@@ -96,7 +104,8 @@
     "color": ["red", "pink"],
     "cover": ["art-simple-calligraphy-sk/simple-calligraphy-cover","art-simple-calligraphy-sk/simple-calligraphy-cover2"],
     "spreadImg": ["art-simple-calligraphy-sk/simple-calligraphy-spread-cover","art-simple-calligraphy-sk/simple-calligraphy-spread-cover2","art-simple-calligraphy-sk/art-simple-calligraphy-1","art-simple-calligraphy-sk/art-simple-calligraphy-2","art-simple-calligraphy-sk/art-simple-calligraphy-3","art-simple-calligraphy-sk/art-simple-calligraphy-4", "art-simple-calligraphy-sk/art-simple-calligraphy-5"],
-    "theme": "theme-fantasy"
+    "theme": "theme-fantasy",
+    "complexity": 4
   },
   {
     "slug": "basic-skills-sketchbook",
@@ -107,7 +116,8 @@
     "color": ["orange", "brown"],
     "cover": ["basic-skills-sk/basic-skills-cover","basic-skills-sk/basic-skills-cover2"],
     "spreadImg": ["basic-skills-sk/basic-skills-spread-cover","basic-skills-sk/basic-skills-spread-cover2","basic-skills-sk/basic-skills-1","basic-skills-sk/basic-skills-2","basic-skills-sk/basic-skills-3","basic-skills-sk/basic-skills-4","basic-skills-sk/basic-skills-5"],
-    "theme": "theme-mercury"
+    "theme": "theme-mercury",
+    "complexity": 4
   },
   {
     "slug": "basic-level-sketchbook",
@@ -118,7 +128,8 @@
     "color": ["pink", "brown"],
     "cover": ["basic-level-sk/basic-level-cover","basic-level-sk/basic-level-cover2"],
     "spreadImg": ["basic-level-sk/basic-level-1","basic-level-sk/basic-level-2","basic-level-sk/basic-level-3","basic-level-sk/basic-level-4","basic-level-sk/basic-level-5"],
-    "theme": "theme-link-water"
+    "theme": "theme-link-water",
+    "complexity": 4
   },
   {
     "slug": "advanced-techniques-sketchbook",
@@ -129,7 +140,8 @@
     "color": ["purple", "blue"],
     "cover": ["advanced-techniques-sk/advanced-techniques-cover","advanced-techniques-sk/advanced-techniques-cover2"],
     "spreadImg": ["advanced-techniques-sk/advanced-techniques-cover-spread-1","advanced-techniques-sk/advanced-techniques-cover-spread-2","advanced-techniques-sk/advanced-techniques-2","advanced-techniques-sk/advanced-techniques-3","advanced-techniques-sk/advanced-techniques-4", "advanced-techniques-sk/advanced-techniques-5"],
-    "theme": "theme-gray-nurse"
+    "theme": "theme-gray-nurse",
+    "complexity": 4
   },
   { 
     "slug": "draw-animals-sketchbook",
@@ -140,7 +152,8 @@
     "color": ["purple", "lime", "green"],
     "cover": ["draw-animals-sk/draw-animals-cover","draw-animals-sk/draw-animals-cover2","draw-animals-sk/draw-animals-cover3"],
     "spreadImg": ["draw-animals-sk/draw-animals-spread-cover","draw-animals-sk/draw-animals-spread-cover2","draw-animals-sk/draw-animals-spread-cover3","draw-animals-sk/draw-animals-1","draw-animals-sk/draw-animals-2","draw-animals-sk/draw-animals-3","draw-animals-sk/draw-animals-4","draw-animals-sk/draw-animals-5"],
-    "theme": "theme-fantasy"
+    "theme": "theme-fantasy",
+    "complexity": 4
   },
   { 
     "slug": "draw-human-sketchbook",
@@ -151,7 +164,8 @@
     "color": ["pink", "green", "blue"],
     "cover": ["draw-human-sk/draw-human-cover","draw-human-sk/draw-human-cover2","draw-human-sk/draw-human-cover3"],
     "spreadImg": ["draw-human-sk/draw-human-spread-cover","draw-human-sk/draw-human-spread-cover2","draw-human-sk/draw-human-spread-cover3","draw-human-sk/draw-human-1","draw-human-sk/draw-human-2","draw-human-sk/draw-human-3","draw-human-sk/draw-human-4","draw-human-sk/draw-human-5","draw-human-sk/draw-human-6"],
-    "theme": "theme-mercury"
+    "theme": "theme-mercury",
+    "complexity": 4
   },
   { 
     "slug": "visual-express-course-sketchbook",
@@ -162,7 +176,8 @@
     "color": ["black", "pink", "red"],
     "cover": ["visual-express-course-sk/visual-cover","visual-express-course-sk/visual-cover2","visual-express-course-sk/visual-cover3"],
     "spreadImg": ["visual-express-course-sk/visual-express-course-spread-cover","visual-express-course-sk/visual-express-course-spread-cover2","visual-express-course-sk/visual-express-course-spread-cover3","visual-express-course-sk/visual-express-course-1","visual-express-course-sk/visual-express-course-2","visual-express-course-sk/visual-express-course-3","visual-express-course-sk/visual-express-course-4","visual-express-course-sk/visual-express-course-5"],
-    "theme": "theme-link-water"
+    "theme": "theme-link-water",
+    "complexity": 4
   },
   {
     "slug": "draw-landscape-sketchbook",
@@ -173,6 +188,7 @@
     "color": ["brown", "yellow"],
     "cover": ["draw-landscape-sk/draw-landscape-cover","draw-landscape-sk/draw-landscape-cover2"],
     "spreadImg": ["draw-landscape-sk/draw-landscape-spread-cover","draw-landscape-sk/draw-landscape-spread-cover2","draw-landscape-sk/draw-landscape-1","draw-landscape-sk/draw-landscape-2","draw-landscape-sk/draw-landscape-3","draw-landscape-sk/draw-landscape-5","draw-landscape-sk/draw-landscape-6"],
-    "theme": "theme-gray-nurse"
+    "theme": "theme-gray-nurse",
+    "complexity": 4
   }
 ]
