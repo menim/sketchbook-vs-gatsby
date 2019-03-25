@@ -60,7 +60,7 @@ export default class SimpleSlider extends Component {
       <>
         <Swiper {...galleryParams} ref={this.galleryRef}>
           {this.props.imgs.map((item, index) => (
-            <div key={index}><Pict src={withPrefix(item)} fallbackFormat="jpg" /></div>
+            <div key={index}><Pict height="500" src={withPrefix(item)} fallbackFormat="jpg" /></div>
           ))}
         </Swiper>
         <Swiper {...thumbnailParams} ref={this.thumbRef}>
