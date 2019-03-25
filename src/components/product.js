@@ -1,6 +1,7 @@
 import React from "react"
 import { withPrefix, Link } from "gatsby"
 import Pict from "./pict"
+import Complexity from './complexity';
 import Swiper from "react-id-swiper"
 
 const Product = ({productData}) => {
@@ -28,7 +29,7 @@ const Product = ({productData}) => {
           : 
             <Pict className="sketchbook__preview" height="260" src={withPrefix(productData.cover[0])} />
         }
-
+          <Complexity count={productData.complexity} />
           <h2 className="sketchbook__title">
             {productData.title}
           </h2>
