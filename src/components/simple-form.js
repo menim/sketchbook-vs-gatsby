@@ -48,7 +48,7 @@ const SimpleForm = () => (
           <Field className={errors.message && touched.message ? "form__input form__input--textarea form__input--error" : "form__input form__input--textarea"} component="textarea" name="message" />
           {errors.message && touched.message ? <div className="form__error">{errors.message}</div> : null}
         </label>
-         <button className="form__btn btn" type="submit">Відправити</button>
+         <button className="form__btn btn btn--primary-theme" type="submit">Відправити</button>
       </Form>
     )} 
   </Formik>
