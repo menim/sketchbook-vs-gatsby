@@ -23,7 +23,7 @@ const Header = ({videoEnabled }) => (
     <Container>
       <div className="header__top">
         <Logo />
-        <Nav />
+        <Nav telephone />
       </div>
         <div className="header__description">
         <Parallax speed={4}>
@@ -47,7 +47,7 @@ const Header = ({videoEnabled }) => (
     <Container>
       <div className="header__top">
         <Logo />
-        <Nav />
+        <Nav telephone />
       </div>
     </Container>
   </header>

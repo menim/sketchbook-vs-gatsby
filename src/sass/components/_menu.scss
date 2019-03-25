@@ -6,6 +6,7 @@
   z-index: 3;
 
   &__list {
+    align-items: center;
     display: flex;
     list-style: none;
     margin-bottom: 0;
@@ -29,35 +30,20 @@
 
   &__link {
     position: relative;
-    color: $white-ice;
+    color: $white;
     letter-spacing: 1px;
     text-decoration: none;
 
-    &--red-orange-theme {
+    &--primary-theme {
 
       &::after {
-        background-color: $red-orange;
-      }
-    }
-
-    &--scooter-theme {
-
-      &::after {
-        background-color: $juniper;
-      }
-    }
-
-    &--green-haze-theme {
-
-      &::after {
-        background-color: $green-haze;
+        background-color: $carnation;
       }
     }
 
     &::after {
       position: absolute;
       right: 0;
-      //background-color: $studio;
       bottom: -5px;
       left: 0;
       content: '';
@@ -73,5 +59,9 @@
         width: 100%;
       }
     }
+  }
+
+  &__telephone {
+    color: $white;
   }
 }
