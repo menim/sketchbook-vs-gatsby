@@ -1,17 +1,22 @@
 .btn {
   border-radius: 20px;
   color: $white;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
+  display: inline-block;
   font-size: $text-sm;
   font-family: raleway, sans-serif;
-  padding: .73em 2.2em;
+  height: 2.66em;
+  line-height: 2.66em;
+  text-align: center;
   text-decoration: none;
   transition: color 300ms ease-out, border 300ms;
+  width: 8.93em;
+
 
   &--primary-theme {
     background-color: $carnation;
     &:hover {
-      border: 2px solid $carnation;
+      border: 1px solid $carnation;
       color: $carnation;
     } 
   }
