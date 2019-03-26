@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import MultilineBg from '../components/multilineBg';
-import VisibilitySensor from 'react-visibility-sensor';
+import MultilineBg from '../components/multilineBg'
+import VisibilitySensor from 'react-visibility-sensor'
 
 class whtSketch extends Component {
   constructor(props) {

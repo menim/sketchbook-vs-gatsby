@@ -1,13 +1,12 @@
 .wht-sketch {
-  position: relative;
-  top: $space-xl;
-  left: $space-lg;
-  background-color: $white;
-  box-shadow: 0 8px 24px 0 rgba(0,0,0,.11);
-  height: 100%;
   color: $white;
-  padding: $space-lg;
-  width: 40%;
+  background-color: $carnation;
+  border-radius: 20px;
+  position: relative;
+  height: 100%;
+  left: 2.4em;
+  padding: 2.4em;
+  width: 35%;
   z-index: 1;
 
   &__header {
@@ -18,7 +17,7 @@
 
   &__list {
     margin-bottom: 0;
-    padding-left: $space-unit;
+    padding-left: 0;
   }
 
   &__item {
