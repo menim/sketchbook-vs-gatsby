@@ -23,7 +23,7 @@ const IndexPage = () => (
         </FlexContainer>
       </Container>
       <Container>
-        <FlexContainer withVerticalOffset> 
+        <FlexContainer params='l-flex--center vert-lg-margin'> 
           <WhtSketch />
           <YtbVideo id="iMOM4CXQn00" />
         </FlexContainer> 

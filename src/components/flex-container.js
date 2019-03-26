@@ -1,10 +1,9 @@
 import React from 'react'
 
-
-const FlexContainer = ({ withVerticalOffset,children }) => (
-  <div className={withVerticalOffset ? `l-flex vert-lg-margin` : `l-flex`}>
+const FlexContainer = ({ params, children }) => (
+  <div className={`l-flex ${params}`}>
     { children }
   </div>
 )
-
+  
 export default FlexContainer
