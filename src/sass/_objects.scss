@@ -13,6 +13,11 @@
 .l-flex {
   display: flex;
   flex-wrap: wrap;
+
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .l-item {
