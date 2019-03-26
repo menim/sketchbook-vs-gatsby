@@ -7,10 +7,10 @@ $text-scale-ratio: 1.2;
 $line-height-default: 1.15;
 
 // font sizes
-$text-xs: 1em / $text-scale-ratio * $text-scale-ratio;
+$text-xsm: 13px;
 $text-sm: 15px;
-$text-md: 1em * $text-scale-ratio;
-$text-lg: 1em * $text-scale-ratio * $text-scale-ratio;
+$text-md: 20px;
+$text-lg: 25px;
 $text-xl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
 $text-xxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
 $text-xxxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
