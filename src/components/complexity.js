@@ -4,7 +4,7 @@ import Bullet from './bullet'
 const Complexity = ({count}) => {
   const list = [];
   for (let i = 0; i < 5; i++) {
-    i < count ? list.push(<Bullet highlight />) : list.push(<Bullet />)
+    i < count ? list.push(<Bullet key={i} highlight />) : list.push(<Bullet key={i}  />)
   }
 
   return (
