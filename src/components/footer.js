@@ -25,7 +25,6 @@ const Footer = () => (
           <a className="telephone" href="tel: +38066-754-95-64">066-754-95-64</a>
           <a className="telephone" href="tel: +38097-025-8-646">097-025-86-46</a>
           <a className="telephone" href="tel: +3093-139-167-04">093-139-67-04</a>
-          <a className="telephone" href="tel: +38050-364-26-87">050-364-26-87</a>
         </section>
         <section className="footer__section">
           <h4 className="footer__title">Email</h4>
