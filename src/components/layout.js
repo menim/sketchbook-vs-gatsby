@@ -5,9 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { injectIntl } from "react-intl"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { injectIntl } from 'react-intl'
 
 const Layout = ({ children, intl }) => (
   <>

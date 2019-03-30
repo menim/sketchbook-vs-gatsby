@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Main = ({ children }) => (
-  <section className="main">
+  <section className='main'>
     { children }
   </section>
 )

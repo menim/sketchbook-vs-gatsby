@@ -1,15 +1,15 @@
-import React from "react"
-import { withIntl } from "../i18n"
+import React from 'react'
+import { withIntl } from '../i18n'
 
-import "../sass/main.scss"
-import "../sass/generic/_swiper.scss"
+import '../sass/main.scss'
+import '../sass/generic/_swiper.scss'
 
 import Layout from '../components/layout'
-import SEO from "../components/seo"
-import Header from "../components/header"
+import SEO from '../components/seo'
+import Header from '../components/header'
 import Footer from '../components/footer'
 import Container from '../components/container'
-import FlexContainer from "../components/flex-container"
+import FlexContainer from '../components/flex-container'
 import Main from '../components/main'
 import ProductList from '../components/productList'
 import WhtSketch from '../components/wht-sketch'
@@ -28,11 +28,11 @@ const IndexPage = ({ intl }) => (
         <Container>
           <FlexContainer params='l-flex--center vert-lg-margin'> 
             <WhtSketch />
-            <YtbVideo id="iMOM4CXQn00" />
+            <YtbVideo id='iMOM4CXQn00' />
           </FlexContainer> 
         </Container>
       </Main>
-      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title='Home' keywords={[`gatsby`, `application`, `react`]} />
     <Footer />
   </Layout>
   </>
