@@ -31,8 +31,8 @@ const Product = ({locale, productData}) => {
           : 
             <Pict className="sketchbook__preview" height="260" src={withPrefix(productData.cover[0])} />
         }
-          <Complexity count={productData.complexity} />
-          <h2 className="sketchbook__title">
+          <Complexity count={productData.complexity} />         
+           <h2 className="sketchbook__title">
             { productData[locale].title }
           </h2>
           <div className="sketchbook__bottom-wrapper">

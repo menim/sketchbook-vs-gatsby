@@ -15,14 +15,14 @@ import ProductList from '../components/productList'
 import WhtSketch from '../components/wht-sketch'
 import YtbVideo from '../components/ytb-video'
 
-const IndexPage = ({intl}) => (
+const IndexPage = ({ intl }) => (
   <>
   <Layout>
     <Header videoEnabled />
       <Main>
         <Container>
           <FlexContainer>
-            <ProductList />
+            <ProductList data = { intl } />
           </FlexContainer>
         </Container>
         <Container>
