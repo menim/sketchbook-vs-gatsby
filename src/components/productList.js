@@ -2,15 +2,11 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Product from './product'
 
-
-
 const ProductList = ({data}) => {
-console.log(data)
 
-  const locale = data.locale 
+const locale = data.locale 
     
-
-  return ( <StaticQuery query={graphql`
+return ( <StaticQuery query={graphql`
   query {
     allDataJson {
       edges {

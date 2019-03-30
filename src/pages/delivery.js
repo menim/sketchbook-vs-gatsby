@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormattedMessage } from "react-intl"
-import { withIntl, Link } from "../i18n"
+import { withIntl } from "../i18n"
 
 import '../sass/main.scss'
 import '../sass/generic/_swiper.scss'

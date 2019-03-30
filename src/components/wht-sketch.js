@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import MultilineBg from '../components/multilineBg'
 import { FormattedMessage } from 'react-intl'
 import VisibilitySensor from 'react-visibility-sensor'
 
