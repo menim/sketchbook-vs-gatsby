@@ -1,15 +1,16 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Parallax from "react-rellax"
+import { FormattedMessage } from 'react-intl'
 
 import mp4Video from "../video/sketch-ai.mp4"
 import webpVideo from "../video/sketch-ai.webm"
 
 import Nav from "./nav"
 import Logo from "./logo";
-import Container from "./container"
-import MultilineBg from "./multilineBg"
+import Container from './container'
+import MultilineBg from './multilineBg'
+import Language from './language'
 
 const Header = ({videoEnabled }) => (
   videoEnabled ? 
@@ -24,18 +25,18 @@ const Header = ({videoEnabled }) => (
       <div className="header__top">
         <Logo />
         <Nav telephone />
+        <Language />
       </div>
         <div className="header__description">
         <Parallax speed={4}>
           <h1 className="header__title">
             <MultilineBg>
-              Скетчбук - книга для записів та замальовок.
+              <FormattedMessage id="header-title" />
             </MultilineBg>
           </h1>
           <p className="header__content">
             <MultilineBg>
-              Це книга для сучасних людей, що шукають яскравих, креативних форм розвитку особистості, прагнуть збагатити своє життя
-              художніми образами.
+              <FormattedMessage id="header-subtitle" />
             </MultilineBg>
           </p>
         </Parallax>
@@ -48,6 +49,7 @@ const Header = ({videoEnabled }) => (
       <div className="header__top">
         <Logo />
         <Nav telephone />
+          <Language />
       </div>
     </Container>
   </header>
