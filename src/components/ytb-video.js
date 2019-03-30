@@ -42,7 +42,7 @@ class ytbVideo extends Component {
         </button> 
         </>)
         : (
-          <iframe allowFullScreen="" allow="autoplay" src={`https://www.youtube.com/embed/${this.props.id}?rel=0&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;autoplay=1`} className="video__media"></iframe>
+          <iframe title="Обзор скетчбуков" allowFullScreen="" allow="autoplay" src={`https://www.youtube.com/embed/${this.props.id}?rel=0&amp;modestbranding=1&amp;autohide=1&amp;showinfo=0&amp;autoplay=1`} className="video__media"></iframe>
         )
 
           }
