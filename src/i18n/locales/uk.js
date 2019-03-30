@@ -1,6 +1,6 @@
 module.exports = {
-  "error-short-name": "Дуже коротке им\'я",
-  "error-long-name": "Дуже довге им\'я",
+  "error-short-name": "Дуже коротке им'я",
+  "error-long-name": "Дуже довге им'я",
   "error-void-message": "Заповніть будь ласка поле",
   "error-email": "Невірна email адреса",
   "error-short-message": "Дуже коротке повідомлення",
