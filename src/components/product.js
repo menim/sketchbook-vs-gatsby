@@ -1,10 +1,12 @@
 import React from "react"
-import { withPrefix, Link } from "gatsby"
+import { withPrefix } from "gatsby"
+import { FormattedMessage } from 'react-intl'
+import { Link } from './../i18n'
 import Pict from "./pict"
 import Complexity from './complexity';
 import Swiper from "react-id-swiper"
 
-const Product = ({productData}) => {
+const Product = ({locale, productData}) => {
   const params = {
     spaceBetween: 25,
     centeredSlides: true,
@@ -31,10 +33,10 @@ const Product = ({productData}) => {
         }
           <Complexity count={productData.complexity} />
           <h2 className="sketchbook__title">
-            {productData.title}
+            { productData[locale].title }
           </h2>
           <div className="sketchbook__bottom-wrapper">
-            <Link className="btn btn--primary-theme" to={slug}>Детальніше</Link>
+            <Link className="btn btn--primary-theme" to={slug}><FormattedMessage id="button-more-details" /></Link>
             <span className="sketchbook__price"> {productData.price} грн</span>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby'
+import { Link } from './../i18n'
 import PropTypes from 'prop-types'
 
 

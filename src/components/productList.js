@@ -2,18 +2,27 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby';
 import Product from './product'
 
-const ProductList = () => (
-  <StaticQuery query={graphql`
+const ProductList = () => {
+  const locale = window.location.href.match(/(ru|uk)/)[0] // get locale of index page 
+
+  return ( <StaticQuery query={graphql`
   query {
     allDataJson {
       edges {
         node {
-          title
           cover
           price
           theme
           complexity
           slug
+          uk {
+            title
+            description
+          }
+          ru {
+            title
+            description
+          }
         }
       }
     }
@@ -21,11 +30,12 @@ const ProductList = () => (
   `}
   render={ (data) => (
     data.allDataJson.edges.map((product, index) => (
-        <Product key={index} productData={product.node} />
+        <Product locale={locale} key={index}  productData={product.node} />
       ))
     )
   }  
   />
-)
+  )
+}
 
 export default ProductList

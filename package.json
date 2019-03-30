@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "autoprefixer": "^9.5.0",
+    "browser-lang": "0.0.1",
     "formik": "^1.5.1",
     "gatsby": "^2.0.116",
     "gatsby-image": "^2.0.29",
@@ -22,6 +23,7 @@
     "react-dom": "^16.8.0",
     "react-helmet": "^5.2.0",
     "react-id-swiper": "^1.6.9",
+    "react-intl": "^2.8.0",
     "react-rellax": "^1.0.2",
     "react-slick": "^0.23.2",
     "react-visibility-sensor": "^5.0.2",

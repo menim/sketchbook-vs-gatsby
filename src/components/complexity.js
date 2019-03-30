@@ -1,4 +1,5 @@
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 import Bullet from './bullet'
 
 const Complexity = ({count}) => {
@@ -10,7 +11,7 @@ const Complexity = ({count}) => {
   return (
     <div className='complexity'>
       <span className='complexity__title'>
-        Складність:
+        <FormattedMessage id="complexity-title" />
       </span>
       <div className='complexity__bullets'>
         {list}
