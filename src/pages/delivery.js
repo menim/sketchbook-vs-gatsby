@@ -1,40 +1,41 @@
-import React from "react"
+import React from 'react'
+import { FormattedMessage } from "react-intl"
+import { withIntl, Link } from "../i18n"
 
-import "../sass/main.scss"
-import "../sass/generic/_swiper.scss"
+import '../sass/main.scss'
+import '../sass/generic/_swiper.scss'
 
-import Header from "../components/header"
-import Main from "../components/main"
-import Container from "../components/container"
-import Footer from "../components/footer"
-import Headline from "../components/headline"
+import Header from '../components/header'
+import Layout from "../components/layout"
+import Main from '../components/main'
+import Container from '../components/container'
+import Footer from '../components/footer'
+import Headline from '../components/headline'
 
-
-const Delivery = () => (
-  <>
+const Delivery = ({ intl }) => (
+    <>
+    <Layout>
     <Header />
     <Main>
       <Container>
         <Headline center>
-          Оплата і доставка
+        <FormattedMessage id="pay-delivery-title" />
         </Headline>
         <section className="delivery">
           <div className="delivery__description">
-            <h2 className="delivery__title"><span className="multiline-bg">Оплата</span></h2>
+            <h2 className="delivery__title"><span className="multiline-bg multiline-bg--primary-theme">Оплата</span></h2>
             <ul className="delivery__list">
               <li>
-                <strong> передоплата на карту ПриватБанку.</strong>
-                Оплату на карту Ви можете зробити просто і швидко в банкоматах,
-              терміналах самообслуговування ПриватБанку, в касі будь-якого відділення ПриватБанку або через систему інтернет-банк «Приват24».
-              Для прискорення обслуговування не забудьте повідомити нам по телефону або по e-mail про те, що Ви зробили оплату і вкажіть суму.</li>
+                <strong><FormattedMessage id="pay-method-1" /></strong>
+                <p>
+                 <FormattedMessage id="pay-description-1" />
+                </p>
+              </li>
               <li>
-                <strong>накладеним платежем.</strong>
-              Нагадуємо, що в цьому випадку буде необхідно доплатити (20 грн + 2% від суми замовлення за накладений платіж) Замовлення на суму до 300 грн можна придбати тільки за передоплатою (картою або перекладом).
-              Оплата здійснюється при отриманні замовлення, що доставляється перевізником "Нова пошта". 
-              Ознайомитися з умовами оплати післяплати ви можете на сайтах цих компаній.
-              Коригування замовлення В разі необхідності внесення змін або анулювання замовлення після його оформлення і оплати, 
-              Вам необхідно пов'язані з нами по телефону або по e-mail. 
-              Коригування або анулювання замовлення можливі тільки в тому випадку, якщо він ще не був оброблений і не був відправлений у службу кур'єрської доставки
+                <strong><FormattedMessage id="pay-method-2" /></strong>
+                <p>
+                 <FormattedMessage id="pay-description-2" />
+                </p>  
               </li>
             </ul>
       </div>
@@ -52,19 +53,18 @@ const Delivery = () => (
             <path fill="#3e4243" d="M111.387 107.821c-3.312 0-6.006 2.695-6.006 6.006s2.694 6.006 6.006 6.006 6.006-2.694 6.006-6.006-2.695-6.006-6.006-6.006zm0 10.012a4.01 4.01 0 0 1-4.006-4.006c0-2.209 1.797-4.006 4.006-4.006s4.006 1.797 4.006 4.006a4.01 4.01 0 0 1-4.006 4.006zM37.133 107.821c-3.311 0-6.006 2.695-6.006 6.006s2.695 6.006 6.006 6.006 6.006-2.694 6.006-6.006-2.694-6.006-6.006-6.006zm0 10.012a4.01 4.01 0 0 1-4.006-4.006 4.01 4.01 0 0 1 4.006-4.006 4.01 4.01 0 0 1 4.006 4.006 4.01 4.01 0 0 1-4.006 4.006z"/>
           </svg>
             <div className="delivery__description">
-                <h2 className="delivery__title"><span className="multiline-bg">Доставка по Україні</span></h2>
+                <h2 className="delivery__title"><span className="multiline-bg multiline-bg--primary-theme"><FormattedMessage id="delivery-title" /></span></h2>
                 <p className="delivery__paragraph"> 
-                  Якщо ваше замовлення оформлений післяплатою або по ньому зроблена оплата до 13-00, то таке замовлення відправляється замовнику в той же день. 
-                  Всі замовлення по передоплаті і оформлені з доставкою післяплатою после 13:00, відправляються на наступний день. Виняток становить п'ятниця - замовлення необхідно оформити та оплатити до 12-00, щоб вони були відправлені в цього ж дня. 
-                  Замовлення, оформлені в неділю, відправляються на наступний день, в понеділок. Відправка замовлень здійснюється по всіх регіонах України кур'єрською службою «Нова Пошта». 
-                  Доставка по Харкову здійснюється кур'єрською службою «Нова Пошта» або самовивозом.         
+                  <FormattedMessage id="delivery-description" />
                 </p>
               </div>
        </section>   
       </Container>
     </Main>
     <Footer />
-  </>
+    </Layout>
+    </>
 )
 
-export default Delivery
+
+export default withIntl(Delivery)
