@@ -1,4 +1,5 @@
 import React from 'react'
+import  PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import Bullet from './bullet'
 
@@ -21,3 +22,7 @@ const Complexity = ({count}) => {
 }
 
 export default Complexity
+
+Complexity.propTypes = {
+  count: PropTypes.number.isRequired
+}

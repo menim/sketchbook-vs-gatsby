@@ -1,19 +1,21 @@
-import React from "react"
-import { graphql } from 'gatsby'
-import { FormattedMessage } from "react-intl"
-import { dynamicWithIntl, Link } from "../i18n"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import "../sass/main.scss"
-import "../sass/generic/_swiper.scss"
+import { graphql } from 'gatsby'
+import { FormattedMessage } from 'react-intl'
+import { dynamicWithIntl, Link } from '../i18n'
+
+import '../sass/main.scss'
+import '../sass/generic/_swiper.scss'
 
 import Layout from '../components/layout'
-import Header from "../components/header"
-import Footer from "../components/footer"
-import Main from "../components/main"
-import Container from "../components/container"
-import SimpleSlider from "../components/swiper-gallery";
+import Header from '../components/header'
+import Footer from '../components/footer'
+import Main from '../components/main'
+import Container from '../components/container'
+import SimpleSlider from '../components/swiper-gallery'
 
-const ProductPage = ({intl, data}) => {
+const ProductPage = ({ data, intl }) => {
 const product = data.allDataJson.edges[0].node
 return (
     <>
@@ -21,17 +23,17 @@ return (
       <Header />
         <Main>
           <Container>
-            <div className="product">
+            <div className='product'>
               <section className="product__view">
               <SimpleSlider imgs={product.spreadImg} />
               </section>
-              <section className="product__description">
-                <h1 className="product__header">Скетчбук. <FormattedMessage id="title" /></h1>
-                <span className="product__price">₴ {product.price}</span>
-                <p className="product__overview">
-                   <FormattedMessage id="description" />
+              <section className='product__description'>
+                <h1 className='product__header'>Скетчбук. <FormattedMessage id='title' /></h1>
+                <span className='product__price'>₴ {product.price}</span>
+                <p className='product__overview'>
+                   <FormattedMessage id='description' />
                 </p>
-                <Link to="" type="button" className="btn btn--lg">Замовити</Link>
+                <Link to='' type='button' className='btn btn--lg'>Замовити</Link>
               </section>
             </div>
           </Container>
@@ -43,7 +45,6 @@ return (
 }
 
 export default dynamicWithIntl(ProductPage)
-
 
 export const query = graphql`
 query($slug: String!) {
@@ -57,3 +58,8 @@ query($slug: String!) {
   }
 }
 `
+
+ProductPage.propTypes = {
+  data: PropTypes.object.isRequired,
+  intl: PropTypes.object.isRequired
+}

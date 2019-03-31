@@ -1,12 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { withPrefix } from 'gatsby'
 import { FormattedMessage } from 'react-intl'
 import { Link } from './../i18n'
 import Pict from './pict'
-import Complexity from './complexity';
+import Complexity from './complexity'
 import Swiper from 'react-id-swiper'
 
-const Product = ({locale, productData}) => {
+const Product = ({ locale, productData }) => {
   const params = {
     spaceBetween: 25,
     centeredSlides: true,
@@ -44,3 +46,8 @@ const Product = ({locale, productData}) => {
     )
   }
 export default Product
+
+Product.propTypes = {
+  locale: PropTypes.string.isRequired,
+  productData: PropTypes.object.isRequired
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 
 const multilineBg = ({children}) => (
@@ -8,3 +9,7 @@ const multilineBg = ({children}) => (
 ) 
 
 export default multilineBg;
+
+multilineBg.propTypes = {
+  children: PropTypes.node.isRequired
+}

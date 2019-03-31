@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from './../i18n'
+import React from 'react'
 import PropTypes from 'prop-types'
 
+import { Link } from './../i18n'
 
-const Logo = ({logoSize}) => (
+const Logo = ({ logoSize }) => (
   <Link className='header__logo' to='/'>
     <svg className={logoSize ? 'logo logo--small' :  'logo'} xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 25' fill='#ffffff'>
       <path d='M71.1 525.5H44.4v-15c0-5.5-2.3-8.3-7-8.3-2.7 0-4.6.7-5.5 2-1 1.3-1.5 3.4-1.5 6.3 0 3.9 1.2 6.9 3.7 9.3s7.4 6.2 15 11.9c7.4 5.6 13 11 16.7 16.2 3.7 5.2 5.4 11.5 5.4 18.9 0 10-2.8 17.3-8.6 22.1-5.6 4.8-14.2 7.2-25.5 7.2-9.8 0-17.7-1.8-24.1-5.5s-9.6-9.8-9.6-18.3v-19.8h26.7V571c0 3.1.5 5.2 1.6 6.3 1.1 1.2 2.9 1.7 5.4 1.7 4.7 0 7-2.7 7-8.1s-1.5-9.6-4.6-12.8c-3.1-3.2-8.2-7.3-15.1-12.4s-12.3-10.1-15.8-15-5.3-11.2-5.3-18.9c0-17.8 11.5-26.7 34.3-26.7 10 0 18 1.8 24.2 5.5s9.2 9.7 9.2 18v16.7h.1z'/>

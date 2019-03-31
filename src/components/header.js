@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import Parallax from 'react-rellax'
 import { FormattedMessage } from 'react-intl'
 
@@ -7,12 +8,12 @@ import mp4Video from '../video/sketch-ai.mp4'
 import webpVideo from '../video/sketch-ai.webm'
 
 import Nav from './nav'
-import Logo from './logo';
+import Logo from './logo'
 import Container from './container'
 import MultilineBg from './multilineBg'
 import Language from './language'
 
-const Header = ({videoEnabled }) => (
+const Header = ({ videoEnabled }) => (
   videoEnabled ? 
   (
     <header className='header header--video'>

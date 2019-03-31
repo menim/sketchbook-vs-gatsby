@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { FormattedMessage } from 'react-intl'
 import { withIntl } from '../i18n'
 
@@ -66,5 +68,8 @@ const Delivery = ({ intl }) => (
     </>
 )
 
-
 export default withIntl(Delivery)
+
+Delivery.propTypes = {
+  intl: PropTypes.object.isRequired
+}

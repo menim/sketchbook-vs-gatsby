@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { withIntl } from '../i18n'
 
 import '../sass/main.scss'
@@ -39,3 +41,7 @@ const IndexPage = ({ intl }) => (
 )
 
 export default withIntl(IndexPage)
+
+IndexPage.propTypes = {
+  intl: PropTypes.object.isRequired
+}

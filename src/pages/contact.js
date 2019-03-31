@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { FormattedMessage } from 'react-intl'
 import { withIntl } from '../i18n'
@@ -15,7 +16,7 @@ import Main from '../components/main'
 import Headline from '../components/headline'
 import Form from '../components/simple-form'
 
-const Contact = ({intl}) => (
+const Contact = ({ intl }) => (
   <>
   <Header />
   <Layout>
@@ -60,4 +61,9 @@ const Contact = ({intl}) => (
   </Layout>
   </>
 )
+
 export default withIntl(Contact)
+
+Contact.propTypes = {
+  intl: PropTypes.object.isRequired
+}

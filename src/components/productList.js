@@ -1,11 +1,13 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import { StaticQuery, graphql } from 'gatsby'
 import Product from './product'
 
-const ProductList = ({data}) => {
+const ProductList = ({ data }) => {
 
 const locale = data.locale 
-    
+
 return ( <StaticQuery query={graphql`
   query {
     allDataJson {
@@ -40,6 +42,8 @@ return ( <StaticQuery query={graphql`
   )
 }
 
-
-
 export default ProductList
+
+ProductList.propTypes = {
+  data: PropTypes.object.isRequired
+}

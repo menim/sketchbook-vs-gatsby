@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from './../i18n'
+import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
+import { Link } from './../i18n'
 
-const Nav = ({telephone}) => (
+
+const Nav = ({ telephone }) => (
   <nav className='menu'>
     <ul className='menu__list'>
       <li className='menu__item'><Link to='/delivery' className='menu__link menu__link--primary-theme'><FormattedMessage id='pay-delivery-title' /></Link></li>
@@ -17,3 +19,8 @@ const Nav = ({telephone}) => (
 )
 
 export default Nav
+
+Nav.propTypes = {
+  telephone: PropTypes.bool
+}
+
