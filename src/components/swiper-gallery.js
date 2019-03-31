@@ -1,7 +1,7 @@
-import React, {Component} from "react"
-import { withPrefix } from "gatsby"
-import Swiper from "react-id-swiper"
-import Pict from "./pict"
+import React, { Component } from 'react'
+import { withPrefix } from 'gatsby'
+import Swiper from 'react-id-swiper'
+import Pict from './pict'
 
 export default class SimpleSlider extends Component {
 
@@ -60,15 +60,15 @@ export default class SimpleSlider extends Component {
       <>
         <Swiper {...galleryParams} ref={this.galleryRef}>
           {this.props.imgs.map((item, index) => (
-            <div key={index}><Pict height="500" src={withPrefix(item)} fallbackFormat="jpg" /></div>
+            <div key={index}><Pict height='500' src={withPrefix(item)} fallbackFormat='jpg' /></div>
           ))}
         </Swiper>
         <Swiper {...thumbnailParams} ref={this.thumbRef}>
           {this.props.imgs.map((item, index) => (
-            <div key={index}><Pict height="100" src={withPrefix(item)} fallbackFormat="jpg" /></div>
+            <div key={index}><Pict height='100' src={withPrefix(item)} fallbackFormat='jpg' /></div>
           ))}
         </Swiper>
       </>
-    );
+    )
   }
 }
