@@ -14,8 +14,8 @@ const contactSchema = Yup.object().shape({
   .required(<FormattedMessage id="error-void-message" />),
   message: Yup.string()
   .min(5, <FormattedMessage id="error-short-message" />)
-    .max(30, <FormattedMessage id="error-void-message" />)
-  .required(<FormattedMessage id="error-long-message" />)
+    .max(100, <FormattedMessage id="error-long-message" />)
+  .required(<FormattedMessage id="error-void-message" />)
 })
 
 const SimpleForm = () => (
