@@ -31,13 +31,12 @@
   &__link {
     position: relative;
     color: $white;
-    letter-spacing: 1px;
     text-decoration: none;
 
     &--primary-theme {
 
       &::after {
-        background-color: $carnation;
+        background-color: $mountain-meadow;
       }
     }
 
