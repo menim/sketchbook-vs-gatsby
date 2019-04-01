@@ -41,7 +41,7 @@ class Language extends Component {
     }
 
     return (
-      <div className='languages' style={{zIndex: 2}}>
+      <div className='languages'>
         {languages.map(({ value, text }) => (
           <button className={(locale === value) ? 'languages__item  languages__item--active' : 'languages__item'} onClick={this.handleClick}  key={value} value={value}>
             {text}
