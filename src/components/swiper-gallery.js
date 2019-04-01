@@ -41,8 +41,8 @@ export default class SimpleSlider extends Component {
     const galleryParams = {
       threshold: 50,
       navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        nextEl: '.swiper-product-next.swiper-product-next--secondary',
+        prevEl: '.swiper-product-prev.swiper-product-prev--secondary'
       }
     }
 

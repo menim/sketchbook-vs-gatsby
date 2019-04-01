@@ -605,6 +605,8 @@ button.swiper-pagination-bullet {
 
 .swiper-product-prev::before,
 .swiper-product-next::before {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent; 
   content: '';
   display: block;
   position: absolute;
@@ -615,15 +617,11 @@ button.swiper-pagination-bullet {
 }
 
 .swiper-product-prev::before {
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent; 
   border-right: 11px solid #dbbcbc;
   
 }
 
 .swiper-product-next::before { 
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
   border-left: 11px solid #dbbcbc;
   right: 0;  
 }
@@ -632,5 +630,21 @@ button.swiper-pagination-bullet {
 .swiper-button-disabled.swiper-product-next::before {
    opacity: .2;
 }
+
+.swiper-product-next.swiper-product-next--secondary::before,
+.swiper-product-prev.swiper-product-prev--secondary::before {
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent; 
+}
+
+.swiper-product-next.swiper-product-next--secondary::before {
+  border-left: 18px solid #17b489;
+}
+
+.swiper-product-prev.swiper-product-prev--secondary::before {
+  border-right: 18px solid #17b489
+}
+
+
 
 
