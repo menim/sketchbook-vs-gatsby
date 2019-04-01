@@ -21,7 +21,7 @@ return (
     <>
     <Layout>
       <Header />
-        <Main>
+        <Main smVerticalOffset>
           <Container>
             <div className='product'>
               <section className="product__view">

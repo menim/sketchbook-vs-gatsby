@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Main = ({ children }) => (
-  <section className='main'>
+const Main = ({ children, smVerticalOffset }) => (
+  <section className={smVerticalOffset ? 'main main--sm' : 'main' }>
     { children }
   </section>
 )
@@ -10,5 +10,6 @@ const Main = ({ children }) => (
 export default Main
 
 Main.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  smVerticalOffset: PropTypes.bool
 }
