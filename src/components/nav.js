@@ -4,8 +4,8 @@ import { FormattedMessage } from 'react-intl'
 import { Link } from './../i18n'
 
 
-const Nav = ({ telephone }) => (
-  <nav className='menu'>
+const Nav = ({ telephone, isHeader }) => (
+  <nav className={isHeader ? 'header__menu menu' : 'menu'}>
     <ul className='menu__list'>
       <li className='menu__item'><Link to='/delivery' className='menu__link menu__link--primary-theme'><FormattedMessage id='pay-delivery-title' /></Link></li>
       <li className='menu__item'><Link to='/contact/' className='menu__link menu__link--primary-theme'><FormattedMessage id='contact-page-title' /></Link></li>

@@ -25,7 +25,7 @@ const Header = ({ videoEnabled }) => (
     <Container>
       <div className='header__top'>
         <Logo />
-        <Nav telephone />
+        <Nav isHeader telephone />
         <Language />
       </div>
         <div className='header__description'>
