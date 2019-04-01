@@ -1,12 +1,12 @@
 .footer {
   background-color: $ebony-clay;
-  padding: $space-lg 0;
+  padding: 5.125em 0;
   color: $white;
   font-size: $text-base-size;
 
   &__top {
     display: flex;
-    padding-bottom: $space-unit;
+    padding-bottom: 3em;
   }
 
   &__bottom {
@@ -17,7 +17,7 @@
   }
 
   &__section {
-    line-height: 20px;
+    line-height: 1.625em;
     width: 25%;
 
     & + & {
@@ -28,6 +28,6 @@
   &__title {
     margin-top: 0;
     font-size: $text-md;
-    margin-bottom: $space-xs;
+    margin-bottom: 1em;
   }
 }
