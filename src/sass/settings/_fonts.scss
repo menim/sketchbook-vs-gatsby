@@ -1,5 +1,8 @@
-@include font-face(raleway, '../fonts/raleway-regular');
-@include font-face('raleway thin', '../fonts/raleway-thin');
+@include font-face('segoe ui regular', '../fonts/segoe-ui');
+@include font-face('segoe ui bold', '../fonts/segoe-ui-bold');
+@include font-face('segoe ui italic', '../fonts/segoe-ui-italic');
+
+
 
 // base font values
 $text-base-size: 16px;
