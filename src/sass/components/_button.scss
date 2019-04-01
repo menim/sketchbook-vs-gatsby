@@ -11,17 +11,20 @@
   transition: color 300ms ease-out, border 300ms;
   width: 8.93em;
 
-
   &--primary-theme {
     background-color: $carnation;
     &:hover {
       border: 1px solid $carnation;
       color: $carnation;
-    } 
+    }
   }
 
-  &--seconday-theme {
+  &--secondary-theme {
     background-color: $mountain-meadow;
+      &:hover {
+      border: 1px solid $mountain-meadow;
+      color: $mountain-meadow;
+    } 
   }
 
   &--lg {
