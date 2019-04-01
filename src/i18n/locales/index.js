@@ -6,7 +6,7 @@ const localeData = [
 module.exports = {
   localeData,
   languages: [
-    { value: 'ru', text: 'Russian' },
-    { value: 'uk', text: 'Ukranian' },
+    { value: 'ru', text: 'ru' },
+    { value: 'uk', text: 'ua' },
   ],
 }

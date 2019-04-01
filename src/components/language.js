@@ -33,9 +33,9 @@ class Language extends Component {
 
   render() {
     const { language } = this.context
-    const { languages } = language
+    const { languages, locale } = language
     const { value } = this.state
-    
+
     if (!value) {
       return null
     }
@@ -43,7 +43,7 @@ class Language extends Component {
     return (
       <div className='languages' style={{zIndex: 2}}>
         {languages.map(({ value, text }) => (
-          <button  onClick={this.handleClick}  key={value} value={value}>
+          <button className={(locale === value) ? 'languages__item  languages__item--active' : 'languages__item'} onClick={this.handleClick}  key={value} value={value}>
             {text}
           </button>
         ))}

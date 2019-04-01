@@ -1,0 +1,22 @@
+.languages {
+  color: $white;
+  font-size: $font-size-xxsm;
+  font-family: 'raleway';
+  line-height: 1;
+
+  &__item {
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 2px $mountain-meadow;
+    height: 40px;
+    padding: 0;
+    margin-right: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 40px;
+
+    &--active {
+      background-color: $mountain-meadow;
+    }
+  }
+}
