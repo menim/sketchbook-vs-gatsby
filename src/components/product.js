@@ -12,6 +12,7 @@ const Product = ({ locale, productData }) => {
   const params = {
     spaceBetween: 25,
     centeredSlides: true,
+    threshold: 50,
     navigation: {
       nextEl: '.swiper-product-next',
       prevEl: '.swiper-product-prev'
