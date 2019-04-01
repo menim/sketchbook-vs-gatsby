@@ -1,6 +1,6 @@
 .sketchbook {
   background-color: $white;
-  border: 1px solid $carnation;
+  border: 1px solid $bon-jour;
   border-radius: 20px;
   color: $emperor;
   display: flex;
@@ -9,6 +9,12 @@
   justify-content: center;
   padding: 2.1825em;
   max-width: 18.75em;
+  transition: border-color 150ms ease-in;
+
+  &:hover {
+    border-color: $mountain-meadow;
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0,.05)
+  }
 
   img {
     width: 14.375em;
@@ -25,28 +31,8 @@
     padding-bottom: $space-md;
   }
 
-  .swiper-container-horizontal>.swiper-pagination-bullets {
-    bottom: 3px;
-  }
-
-  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet  {
-    background-color: $clam-shell;
-  }
-
-  &--theme-fantasy {
-    @include linear-gradient-add($fantasy);
-  }
-  
-  &--theme-mercury {
-    @include linear-gradient-add($mercury);
-  }
-
-  &--theme-link-water {
-    @include linear-gradient-add($link-water);
-  }
-  
-  &--theme-gray-nurse {
-    @include linear-gradient-add( $gray-nurse);
+  &--theme-iceberg {
+    @include linear-gradient-add( $iceberg);
   }
 
   &__preview {
@@ -56,8 +42,9 @@
   }
 
   &__title {
-    color: $black;
+    color: $ebony-clay;
     font-size: $text-base-size;
+    font-weight: normal;
     margin-bottom: 0;
     margin-top: $space-md;
     padding: 0 1em;
@@ -69,7 +56,7 @@
   }
 
   &__price {
-    color: $nobel;
+    color: $ebony-clay;
     font-size: $text-sm;
   }
 

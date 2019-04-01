@@ -12,6 +12,10 @@ const Product = ({ locale, productData }) => {
   const params = {
     spaceBetween: 25,
     centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-product-next',
+      prevEl: '.swiper-product-prev'
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true
@@ -22,23 +26,23 @@ const Product = ({ locale, productData }) => {
 
   return (
       <div className='l-item'>
-        <div className={`sketchbook sketchbook--${productData.theme}`}>
+        <div className='sketchbook sketchbook--theme-iceberg'>
         {productData.cover.length > 1 
           ?  
            <Swiper  {...params}>
               {productData.cover.map((item, index) => (
-                <div key={index}><Pict className='sketchbook__preview' height='260' src={withPrefix(item)} fallbackFormat='png' /></div>
+                <div key={index}><Pict className='sketchbook__preview' src={withPrefix(item)} fallbackFormat='png' /></div>
               ))}
             </Swiper> 
           : 
-            <Pict className='sketchbook__preview' height='260' src={withPrefix(productData.cover[0])} />
+            <Pict className='sketchbook__preview' src={withPrefix(productData.cover[0])} />
         }
           <Complexity count={productData.complexity} />         
            <h2 className='sketchbook__title'>
             { productData[locale].title }
           </h2>
           <div className='sketchbook__bottom-wrapper'>
-            <Link className='btn btn--primary-theme' to={slug}><FormattedMessage id='button-more-details' /></Link>
+            <Link className='btn btn--secondary-theme' to={slug}><FormattedMessage id='button-more-details' /></Link>
             <span className='sketchbook__price'> {productData.price} грн</span>
           </div>
         </div>
