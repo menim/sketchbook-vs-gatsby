@@ -328,8 +328,7 @@
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #000;
-  opacity: 0.2;
+  background: #dbbcbc;
 }
 
 button.swiper-pagination-bullet {
@@ -351,6 +350,10 @@ button.swiper-pagination-bullet {
   opacity: 1;
   background: #9a9797;
 }
+
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 3px;
+}  
 
 .swiper-container-vertical>.swiper-pagination-bullets {
   right: 10px;
@@ -579,3 +582,55 @@ button.swiper-pagination-bullet {
     border: 1px solid red;
   }
 }
+
+.swiper-product-next,
+.swiper-product-prev {
+  cursor: pointer;
+  display: block;
+  height: 44px;
+  margin-top: -22px;
+  position: absolute;
+  top: 50%;
+  width: 44px;
+  z-index: 2;
+}
+
+.swiper-product-prev {
+  left: 0;
+}
+
+.swiper-product-next {
+  right: 0;
+}
+
+.swiper-product-prev::before,
+.swiper-product-next::before {
+  content: '';
+  display: block;
+  position: absolute;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+}
+
+.swiper-product-prev::before {
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent; 
+  border-right: 11px solid #dbbcbc;
+  
+}
+
+.swiper-product-next::before { 
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 11px solid #dbbcbc;
+  right: 0;  
+}
+
+.swiper-button-disabled.swiper-product-prev::before,
+.swiper-button-disabled.swiper-product-next::before {
+   opacity: .2;
+}
+
+
