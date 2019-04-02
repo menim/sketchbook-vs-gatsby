@@ -1,4 +1,5 @@
 .form {
+  color: $ebony-clay;
 
   &__label {
     font-size: $text-base-size;
@@ -6,20 +7,23 @@
   }
 
   &__input {
-    border: 0;
-    border-bottom: 1px solid $carnation;
+    border: 2px solid $mountain-meadow;
+    border-radius: 44px;
     display: block;
-    height: 50px;
-    width: 75%;
-    margin-bottom: $space-md;
-  
-    &--textarea {
-      height: 150px;
-    }
+    height: 3.75em;
+    padding-left: 1.5em;
+    margin-top: .2em;
+    margin-bottom: 2.25em;
+    transition: border-color 150ms ease-in;
+    width: 100%;
 
+    &--textarea {
+      resize: none;
+    }
+  
     &--error {
-      box-shadow: 1px 1px 10px rgba(255,0,0,.5);
-      border: 1px solid red;
+      border: 2px solid $carnation;
+      margin-bottom: 0;
     }
   }
 
@@ -28,6 +32,8 @@
   }
 
   &__error {
-    color: red;
+    color: $carnation;
+    font-size: $text-xsm;
+    margin: .2em 0 1.25em 2.25em;
   }
 }
