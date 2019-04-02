@@ -1,6 +1,7 @@
-.aside-info {
-  color: $white;
-  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.4);
+.aside-info {  
+  color: $ebony-clay;
+  background-color: $mountain-meadow; 
+  border-radius: 16px;
 
   &__item {
     margin-bottom: $space-lg;
@@ -12,8 +13,8 @@
   }
 
   &__header {
-    text-transform: uppercase;
     margin-top: 0;
+    font-family: 'segoe ui bold';
     font-size: $text-base-size;
     margin-bottom: $space-xs;
   }
