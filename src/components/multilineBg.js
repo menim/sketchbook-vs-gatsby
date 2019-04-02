@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 
 const multilineBg = ({children}) => (
-  <span className='multiline-bg multiline-bg--primary-theme'>
+  <span className='multiline-bg multiline-bg--secondary-theme'>
     {children}
   </span>
 ) 
