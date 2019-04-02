@@ -1,6 +1,9 @@
 .headline {
-  color: $black; 
+  color: $ebony-clay; 
   font-size: $text-xxl;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 1.5em;
 
   &--center {
     text-align: center;
