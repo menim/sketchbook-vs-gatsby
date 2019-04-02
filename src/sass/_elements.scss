@@ -43,3 +43,10 @@ img {
 address {
   font-style: normal;
 }
+
+input:focus,
+button:focus,
+a:focus {
+  outline: none;
+  box-shadow: 1px 1px 10px 2px rgb(59, 153, 252);
+}
