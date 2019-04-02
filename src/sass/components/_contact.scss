@@ -1,21 +1,28 @@
 .contact {
+  color: $ebony-clay;
   display: flex;
+  font-size: $text-base-size;
+  justify-content: center;
+  width: 40%;
 
-  &__main {
-    width: 60%;
+  &__paragraph {
+    margin-top: 0;
+    font-size: 1.1em;
+    line-height: 1.5;
   }
 
   &__aside-info {
-    align-self: center;
-    background-color: $carnation; 
-    width: 20%;
-    padding: $space-lg;
-
+    align-self: flex-start;
+    width: 35%;
+    margin-left: 8%;
+    padding: 2em 3em;
   }
 
   &__intro {
-    font-size: $text-md;
-    width: 75%;
-    line-height: 1.5;
+    line-height: 1.625%;
+  }
+
+  &__form {
+    margin-top: 3.135em;
   }
 }
