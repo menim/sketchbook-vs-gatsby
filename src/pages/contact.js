@@ -20,18 +20,18 @@ const Contact = ({ intl }) => (
   <>
   <Header />
   <Layout>
-    <Main>
+    <Main smVerticalOffset>
       <Container>
-        <FlexContainer>
-          <div className='contacts'>
+        <Headline>
+          <FormattedMessage id='contact-page-title' />
+        </Headline>
+        <FlexContainer params='l-flex--center'>
+          <div className='contact'>
           <section className='contact__main'>
-          <Headline>
-            <FormattedMessage id='contact-page-title' />
-          </Headline>
-          <p className='paragraph'>
+          <p className='contact__paragraph'>
             <FormattedMessage id='contact-page-description' />
           </p>
-          <Form />
+          <Form isContact />
           </section>
           </div>
           <aside className='aside-info contact__aside-info'>
@@ -51,7 +51,7 @@ const Contact = ({ intl }) => (
             </section>
             <section className='aside-info__item'>
               <h2 className='aside-info__header'><FormattedMessage id='contact-us-title' /></h2>
-              <a href='mailto:mail@okobook.com'>mail@okobook.com</a>
+               mail@okobook.com
             </section>
           </aside>
         </FlexContainer>
