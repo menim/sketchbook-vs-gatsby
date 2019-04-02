@@ -18,7 +18,7 @@ const Delivery = ({ intl }) => (
     <>
     <Layout>
     <Header />
-    <Main>
+    <Main smVerticalOffset>
       <Container>
         <Headline center>
         <FormattedMessage id='pay-delivery-title' />
