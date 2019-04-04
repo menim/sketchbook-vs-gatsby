@@ -43,7 +43,7 @@ const Product = ({ locale, productData }) => {
             { productData[locale].title }
           </h2>
           <div className='sketchbook__bottom-wrapper'>
-            <Link className='btn btn--secondary-theme' to={slug}><FormattedMessage id='button-more-details' /></Link>
+            <Link className='btn btn--link btn--secondary-theme' to={slug}><FormattedMessage id='button-more-details' /></Link>
             <span className='sketchbook__price'> {productData.price} грн</span>
           </div>
         </div>

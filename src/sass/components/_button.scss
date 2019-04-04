@@ -5,11 +5,21 @@
   display: inline-block;
   font-size: $text-sm;
   height: 2.66em;
-  line-height: 2.66em;
+  line-height: 1;
   text-align: center;
   text-decoration: none;
   transition: color 300ms ease-out, border 300ms;
   width: 8.93em;
+
+
+  &--link {
+    &::after {
+      content:'';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
 
   &--primary-theme {
     background-color: $carnation;
