@@ -1,0 +1,20 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  min-height: 300px;
+  background-color:  $mountain-meadow;
+  z-index: 6;
+
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.modal-open {
+  overflow: hidden;
+}
