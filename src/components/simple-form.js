@@ -29,7 +29,7 @@ const SimpleForm = ({ isContact }) => (
    validationSchema = {contactSchema}
   >
     {({ errors, touched }) => (
-      <Form name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true" className={isContact ? 'form contact__form' : 'form'}>
+      <Form name="contact" method="POST" onSubmit={()=>{}} netlify-honeypot="bot-field" data-netlify="true" noValidate className={isContact ? 'form contact__form' : 'form'}>
         <label className='form__label' htmlFor='name'>
           <FormattedMessage id='form-name-field' />*:
           <Field className={errors.name && touched.name ? 'form__input form__input--error' : 'form__input'} name='name' />
