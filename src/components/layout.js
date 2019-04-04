@@ -5,7 +5,6 @@ import { injectIntl } from 'react-intl'
 import { ModalContext } from './modal-context'
 import Modal from './modal'
 
-const bodyRef = document.body
 class Layout extends Component {
   constructor(props){
     super(props)  
@@ -13,7 +12,7 @@ class Layout extends Component {
   }
 
   toggleModal = () => { 
-    bodyRef.classList.contains('modal-open') ? bodyRef.classList.remove('modal-open') : bodyRef.classList.add('modal-open')
+    document.body.classList.contains('modal-open') ? document.body.classList.remove('modal-open') : document.body.classList.add('modal-open')
     this.setState(prevState => ({ isShow: !prevState.isShow}))
   }
  
