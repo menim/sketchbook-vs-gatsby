@@ -45,9 +45,12 @@ address {
   font-style: normal;
 }
 
+a:active {
+  outline: none;
+}
+
 input:focus,
-button:focus,
-a:focus {
+button:focus {
   outline: none;
   box-shadow: 1px 1px 10px 2px rgb(59, 153, 252);
 }
