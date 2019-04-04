@@ -38,7 +38,7 @@ export default ComposedComponent => {
       const messages = require(`./locales/${locale}.js`) // eslint-disable-line
       const IntlComponent = injectIntl(ComposedComponent)
       return (
-        <IntlProvider locale={locale} messages={messages}>
+        <IntlProvider textComponent={React.Fragment} locale={locale} messages={messages}>
           <IntlComponent {...this.props} />
         </IntlProvider>
       )

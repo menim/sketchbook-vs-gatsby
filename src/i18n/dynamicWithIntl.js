@@ -42,7 +42,7 @@ export default (ComposedComponent) => {
       const messages = {...staticMessages, ...dynamicMessages}  
       const IntlComponent = injectIntl(ComposedComponent, locale)
       return (
-        <IntlProvider locale={locale} messages={messages}>
+        <IntlProvider textComponent={React.Fragment} locale={locale} messages={messages}>
           <IntlComponent {...this.props} />
         </IntlProvider>
       )
