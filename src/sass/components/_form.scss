@@ -36,4 +36,21 @@
     font-size: $text-xsm;
     margin: .2em 0 1.25em 2.25em;
   }
+
+  &__success-message {
+    color: $mountain-meadow;
+    padding-top: 1em;
+    opacity: 0;
+    animation: fadeIn 200ms 200ms ease-in forwards;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+ 50%,100% {
+    opacity: 1;
+  }
 }
