@@ -11,6 +11,7 @@ module.exports = {
   "contact-page-title": "Контакти",
   "contact-page-description": "По питанням співпраці, пропозицій чи замовлення скетчбука пишіть нам або залишайте телефон и ми передзвонимо Вам",
   "button-sent-title": "Відправити",
+  "success-message": "Ваше повідомлення відправлено, дякуємо",
   "pay-delivery-title": "Оплата і доставка",
   "pay-title": "Оплата",
   "delivery-title": "Доставка по Україні",
