@@ -33,7 +33,7 @@ class SimpleForm extends Component {
      headers: { "Content-Type": "application/x-www-form-urlencoded" },
      body: encode({ "form-name": "contact", ...values })
    }).then((response) => {
-     console.log()
+     console.log(response)
      if(response.status === 200) {
        actions.setStatus({ success: <FormattedMessage id="success-message" /> })
 
