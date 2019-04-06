@@ -16,7 +16,9 @@ import Container from '../components/container'
 import SimpleSlider from '../components/swiper-gallery'
 
 const ProductPage = ({ data, intl }) => {
+
 const product = data.allDataJson.edges[0].node
+
 return (
     <>
     <Layout>
@@ -33,6 +35,12 @@ return (
                 <p className='product__overview'>
                    <FormattedMessage id='description' />
                 </p>
+                <div className="lang product__lang">
+                  <h2 className="lang__title"><FormattedMessage id="lang-option-message" />:</h2>
+                  <ul className="lang__list">
+                    { product[intl.locale].lang.map((item, index) => <li className='lang__item' key={index}> {item}/</li>)}
+                  </ul>
+                </div>
                 <Link to='' type='button' className='btn btn--lg'>Замовити</Link>
               </section>
             </div>
@@ -53,6 +61,12 @@ query($slug: String!) {
       node {
         price
         spreadImg
+        ru {
+          lang
+        }
+        uk {
+          lang
+        }
       }
     }
   }
