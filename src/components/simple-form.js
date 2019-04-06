@@ -31,8 +31,9 @@ class SimpleForm extends Component {
    fetch(`/${this.props.locale}/`, {
      method: "POST",
      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-     body: encode({ "form-name": "contact-us", ...values })
+     body: encode({ "form-name": "contact", ...values })
    }).then((response) => {
+     console.log()
      if(response.status === 200) {
        actions.setStatus({ success: <FormattedMessage id="success-message" /> })
 
