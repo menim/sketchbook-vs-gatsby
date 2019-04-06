@@ -42,6 +42,9 @@ return (
                   </ul>
                 </div>
                 <Link to='' type='button' className='btn btn--lg'>Замовити</Link>
+                <p className="product__paragraph">
+                  <FormattedMessage id="wholesale-message" />
+                </p>
               </section>
             </div>
           </Container>
