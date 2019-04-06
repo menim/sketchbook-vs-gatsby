@@ -28,7 +28,7 @@ const contactSchema = Yup.object().shape({
 class SimpleForm extends Component {
   handleSubmit = (values, actions )=>{
     actions.setSubmitting(false)
-   fetch(`/${this.props.locale}`, {
+   fetch(`/${this.props.locale}/`, {
      method: "POST",
      headers: { "Content-Type": "application/x-www-form-urlencoded" },
      body: encode({ "form-name": "contact-us", ...values })

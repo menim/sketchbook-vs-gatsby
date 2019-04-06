@@ -33,7 +33,7 @@ const Contact = ({ intl }) => {
               <p className='contact__paragraph'>
                 <FormattedMessage id='contact-page-description' />
               </p>
-              <Form isContact data = {intl.locale} />
+              <Form isContact locale = {intl.locale} />
               </section>
               </div>
               <aside className='aside-info contact__aside-info'>
