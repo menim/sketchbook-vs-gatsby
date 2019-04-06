@@ -16,7 +16,9 @@ import Main from '../components/main'
 import Headline from '../components/headline'
 import Form from '../components/simple-form'
 
-const Contact = ({ intl }) => (
+const Contact = ({ intl }) => { 
+
+  return (
   <>
     <Layout>
       <Header />
@@ -31,7 +33,7 @@ const Contact = ({ intl }) => (
               <p className='contact__paragraph'>
                 <FormattedMessage id='contact-page-description' />
               </p>
-              <Form isContact />
+              <Form isContact data = {intl.locale} />
               </section>
               </div>
               <aside className='aside-info contact__aside-info'>
@@ -60,7 +62,7 @@ const Contact = ({ intl }) => (
       <Footer />
     </Layout>
   </>
-)
+)}
 
 export default withIntl(Contact)
 
