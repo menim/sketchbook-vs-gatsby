@@ -151,7 +151,7 @@ class OrderForm extends Component {
                     <Field  className={errors.telephone && touched.telephone ? 'form__input form__input--error' : 'form__input'} name='telephone' type="numeber" placeholder='' /> 
                     {errors.telephone && touched.telephone ? <div className="form__error">{errors.telephone}</div> : null}
                   </label>        
-                  <button className='form__btn btn btn--primary-theme' type='submit'>Замовити</button> 
+                  <button className='form__btn btn btn--primary-theme' type='submit'>{order ? <FormattedMessage id='button-order-title' /> : <FormattedMessage id='button-sent-title' />}</button> 
                   {status && status.success ? <div className='form__success-message'>{status.success}</div>  : ''}   
                 </fieldset>
               </Form>
