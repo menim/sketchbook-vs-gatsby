@@ -55,21 +55,22 @@ class OrderForm extends Component {
   }
 
   handleSubmit = (values, actions) => {
-    actions.setSubmitting(false)
-   fetch(`/${this.props.locale}/`, {
-     method: 'POST',
-     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-     body: encode({ 'form-name': 'contact', ...values })
-   }).then((response) => {
-     if(response.status === 200) {
-       actions.setStatus({ success: <FormattedMessage id='success-message' /> })
-       setTimeout(() => {
-        actions.resetForm();
-        this.setState({count: 1})   
-      }, 2000)
-     } 
-   })
-     .catch(error => { console.log(error) })
+  //   actions.setSubmitting(false)
+  //  fetch(`/${this.props.locale}/`, {
+  //    method: 'POST',
+  //    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //    body: encode({ 'form-name': 'contact', ...values })
+  //  }).then((response) => {
+  //    if(response.status === 200) {
+  //      actions.setStatus({ success: <FormattedMessage id='success-message' /> })
+  //      setTimeout(() => {
+  //       actions.resetForm();
+  //       this.setState({count: 1})   
+  //     }, 2000)
+  //    } 
+  //  })
+  //    .catch(error => { console.log(error) })
+  console.log(values);
   }
 
   render() {
@@ -102,7 +103,7 @@ class OrderForm extends Component {
             initialValues={{
               name: '',
               telephone: '',
-              quantity: 1,
+              quantity: this.state.count,
               selectSketch: selectDefaultVal,
               message: '',
               email: ''
