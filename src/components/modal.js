@@ -10,7 +10,7 @@ class Modal extends Component {
         <div className="backdrop" onClick={this.props.close}>
         </div>
         <div className="modal">
-          <button className="modal__close" onClick={this.props.close}>Close button</button>
+          <button className="modal__close close" onClick={this.props.close}></button>
           {this.props.children}
         </div>
       </div>,

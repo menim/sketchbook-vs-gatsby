@@ -5,16 +5,23 @@
   transform: translate(-50%, -50%);
   min-width: 300px;
   min-height: 300px;
-  background-color:  $mountain-meadow;
+  background-color: $iceberg;
+  border-radius: 1em;
   z-index: 6;
+  -webkit-font-smoothing: subpixel-antialiased;
 
   &__close {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 15px;
+    top: 15px;
+
+    &:focus {
+      box-shadow: none;
+    }
   }
 }
 
 .modal-open {
+  outline: -webkit-focus-ring-color auto 5px;
   overflow: hidden;
 }
