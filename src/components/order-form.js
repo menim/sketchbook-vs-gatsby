@@ -103,7 +103,9 @@ class OrderForm extends Component {
               name: '',
               telephone: '',
               quantity: 1,
-              selectSketch: selectDefaultVal
+              selectSketch: selectDefaultVal,
+              message: '',
+              email: ''
             }}
             enableReinitialize={true}
             validateOnChange
