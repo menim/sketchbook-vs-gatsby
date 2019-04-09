@@ -21,6 +21,21 @@ const orderSchema = Yup.object().shape({
   telephone: Yup.string().matches(phoneRegExp, '*Неправильный номер, пример 0978192543')
   .required(<FormattedMessage id='error-void-message' />),
   quantity: Yup.number()
+});
+
+
+const contactSchema = Yup.object().shape({
+  name: Yup.string()
+  .min(5,<FormattedMessage id='error-short-name' />)
+  .max(30, <FormattedMessage id='error-long-name' />)
+  .required(<FormattedMessage id='error-void-message' />),
+  email: Yup.string()
+    .email(<FormattedMessage id='error-email' />)
+  .required(<FormattedMessage id='error-void-message' />),
+  message: Yup.string()
+  .min(5, <FormattedMessage id='error-short-message' />)
+    .max(500, <FormattedMessage id='error-long-message' />)
+  .required(<FormattedMessage id='error-void-message' />)
 })
 
 class OrderForm extends Component {
@@ -44,7 +59,7 @@ class OrderForm extends Component {
    fetch(`/${this.props.locale}/`, {
      method: 'POST',
      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-     body: encode({ 'form-name': 'order-form', ...values })
+     body: encode({ 'form-name': 'contact', ...values })
    }).then((response) => {
      if(response.status === 200) {
        actions.setStatus({ success: <FormattedMessage id='success-message' /> })
@@ -58,7 +73,8 @@ class OrderForm extends Component {
   }
 
   render() {
-    const locale = this.props.locale
+    const {locale, order } = this.props
+
     return ( <StaticQuery query={graphql`
       query {
         allDataJson {
@@ -78,7 +94,6 @@ class OrderForm extends Component {
       }
       `}
       render={ (data) => {
-
         const listSketch = data.allDataJson.edges.map((product, index) => (<option value={product.node[locale].title} key={index}>{product.node[locale].title}</option>))
         const selectDefaultVal = listSketch[0].props.value // get default value for select component
 
@@ -92,21 +107,20 @@ class OrderForm extends Component {
             }}
             enableReinitialize={true}
             validateOnChange
-            validationSchema = {orderSchema}
+            validationSchema = {this.props.order ? orderSchema : contactSchema}
             onSubmit={(values, actions) => this.handleSubmit(values, actions)}
             >
             {({errors, touched, isSubmitting, status }) => (
-              <Form className='form form--order' name="order-form" method='POST' netlify-honeypot='bot-field' data-netlify='true' noValidate>
-                <input type='hidden' name='form-name' value='order-form' />
+              <Form className='form form--order' name="contact" method='POST' netlify-honeypot='bot-field' data-netlify='true' noValidate>
+                <input type='hidden' name='form-name' value='contact' />
                 <fieldset>
-                  <legend className='form__title'>Форма заказа</legend>
-                  <label className='form__label form__label--select-wrapper' htmlFor='select-sketch'>
+                  <legend className={order ? 'form__title' : 'visuallyhidden'}>Форма заказа</legend>
+                  <label className={order ? 'form__label form__label--select-wrapper' : 'visuallyhidden'} htmlFor='select-sketch'>
                     <Field className='form__input form__input--select' component='select' name='selectSketch'>
                       {listSketch}
                     </Field>
-                  
                   </label>
-                  <label className='form__label' htmlFor='quantity'>
+                  <label className={order ? 'form__label' : 'visuallyhidden'} htmlFor='quantity'>
                     Количество:
                     <div>
                       <Field className='form__input form__input--quantity' onChange={this.handleChange} value={this.state.count} name='quantity' type="number"  />
@@ -119,7 +133,19 @@ class OrderForm extends Component {
                     <Field className={errors.name && touched.name ? 'form__input form__input--error' : 'form__input'} name='name' />
                     {errors.name && touched.name ? <div className="form__error">{errors.name}</div> : null}
                   </label>
-                  <label className='form__label' htmlFor='telephone'>
+                  <label className={order ? 'visuallyhidden'  : 'form__label'} htmlFor='email'>
+                    <FormattedMessage id='form-email-field' />*:
+                    <Field className={errors.email && touched.email ? 'form__input form__input--error'  : 'form__input'} name='email' type='email' />
+                    {errors.email && touched.email ? (
+                      <div className='form__error'>{errors.email}</div>
+                    ) : null}
+                  </label>
+                  <label className={order ? 'visuallyhidden' : 'form__label'}  htmlFor='message'>
+                    <FormattedMessage id='form-message-field' />*:
+                    <Field className={errors.message && touched.message ? 'form__input form__input--textarea form__input--error' : 'form__input form__input--textarea'} name='message' />
+                    {errors.message && touched.message ? <div className="form__error">{errors.message}</div> : null}
+                  </label>
+                  <label className={order ? 'form__label' : 'visuallyhidden'}  htmlFor='telephone'>
                     Телефон:*
                     <Field  className={errors.telephone && touched.telephone ? 'form__input form__input--error' : 'form__input'} name='telephone' type="numeber" placeholder='' /> 
                     {errors.telephone && touched.telephone ? <div className="form__error">{errors.telephone}</div> : null}

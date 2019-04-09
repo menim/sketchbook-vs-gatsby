@@ -14,7 +14,7 @@ import Container from '../components/container'
 import FlexContainer from '../components/flex-container'
 import Main from '../components/main'
 import Headline from '../components/headline'
-import Form from '../components/simple-form'
+import Form from '../components/order-form'
 
 const Contact = ({ intl }) => { 
 
@@ -33,7 +33,7 @@ const Contact = ({ intl }) => {
               <p className='contact__paragraph'>
                 <FormattedMessage id='contact-page-description' />
               </p>
-              <Form isContact locale = {intl.locale} />
+              <Form locale = {intl.locale} />
               </section>
               </div>
               <aside className='aside-info contact__aside-info'>
