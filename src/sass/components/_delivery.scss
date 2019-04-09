@@ -1,8 +1,13 @@
 .delivery {
+  
   color: $black;
   font-size: $text-base-size;
   line-height: 1.5;
   display: flex;
+
+  &:first-of-type {
+    margin-bottom: 4em;  
+  }
 
   &__description {
     width: 60%;
