@@ -4,6 +4,7 @@ import { injectIntl } from 'react-intl'
 
 import { ModalContext } from './modal-context'
 import Modal from './modal'
+import OrderForm from './order-form'
 
 class Layout extends Component {
   constructor(props){
@@ -20,7 +21,7 @@ class Layout extends Component {
     return (
       <ModalContext.Provider value={this.state}>
           {this.props.children}
-          {this.state.isShow ? <Modal close={this.toggleModal}></Modal> : '' }
+          {this.state.isShow ? <Modal close={this.toggleModal}><OrderForm locale={this.props.intl.locale} /></Modal> : '' }
       </ModalContext.Provider>
     )
   }

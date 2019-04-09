@@ -1,9 +1,40 @@
 .form {
   color: $ebony-clay;
 
+  &--order {
+    margin: 3em;
+  }
+  
+  &__title {
+    display: block;
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    width: 100%;
+  }
+
   &__label {
     font-size: $text-base-size;
     display: block;
+    position: relative;
+
+    &--select-wrapper {
+      &::after {
+        content: '';
+        display: block;
+        border-top: 9px solid #17b489;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        position: absolute;
+        right: .8em;
+        margin-top: -3px;
+        top: 50%;
+      }
+    }
+
+    div {
+      display: flex;
+    }
   }
 
   &__input {
@@ -17,13 +48,40 @@
     transition: border-color 150ms ease-in;
     width: 100%;
 
-    &--textarea {
-      resize: none;
+    &--select {
+      -webkit-appearance: none;
+      appearance: none;
+      padding-right: 1.5em;
+      position: relative;
     }
-  
+
+    &--quantity {
+      width: 70%;
+    }
+    
     &--error {
       border: 2px solid $carnation;
       margin-bottom: 0;
+    }
+  }
+
+  &__control {
+    align-self: center;
+    background-color: $mountain-meadow;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    color: $white;
+    font-size: 1em;
+    height: 2.25em;
+    margin-bottom: 2.25em;
+    padding: 0;
+    width: 2.25em;
+    transition: color, background-color 150ms ease-in;
+    margin-left: .5em;
+     
+    &:hover {
+      color: $white;
+      background-color: $mountain-meadow;
     }
   }
 
