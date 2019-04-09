@@ -69,7 +69,6 @@ class OrderForm extends Component {
       }, 2000)
      } 
    })
-     .catch(error => { console.log(error) })
   }
 
   render() {
@@ -102,7 +101,7 @@ class OrderForm extends Component {
             initialValues={{
               name: '',
               telephone: '',
-              quantity: 1,
+              quantity: this.state.count,
               selectSketch: selectDefaultVal,
               message: '',
               email: ''
