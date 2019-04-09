@@ -44,7 +44,7 @@ class OrderForm extends Component {
    fetch(`/${this.props.locale}/`, {
      method: 'POST',
      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-     body: encode({ 'form-name': 'order-form', ...values })
+     body: encode({ 'form-name': 'contact', ...values })
    }).then((response) => {
      if(response.status === 200) {
        actions.setStatus({ success: <FormattedMessage id='success-message' /> })
@@ -96,8 +96,8 @@ class OrderForm extends Component {
             onSubmit={(values, actions) => this.handleSubmit(values, actions)}
             >
             {({errors, touched, isSubmitting, status }) => (
-              <Form className='form form--order' name="order-form" method='POST' netlify-honeypot='bot-field' data-netlify='true' noValidate>
-                <input type='hidden' name='form-name' value='order-form' />
+              <Form className='form form--order' name="contact" method='POST' netlify-honeypot='bot-field' data-netlify='true' noValidate>
+                <input type='hidden' name='form-name' value='contact' />
                 <fieldset>
                   <legend className='form__title'>Форма заказа</legend>
                   <label className='form__label form__label--select-wrapper' htmlFor='select-sketch'>
