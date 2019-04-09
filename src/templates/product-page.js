@@ -42,7 +42,7 @@ return (
                     { product[intl.locale].lang.map((item, index) => <li className='lang__item' key={index}> {item}/</li>)}
                   </ul>
                 </div>
-                <ModalToggleBtn className="product__btn"><FormattedMessage id="button-order-title" /></ModalToggleBtn>
+                <ModalToggleBtn><FormattedMessage id="button-order-title" /></ModalToggleBtn>
                 <p className="product__paragraph">
                   <FormattedMessage id="wholesale-message" />
                 </p>
@@ -65,6 +65,7 @@ query($slug: String!) {
       node {
         price
         spreadImg
+        complexity
         ru {
           lang
         }
