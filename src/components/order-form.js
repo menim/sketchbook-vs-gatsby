@@ -18,7 +18,7 @@ const orderSchema = Yup.object().shape({
   .min(5,<FormattedMessage id='error-short-name' />)
   .max(30, <FormattedMessage id='error-long-name' />)
   .required(<FormattedMessage id='error-void-message' />),
-  telephone: Yup.string().matches(phoneRegExp, '*Неправильный номер, пример 0978192543')
+  telephone: Yup.string().matches(phoneRegExp, <FormattedMessage id='error-telephone-num' />)
   .required(<FormattedMessage id='error-void-message' />),
   quantity: Yup.number()
 });
@@ -122,7 +122,7 @@ class OrderForm extends Component {
                     </Field>
                   </label>
                   <label className={order ? 'form__label' : 'visuallyhidden'} htmlFor='quantity'>
-                    Количество:
+                    <FormattedMessage id="form-quantity-title" />:
                     <div>
                       <Field className='form__input form__input--quantity' onChange={this.handleChange} value={this.state.count} name='quantity' type="number"  />
                       <button className='form__control' onClick={this.increment} type='button'>+</button>

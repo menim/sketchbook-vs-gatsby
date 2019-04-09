@@ -3,6 +3,7 @@ module.exports = {
   "error-long-name": "*Дуже довге им'я",
   "error-void-message": "*Заповніть будь ласка поле",
   "error-email": "*Невірна email адреса",
+  "error-telephone-num": "*Невірний номер, приклад 0977574545",
   "error-short-message": "*Дуже коротке повідомлення",
   "error-long-message": "*Дуже довге повідомлення",
   "form-name-field": "Им'я",
@@ -36,5 +37,6 @@ module.exports = {
   "wth-sketch-descript-3": "Це комора ідей творчої людини, яку він створює сам, розвиваючи свої таланти і вдосконалюючи навички",
   "footer-manager-title": "Відділ продажу",
   "lang-option-message": "Мова",
-  "wholesale-message": "Якщо ви хочете зробити замовлення оптом зв'яжіться з нашим менеджером"
+  "wholesale-message": "Якщо ви хочете зробити замовлення оптом зв'яжіться з нашим менеджером",
+  "form-quantity-title": "Кількість"
 }

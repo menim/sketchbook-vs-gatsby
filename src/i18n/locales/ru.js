@@ -5,6 +5,7 @@ module.exports = {
   "error-email": "*Неверный email адрес",
   "error-short-message": "*Очень короткое сообщение",
   "error-long-message": "*Очень длинное сообщение",
+  "error-telephone-num": "*Неверный номер, пример 0977574545",
   "form-name-field": "Имя",
   "form-email-field": "Email адрес",
   "form-message-field": "Сообщение",
@@ -36,5 +37,6 @@ module.exports = {
   "wth-sketch-descript-3": "Это кладовая идей творческого человека, которую он создает сам, развивая свои таланты и совершенствуя навыки",
   "footer-manager-title": "Отдел продаж",
   "lang-option-message": "Язык",
-  "wholesale-message": "Если вы хотите сделать заказ оптом свяжитесь с нашим менеджером"
+  "wholesale-message": "Если вы хотите сделать заказ оптом свяжитесь с нашим менеджером",
+  "form-quantity-title": "Количество",
 }
