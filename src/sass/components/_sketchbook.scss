@@ -11,9 +11,18 @@
   max-width: 18.75em;
   transition: border-color 150ms ease-in;
 
+  picture {
+    transition: transform 300ms ease-in;
+  }
+
   &:hover {
     border-color: $mountain-meadow;
-    box-shadow: 1px 1px 10px 0 rgba(0,0,0,.05)
+    box-shadow: 1px 1px 10px 0 rgba(0,0,0,.05);
+    @include linear-gradient-add( $iceberg);
+
+    picture {
+      transform: scale(1.02);
+    }
   }
 
   img {
@@ -29,10 +38,6 @@
   .swiper-wrapper {
     padding-top: $space-md;
     padding-bottom: $space-md;
-  }
-
-  &--theme-iceberg {
-    @include linear-gradient-add( $iceberg);
   }
 
   &__preview {

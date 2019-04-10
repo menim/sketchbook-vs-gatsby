@@ -27,7 +27,7 @@ const Product = ({ locale, productData }) => {
 
   return (
       <div className='l-item'>
-        <div className='sketchbook sketchbook--theme-iceberg'>
+        <div className='sketchbook'>
         {productData.cover.length > 1 
           ?  
            <Swiper  {...params}>
