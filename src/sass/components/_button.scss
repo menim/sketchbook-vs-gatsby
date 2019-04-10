@@ -1,9 +1,11 @@
 .btn {
+  align-items: center;
   border-radius: 20px;
   color: $white;
   border: 1px solid transparent;
-  display: inline-block;
+  display: flex;
   font-size: $text-sm;
+  justify-content: center;
   height: 2.66em;
   line-height: 1;
   text-align: center;
