@@ -72,6 +72,8 @@
     border-radius: 50%;
     color: $white;
     font-size: 1em;
+    font-family: sans-serif;
+    line-height: 1;
     height: 2.25em;
     margin-bottom: 2.25em;
     padding: 0;
@@ -80,8 +82,9 @@
     margin-left: .5em;
      
     &:hover {
-      color: $white;
-      background-color: $mountain-meadow;
+      color: $mountain-meadow;
+      background-color: $white;
+      border-color: $mountain-meadow; 
     }
   }
 
