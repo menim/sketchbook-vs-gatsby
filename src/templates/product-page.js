@@ -65,7 +65,6 @@ query($slug: String!) {
       node {
         price
         spreadImg
-        complexity
         ru {
           lang
         }
