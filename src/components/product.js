@@ -5,7 +5,6 @@ import { withPrefix } from 'gatsby'
 import { FormattedMessage } from 'react-intl'
 import { Link } from './../i18n'
 import Pict from './pict'
-import Complexity from './complexity'
 import Swiper from 'react-id-swiper'
 
 const Product = ({ locale, productData }) => {
@@ -28,18 +27,17 @@ const Product = ({ locale, productData }) => {
   return (
       <div className='l-item'>
         <div className='sketchbook'>
-        {productData.cover.length > 1 
-          ?  
-           <Swiper  {...params}>
-              {productData.cover.map((item, index) => (
-                <div key={index}><Pict className='sketchbook__preview' src={withPrefix(item)} fallbackFormat='png' /></div>
-              ))}
-            </Swiper> 
-          : 
-            <Pict className='sketchbook__preview' src={withPrefix(productData.cover[0])} />
-        }
-          <Complexity count={productData.complexity} />         
-           <h2 className='sketchbook__title'>
+          {productData.cover.length > 1 
+            ?  
+              <Swiper  {...params}>
+                {productData.cover.map((item, index) => (
+                  <div key={index}><Pict className='sketchbook__preview' src={withPrefix(item)} fallbackFormat='png' /></div>
+                ))}
+              </Swiper> 
+            : 
+              <Pict className='sketchbook__preview' src={withPrefix(productData.cover[0])} />
+          }
+          <h2 className='sketchbook__title'>
             { productData[locale].title }
           </h2>
           <div className='sketchbook__bottom-wrapper'>

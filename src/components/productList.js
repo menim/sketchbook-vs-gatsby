@@ -15,7 +15,6 @@ return ( <StaticQuery query={graphql`
         node {
           cover
           price
-          complexity
           slug
           uk {
             title
