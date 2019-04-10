@@ -35,7 +35,7 @@ const Product = ({ locale, productData }) => {
                 ))}
               </Swiper> 
             : 
-              <Pict className='sketchbook__preview' src={withPrefix(productData.cover[0])} />
+              <Pict className='sketchbook__preview' src={withPrefix(productData.cover[0])} fallbackFormat='png' />
           }
           <h2 className='sketchbook__title'>
             { productData[locale].title }
