@@ -44,10 +44,10 @@ const Delivery = ({ intl }) => (
               </li>
             </ul>
         </div>
-        <img class="delivery__img" src={pay} />
+        <img className="delivery__img" src={pay} />
       </section>
         <section className='delivery'>
-          <img class="delivery__img" src={delivery} />
+          <img className="delivery__img" src={delivery} />
           <div className='delivery__description'>
             <h2 className='delivery__title'><span className='multiline-bg multiline-bg--primary-theme'><FormattedMessage id='delivery-title' /></span></h2>
             <p className='delivery__paragraph'> 
