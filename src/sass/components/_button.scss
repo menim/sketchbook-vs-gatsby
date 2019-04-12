@@ -10,9 +10,8 @@
   line-height: 1;
   text-align: center;
   text-decoration: none;
-  transition: color 300ms ease-out, border 300ms;
+  transition: color 150ms ease-out, background-color 150ms ease-out, border 150ms ease-out;
   width: 8.93em;
-
 
   &--link {
     &::after {
@@ -41,8 +40,8 @@
 
   &--lg {
     font-size: $text-md;
-    margin-top: $space-md;
-    padding: $space-xxs $space-md;
+    margin-top: 1.25em;
+    padding: .375em 1.25em;
   }
 
   &--block {

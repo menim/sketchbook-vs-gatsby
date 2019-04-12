@@ -1,6 +1,6 @@
 .features {
   font-size: $text-base-size;
-  padding: $space-xxl 0 $space-lg;
+  padding: 5.25em 0 2em;
 }
 
 .features__list {
@@ -8,18 +8,18 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0;
-  padding: 0 $space-sm;
+  padding: 0 .75em;
 }
 
 .features__item {
   line-height: 1.4;
   list-style: none;
-  margin-bottom: $space-xl;
-  padding: $space-md;
+  margin-bottom: 3.25em;
+  padding: 1.25em;
   text-align: center;
   width: 22%;
   box-shadow: 0 8px 24px 0 rgba(0,0,0,.11);
-  border-radius: .625rem;
+  border-radius: 10px;
 
   @include respond-below(l) {
     width: 24%;
@@ -36,7 +36,7 @@
 
 .features__header {
   font-size: $text-md;
-  margin: $space-sm;
+  margin: .6em;
 }
 
 .features__description {

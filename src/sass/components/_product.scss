@@ -23,7 +23,7 @@
 
   &__overview {
     line-height: 1.4;
-    margin: $space-md auto;
+    margin: 1.25em auto;
     text-align: left;
   }
 
@@ -31,9 +31,6 @@
     display: block;
     font-size: $text-lg;
     text-align: left;
-    //padding: 0 0 $space-sm;
-    //margin: 0 $space-lg $space-sm;
-    //border-bottom: 1px solid $black;
   }
 
   &__lang {

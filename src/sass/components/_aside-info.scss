@@ -4,7 +4,7 @@
   border-radius: 16px;
 
   &__item {
-    margin-bottom: $space-lg;
+    margin-bottom: 2rem;
     line-height: 1.5;
 
     &:last-child {
@@ -16,6 +16,6 @@
     margin-top: 0;
     font-family: 'weblysleek bold', sans-serif;
     font-size: $text-base-size;
-    margin-bottom: $space-xs;
+    margin-bottom: .5rem;
   }
 }

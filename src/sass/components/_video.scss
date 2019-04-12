@@ -1,11 +1,12 @@
 .video {
   background-color: #000;
-  width: 50%; 
+  font-size: $text-base-size;
+  width: 50%;
 
   &__resp-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 65px; 
+    padding-top: 4.0625em; 
     height: 0; 
     overflow: hidden;
   }
@@ -25,8 +26,8 @@
     display: block;
     z-index: 1;
     padding: 0;
-    width: 68px;
-    height: 48px;
+    width: 4.25em;
+    height: 3em;
     border: none;
     background-color: transparent;
     transform: translate(-50%, -50%);

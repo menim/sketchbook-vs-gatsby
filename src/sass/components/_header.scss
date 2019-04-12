@@ -1,4 +1,5 @@
 .header {
+  font-size: $text-base-size; 
 
   &--video {
     position: relative;
@@ -7,7 +8,7 @@
   }
 
   &--simple {
-    height: 95px;
+    height: 5.9375em;
     background-color: $ebony-clay;
   }
 
@@ -15,7 +16,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 95px;
+    height: 5.9375em;
   }
 
   &__video {
@@ -34,7 +35,7 @@
   &__description {
     position: absolute;
     color: $white;
-    bottom: 10rem;
+    bottom: 10em;
     width: 60%;
     z-index: 4;  
     transform: rotateX(0);
@@ -48,13 +49,13 @@
 
   &__content {
     font-size: $text-md;
-    margin-top: 32px;
+    margin-top: 1.6em;
     width: 80%;
   }
 
   &__menu {
     margin-left: auto;
-    margin-right: 138px;
+    margin-right: 8.625em;
   }
 }
 

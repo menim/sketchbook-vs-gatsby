@@ -1,5 +1,6 @@
 .form {
   color: $ebony-clay;
+  font-size: $text-base-size;
 
   &--order {
     margin: 3em;
@@ -14,7 +15,6 @@
   }
 
   &__label {
-    font-size: $text-base-size;
     display: block;
     position: relative;
 
@@ -27,7 +27,7 @@
         border-right: 7px solid transparent;
         position: absolute;
         right: .8em;
-        margin-top: -3px;
+        margin-top: -.1875em;
         top: 50%;
       }
     }

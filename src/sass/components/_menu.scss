@@ -16,12 +16,7 @@
 
   &__item {
     font-size: $text-sm;
-    margin-left: $space-xl;
-
-    &--small {
-      font-size: $text-base-size;
-      margin-left: $space-md;
-    }
+    margin-left: 3.46em;
 
     &:first-child {
       margin-left: 0;
@@ -34,7 +29,6 @@
     text-decoration: none;
 
     &--primary-theme {
-
       &::after {
         background-color: $mountain-meadow;
       }
@@ -43,7 +37,7 @@
     &::after {
       position: absolute;
       right: 0;
-      bottom: -5px;
+      bottom: -.33333em;
       left: 0;
       content: '';
       margin: 0 auto;
@@ -52,7 +46,6 @@
     }
 
     &:hover {
-
       &::after {
         height: 2px;
         width: 100%;

@@ -2,6 +2,7 @@
   color: $white;
   background-color: $mountain-meadow;
   border-radius: 20px;
+  font-size: $text-base-size;
   position: relative;
   height: 100%;
   left: 2.4em;
@@ -11,7 +12,6 @@
 
   &__header {
     font-size: $text-xxl;
-    margin-bottom: $space-unit;
     margin-top: 0;
   }
 
@@ -25,6 +25,6 @@
   }
 
   &__item + &__item {
-    margin-top: $space-unit;
+    margin-top: 1em;
   }
 }

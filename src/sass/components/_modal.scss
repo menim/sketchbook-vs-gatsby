@@ -1,10 +1,11 @@
 .modal {
+  font-size: $text-base-size;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  min-width: 300px;
-  min-height: 300px;
+  min-width: 18.75em;
+  min-height: 18.75em;
   background-color: $iceberg;
   border-radius: 1em;
   z-index: 6;
@@ -12,8 +13,8 @@
 
   &__close {
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: .9375em;
+    top: .9375em;
 
     &:focus {
       box-shadow: none;
