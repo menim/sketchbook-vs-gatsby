@@ -15,7 +15,11 @@
     text-transform: uppercase;
     transition: background-color 150ms ease-in;
     width: 40px;
-
+    
+    &:last-child {
+      margin-right: 0;
+    }
+    
     &:hover {
       background-color: $mountain-meadow;
     }
