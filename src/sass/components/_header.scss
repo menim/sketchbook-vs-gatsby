@@ -1,6 +1,10 @@
 .header {
   font-size: $text-base-size; 
 
+  @include respond-below(l) {
+    font-size: $text-sm;
+  }
+
   &--video {
     position: relative;
     height: 100vh;
@@ -45,17 +49,35 @@
     font-size: $text-xxxl;
     letter-spacing: 1px;
     width: 60%;
+
+    @include respond-below(xl) {
+      font-size: $text-xxl;
+    }
+
+    @include respond-below(m) {
+      font-size: $text-xl;
+      width: 70%;
+    }
   }
 
   &__content {
     font-size: $text-md;
     margin-top: 1.6em;
     width: 80%;
+
+    @include respond-below(m) {
+      font-size: $text-base-size;
+      width: 90%;
+    }
   }
 
   &__menu {
     margin-left: auto;
     margin-right: 8.625em;
+
+    @include respond-below(l) {
+      margin-right: auto;
+    }
   }
 }
 

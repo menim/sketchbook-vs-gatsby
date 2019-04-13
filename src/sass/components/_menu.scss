@@ -15,8 +15,17 @@
   }
 
   &__item {
-    font-size: $text-sm;
+    font-size: $text-base-size;
     margin-left: 3.46em;
+
+    @include respond-below(l) {
+      font-size: $text-sm;
+      margin-left: 2.46em;
+    }
+
+    @include respond-below(m) {
+      margin-left: 1.5em;
+    }
 
     &:first-child {
       margin-left: 0;
