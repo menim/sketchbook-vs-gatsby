@@ -4,6 +4,16 @@
   display: flex;
   justify-content: space-between;
   z-index: 3;
+  margin-left: auto;
+  margin-right: 8.625em;
+
+  @include respond-below(l) {
+    margin-right: auto;
+  }
+
+  @include respond-below(s) {
+    display: none;
+  }
 
   &__list {
     align-items: center;
@@ -64,5 +74,26 @@
 
   &__telephone {
     color: $white;
+  }
+
+  &--mobile {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    display: flex;
+
+    .menu__list {
+      flex-direction: column;    
+    }
+
+    .menu__item {
+      margin-left: 0;
+      font-size: $text-xl;
+      margin-bottom: 1.5em;
+    }
+
+    .btn {
+      font-size: $text-lg;
+    }
   }
 }

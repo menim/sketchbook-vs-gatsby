@@ -70,15 +70,6 @@
       width: 90%;
     }
   }
-
-  &__menu {
-    margin-left: auto;
-    margin-right: 8.625em;
-
-    @include respond-below(l) {
-      margin-right: auto;
-    }
-  }
 }
 
 .overlay {

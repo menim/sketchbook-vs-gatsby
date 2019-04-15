@@ -1,0 +1,70 @@
+.nav-mobile {
+  position: relative;
+  display: none;
+  z-index: 5;
+
+  @include respond-below(s) {
+    display: block;
+  }
+
+  &__btn {
+    display: inline-block;
+    position: relative;
+    width: 4em;
+    padding: $text-base-size;
+    z-index: 5;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: $white;
+      display: block;
+      position: relative;
+      height: 2px;
+      width: 100%;
+      transition: top 50ms ease-out 150ms, margin-top 100ms ease-out 200ms, transform 150ms ease-out 0ms;
+    }
+    
+    &::after {
+      margin-top: .5em;
+      top: 0;
+    }
+
+    &--close {
+      &::after,
+      &::before {
+        transition: top 50ms ease-out 0ms, margin-top 100ms ease-out 50ms, transform 150ms ease-out 150ms;
+      }
+        
+      &::before {
+        transform: rotate(-45deg);
+      }
+
+      &::after {
+        margin-top: 0;
+        top: -2px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: $ebony-clay;
+    transition: height 0ms 300ms, opacity 300ms 0ms ease-in;
+    z-index: 4;
+    
+    &--open {
+      opacity: 1;
+      height: 100%;
+      transition: height 0ms 0ms, opacity 300ms 0ms;
+    }
+  }
+} 

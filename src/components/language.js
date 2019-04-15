@@ -35,6 +35,7 @@ class Language extends Component {
     const { language } = this.context
     const { languages, locale } = language
     const { value } = this.state
+    const { mobile } = this.props
 
     if (!value) {
       return null

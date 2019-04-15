@@ -12,6 +12,7 @@ import Logo from './logo'
 import Container from './container'
 import MultilineBg from './multilineBg'
 import Language from './language'
+import NavMobile from './nav-mobile'
 
 const Header = ({ videoEnabled }) => (
   videoEnabled ? 
@@ -27,6 +28,7 @@ const Header = ({ videoEnabled }) => (
         <Logo />
         <Nav isHeader telephone />
         <Language />
+        <NavMobile />
       </div>
         <div className='header__description'>
         <Parallax speed={4}>
@@ -50,7 +52,8 @@ const Header = ({ videoEnabled }) => (
       <div className='header__top'>
         <Logo />
         <Nav telephone />
-          <Language />
+        <Language />
+        <NavMobile />
       </div>
     </Container>
   </header>
