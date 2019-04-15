@@ -9,6 +9,13 @@
     position: relative;
     height: 100vh;
     overflow: hidden;
+
+    @include respond-below(s) {
+      background-image: url('./../../static/header-bg.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
   }
 
   &--simple {
@@ -30,6 +37,10 @@
     min-width: 100%;
     transform: translate(-50%);
     z-index: 1;
+
+    @include respond-below(s) {
+      display: none;
+    }
   }
 
   &__logo {
