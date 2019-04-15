@@ -12,6 +12,10 @@
     font-size: $text-xxsm;
   }
 
+  @include respond-below(xs) {
+    font-size: 8px;
+  }
+
   &--small {
     width: 9.375em;
     height: 1.25em;
