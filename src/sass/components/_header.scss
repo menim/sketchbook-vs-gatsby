@@ -43,6 +43,14 @@
     width: 60%;
     z-index: 4;  
     transform: rotateX(0);
+  
+    @include respond-below(s) {
+      width: 70%;
+    }
+    
+    @include respond-below(xs) {
+      width: 90%;
+    }
   }
 
   &__title {
@@ -58,6 +66,10 @@
       font-size: $text-xl;
       width: 70%;
     }
+
+    @include respond-below(s) {
+      width: 100%;
+    }
   }
 
   &__content {
@@ -68,6 +80,10 @@
     @include respond-below(m) {
       font-size: $text-base-size;
       width: 90%;
+    }
+
+    @include respond-below(s) {
+      width: 100%;
     }
   }
 }
