@@ -54,13 +54,22 @@
     width: 60%;
     z-index: 4;  
     transform: rotateX(0);
+
+    @include respond-below(l) {
+      bottom: 9em
+    }
+
+    @include respond-below(m) {
+      bottom: 7em;
+    }
   
     @include respond-below(s) {
-      width: 70%;
+      bottom: 5em;
     }
     
     @include respond-below(xs) {
       width: 90%;
+      bottom: 3em;
     }
   }
 
