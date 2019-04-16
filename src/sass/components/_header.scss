@@ -78,7 +78,7 @@
     letter-spacing: 1px;
     width: 60%;
 
-    @include respond-below(xl) {
+    @include respond-below(xxl) {
       font-size: $text-xxl;
     }
 

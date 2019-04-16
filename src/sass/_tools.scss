@@ -107,8 +107,9 @@ $breakpoints: (
   xs: 480px,
   s: 767px,
   m: 991px,
-  l: 1199px, 
-  xl: 1450px 
+  l: 1199px,
+  xl: 1366px,
+  xxl: 1450px 
 );
 
 // @include respond-below(sm) {}
