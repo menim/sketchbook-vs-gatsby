@@ -33,7 +33,7 @@ const Footer = () => (
         </section>
       </div>
       <div className='footer__bottom'>
-        <Nav />
+        <Nav isPlace='footer' />
         <small className='copyright'><FormattedMessage id='publishing-title' /></small>
       </div>
     </Container>

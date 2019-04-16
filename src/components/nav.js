@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import { Link } from './../i18n'
 import ModalToggleBtn from './modal-toogle-btn'
 
-const Nav = ({ telephone, isHeader, mobile }) => (
+const Nav = ({ telephone, isPlace, mobile }) => (
   mobile ?
   (<nav className='menu menu--mobile'>
     <ul className='menu__list'>
@@ -15,7 +15,7 @@ const Nav = ({ telephone, isHeader, mobile }) => (
     </ul>
   </nav>)
   : 
-  (<nav className={isHeader ? 'header__menu menu' : 'menu'}>
+  (<nav className={`menu ${isPlace && isPlace+'__menu'}`}>
       <ul className='menu__list'>
         <li className='menu__item'><Link to='/delivery' className='menu__link menu__link--primary-theme'><FormattedMessage id='pay-delivery-title' /></Link></li>
         <li className='menu__item'><Link to='/contact/' className='menu__link menu__link--primary-theme'><FormattedMessage id='contact-page-title' /></Link></li>

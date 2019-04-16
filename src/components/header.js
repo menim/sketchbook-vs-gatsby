@@ -26,7 +26,7 @@ const Header = ({ videoEnabled }) => (
     <Container>
       <div className='header__top'>
         <Logo />
-        <Nav isHeader telephone />
+        <Nav isPlace='header' telephone />
         <Language />
         <NavMobile />
       </div>
@@ -51,7 +51,7 @@ const Header = ({ videoEnabled }) => (
     <Container>
       <div className='header__top'>
         <Logo />
-        <Nav telephone />
+        <Nav isPlace='header' telephone />
         <Language />
         <NavMobile />
       </div>
