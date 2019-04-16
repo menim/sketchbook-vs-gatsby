@@ -26,9 +26,29 @@
   text-align: center;
   width: 25%;
 
+  @include respond-below(l) {
+    width: 33.33333%;
+  }
+
+  @include respond-below(s) {
+    width: 100%;
+    margin-top: 2.5em;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:nth-child(n+4) {
+    @include respond-below(l) {
+      margin-top: 2.5em;
+    }
+  }
+
   &:nth-child(n+5) {
     margin-top: 2.5em;
   }
+
 }
 
 .l-flex-align-start {
