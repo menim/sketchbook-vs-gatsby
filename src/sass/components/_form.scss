@@ -2,6 +2,18 @@
   color: $ebony-clay;
   font-size: $text-base-size;
 
+  @include respond-below(m) {
+    font-size: $text-sm;
+  }
+
+  @include respond-below(s) {
+    font-size: $text-xsm;
+  }
+
+  @include respond-below(xs) {
+    font-size: $text-xxsm;
+  }
+
   &--order {
     margin: 3em;
   }
