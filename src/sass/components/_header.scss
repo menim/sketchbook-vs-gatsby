@@ -47,6 +47,18 @@
     z-index: 3;
   }
 
+  &__menu {
+    margin-left: auto;
+
+    @include respond-below(l) {
+      margin-right: auto;
+    }
+  
+    @include respond-below(s) {
+      display: none;
+    }
+  }
+
   &__description {
     position: absolute;
     color: $white;
