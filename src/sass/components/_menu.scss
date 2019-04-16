@@ -72,9 +72,11 @@
     justify-content: center;
     height: 100%;
     display: flex;
+    margin-right: 0;
 
     .menu__list {
-      flex-direction: column;    
+      flex-direction: column;
+          
     }
 
     .menu__item {
