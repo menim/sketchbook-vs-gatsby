@@ -10,6 +10,18 @@
   padding: 2.1825em;
   max-width: 18.75em;
   transition: border-color 150ms ease-in;
+
+  @include respond-below(xl) {
+    font-size: $text-sm;
+  }
+
+  @include respond-below(m) {
+    font-size: $text-xsm;
+  }
+
+  @include respond-below(s) {
+    font-size: $text-sm;
+  }
   
   picture {
     transition: transform 300ms ease-in;
@@ -54,6 +66,11 @@
     margin-top: 1.25em;
     padding: 0 1em;
     text-align: center;
+
+    @include respond-below(xl) {
+      font-size: $text-sm;
+      margin-top: 1.5em;
+    }
   }
 
   &__subtitle {
