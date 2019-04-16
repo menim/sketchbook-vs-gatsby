@@ -9,8 +9,9 @@ import Swiper from 'react-id-swiper'
 
 const Product = ({ locale, productData }) => {
   const params = {
-    spaceBetween: 25,
-    centeredSlides: true,
+    freeMode: true,
+    freeModeSticky: true,
+    freeModeMomentum: false,
     threshold: 50,
     navigation: {
       nextEl: '.swiper-product-next',
