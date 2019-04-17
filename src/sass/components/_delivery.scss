@@ -5,16 +5,33 @@
   line-height: 1.5;
   display: flex;
 
+  @include respond-below(s) {
+    flex-direction: column;
+    font-size: $text-sm;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
   &:first-of-type {
     margin-bottom: 4em;  
+
+    @include respond-below(s) {
+      margin-bottom: 2em;
+    }
   }
 
   &__description {
     width: 60%;
+
+    @include respond-below(s) {
+      width: 100%;
+    }
   }
 
   &__title {
-    font-size: $text-lg;
+    font-size: 1.5625em;
+    margin-top: 0;
   }
 
   &__list {
@@ -28,5 +45,9 @@
 
   &__img {
     width: 40%;
+
+    @include respond-below(s) {
+      order: 1;
+    }
   }
 }
