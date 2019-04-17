@@ -3,6 +3,10 @@
   background-color: $mountain-meadow; 
   border-radius: 16px;
 
+  @include respond-below(s) {
+    display: none;
+  }
+
   &__item {
     margin-bottom: 2rem;
     line-height: 1.5;
@@ -18,4 +22,5 @@
     font-size: $text-base-size;
     margin-bottom: .5rem;
   }
+
 }
