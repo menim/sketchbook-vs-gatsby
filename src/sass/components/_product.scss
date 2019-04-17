@@ -2,16 +2,37 @@
   display: flex;
   color: $ebony-clay;
   font-size: $text-base-size;
+
+  @include respond-below(m) {
+    flex-direction: column;    
+  }
   
+  @include respond-below(l) {
+    font-size: $text-sm;
+  }
+
   &__view {
     width: 60%;
     padding-right: 3em; 
+
+    @include respond-below(m) {
+      order: 1;   
+      width: 100%;
+      padding-right: 0;
+    }
   }
 
   &__description {
     width: 40%;
     border-left: 3px solid $bon-jour;
     padding: 0 0 3em 3em;
+
+    @include respond-below(m) {
+      width: 100%;
+      padding: 0;
+      border: 0;   
+      margin-bottom: 2em; 
+    }
   }
 
   &__header {
@@ -29,15 +50,23 @@
 
   &__price {
     display: block;
-    font-size: $text-lg;
+    font-size: 1.5625em;
     text-align: left;
   }
 
   &__lang {
     margin-bottom: 4em;
+
+    @include respond-below(m) {
+      margin-bottom: 2em;
+    }
   }
 
   &__paragraph {
     margin-top: 4em;
+    
+    @include respond-below(m) {
+      margin-top: 2em;
+    }
   }
 }
