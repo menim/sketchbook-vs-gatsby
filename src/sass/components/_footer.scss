@@ -4,9 +4,21 @@
   font-size: $text-base-size;
   padding: 5.125em 0;
 
+  @include respond-below(m) {
+    font-size: $text-sm;
+  }
+
+  @include respond-below(s) {
+    padding: 3.125em 0;
+  }
+
   &__top {
     display: flex;
     padding-bottom: 3em;
+
+    @include respond-below(s) {
+      flex-wrap: wrap;
+    }
   }
 
   &__bottom {
@@ -14,14 +26,58 @@
     display: flex;
     justify-content: space-between;
     padding-top: 1em;
+
+    @include respond-below(s) {
+      flex-wrap: wrap;
+      padding-left: 2.25em;
+    }
+
+    @include respond-below(xs) {
+      padding-left: 0;
+    }
+  }
+
+  &__menu {
+    @include respond-below(s) {
+      margin-right: 0;
+      flex-basis: 100%;
+      margin-bottom: 2em;
+    }
   }
 
   &__section {
     line-height: 1.625;
     width: 25%;
 
+    @include respond-below(s) {
+      width: 33.33333%;
+      flex: 1;
+    }
+
+    @include respond-below(xs) {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+
+    &:first-child {
+      @include respond-below(s) {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 1.5em;
+      }
+    }
+
     & + & {
       margin-left: 3.25em;
+
+      @include respond-below(s) {
+        margin-left: 2.25em;
+      }
+
+      @include respond-below(xs) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -30,5 +86,13 @@
     font-size: $text-md;
     line-height: 1;
     margin-bottom: 1em;
+
+    @include respond-below(m) {
+      font-size: $text-base-size;
+    }
+
+    @include respond-below(xs) {
+      margin-bottom: .5em;
+    }
   }
 }
