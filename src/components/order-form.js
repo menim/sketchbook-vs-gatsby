@@ -113,7 +113,7 @@ class OrderForm extends Component {
               {({errors, touched, isSubmitting, status, values }) => { 
                 values.quantity = this.state.count
                 return (
-                  <Form className='form form--order' name="contact" method='POST' netlify-honeypot='bot-field' data-netlify='true' noValidate>
+                  <Form className={`form ${order ? 'form--order' : ''}`} name="contact" method='POST' netlify-honeypot='bot-field' data-netlify='true' noValidate>
                   <input type='hidden' name='form-name' value='contact' />
                   <fieldset>
                     <legend className={order ? 'form__title' : 'visuallyhidden'}>Форма заказа</legend>
