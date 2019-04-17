@@ -573,6 +573,10 @@ button.swiper-pagination-bullet {
 .thumbnail {
   padding-top: 1.25em;
 
+  @media (max-width: 767px) {
+    display: none;
+  }
+
   .swiper-slide {
     width: 150px;
     height: 100px;
