@@ -5,6 +5,10 @@
   margin-top: 0;
   margin-bottom: 1.5em;
 
+  @include respond-below(s) {
+    font-size: $text-lg;
+  }
+
   &--center {
     text-align: center;
   }
