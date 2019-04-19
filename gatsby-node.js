@@ -72,10 +72,6 @@ exports.createPages = async ({ graphql, actions }) => {
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
-  if (page.path.includes('404')) {
-    return Promise.resolve()
-  }
- console.log(page.path)
   return new Promise(resolve => {
     const redirect = path.resolve('src/i18n/redirect.js')
     const redirectPage = {
