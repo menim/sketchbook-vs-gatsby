@@ -34,7 +34,7 @@ export default ComposedComponent => {
 
     render() {
       const { language } = this.state
-      const locale = language.locale || "en"
+      const locale = language.locale
       const messages = require(`./locales/${locale}.js`) // eslint-disable-line
       const IntlComponent = injectIntl(ComposedComponent)
       return (
