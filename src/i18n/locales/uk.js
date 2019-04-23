@@ -37,5 +37,7 @@ module.exports = {
   "footer-manager-title": "Відділ продажу",
   "lang-option-message": "Мова",
   "wholesale-message": "Якщо ви хочете зробити замовлення оптом зв'яжіться з нашим менеджером",
-  "form-quantity-title": "Кількість"
+  "form-quantity-title": "Кількість",
+  "header-404-title": "Вибачте, такої сторінки не існує ...",
+  "paragraph-404-title": "Спробуйте повернутися назад і повторити ще раз, або виберіть із запропонованого нижче"
 }

@@ -17,10 +17,9 @@ const NotFoundPage = ({intl}) => (
     <Main>
       <Container>
         <div className='page-404'>
-          <h1><span>404</span> Извините, такой страницы нет…</h1>
+          <h1><span>404</span> <FormattedMessage id='header-404-title' /></h1>
           <p>
-            Попробуйте вернуться назад и повторить еще раз,<br />
-            или выберите из предложенного ниже
+            <FormattedMessage id='paragraph-404-title' />
           </p>
           <img src={pen} alt='' />
         </div>
