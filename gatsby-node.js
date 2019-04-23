@@ -71,9 +71,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage, deletePage } = actions
-
   return new Promise(resolve => {
     const redirect = path.resolve('src/i18n/redirect.js')
+
     const redirectPage = {
       ...page,
       component: redirect,
@@ -99,39 +99,16 @@ exports.onCreatePage = async ({ page, actions }) => {
           originalPath: page.path,
         },
       }
+      
+      if (localePage.path === '/uk/404.html') {
+        localePage.matchPath = '/uk/*';
+      } else if (localePage.path === '/ru/404.html') {
+        localePage.matchPath = '/ru/*';
+    }
+
       createPage(localePage)
     })
 
     resolve()
   })
 }
-
-// exports.createPages = ({ graphql, actions }) => {
-//   // **Note:** The graphql function call returns a Promise
-//   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-//   const { createPage } = actions
-//   return graphql(`
-//     {
-//       allDataJson {
-//         edges {
-//           node {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `
-//   ).then(result => {
-//     result.data.allDataJson.edges.forEach(({ node }) => {
-//       createPage({
-//         path: node.slug,
-//         component: path.resolve(`./src/templates/product-page.js`),
-//         context: {
-//           // Data passed to context is available
-//           // in page queries as GraphQL variables.
-//           slug: node.slug,
-//         },
-//       })
-//     })
-//   })
-// }
