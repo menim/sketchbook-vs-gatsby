@@ -1,5 +1,5 @@
 .delivery {
-  
+  align-items: center;
   color: $black;
   font-size: $text-base-size;
   line-height: 1.5;
@@ -9,8 +9,6 @@
     flex-direction: column;
     font-size: $text-sm;
     justify-content: center;
-    align-items: center;
-    
   }
 
   &:first-of-type {
@@ -45,6 +43,7 @@
 
   &__img {
     width: 40%;
+    height: 20em;
 
     @include respond-below(s) {
       order: 1;
