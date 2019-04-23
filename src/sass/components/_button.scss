@@ -48,6 +48,12 @@
     display: block;
   }
 
+  &--fluid {
+    width: auto;
+    height: auto;
+    padding: 1em 1.25em;
+  }
+
   &:hover {
     background-color: $white;
   }
