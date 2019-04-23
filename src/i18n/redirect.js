@@ -7,14 +7,13 @@ class Redirect extends PureComponent {
   constructor(props) {
     super(props)
     const langKeys = languages.map(language => language.value)
-    const { pathname } = props.location
-    // Skip build, Browsers only
+    const { pathname } = props.location   // Skip build, Browsers only
     if (typeof window !== "undefined") {
       const detected =
         window.localStorage.getItem("language") ||
         browserLang({
           languages: langKeys,
-          fallback: "en",
+          fallback: "ru",
         })
 
       const newUrl = withPrefix(`/${detected}/${pathname}`)
