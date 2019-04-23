@@ -1,0 +1,42 @@
+.page-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: $text-base-size;
+  text-align: center;
+
+  @include respond-below(m) {
+    font-size: $text-sm;
+  }
+
+  &__header {
+    font-size: 1.1875em;
+    margin-top: 0;
+  }
+   
+  &__big-text {
+    display: block;
+    color: $mountain-meadow;
+    font-size: 15em;
+    line-height: 1;
+    margin-bottom: .2em;
+
+    @include respond-below(s) {
+      font-size: 10em;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 4.375em;
+  }
+
+  &__btn {
+    margin-bottom: 2em;
+  }
+
+  &__img {
+    width: 17.625em;
+  }
+}
