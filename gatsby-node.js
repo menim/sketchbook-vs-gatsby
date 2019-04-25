@@ -99,10 +99,9 @@ exports.onCreatePage = ({ page, actions }) => {
           originalPath: page.path,
         },
       }
-      if (localePage.path.match(/^\/[a-z]{2}\/404\/$/)) {
-        localePage.matchPath = `${value}/*`
-      }
-        
+      // if (localePage.path.match(/^\/[a-z]{2}\/404\/$/)) {
+      //   localePage.matchPath = `${value}/*`
+      // }
       createPage(localePage)
     })
     resolve()
