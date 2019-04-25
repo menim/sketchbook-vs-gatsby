@@ -9,11 +9,11 @@
 const path = require(`path`)
 const { languages } = require('./src/i18n/locales')
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
   
-  const { createPage, deletePage } = actions
+  const { createPage } = actions
   return graphql(`
     {
       allDataJson {
@@ -34,6 +34,9 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `
   ).then(result => {
+    if(result.errors) {
+      console.log(result.errors)
+    }
     result.data.allDataJson.edges.forEach(({ node }) => {
       const redirect = path.resolve('src/i18n/redirect.js')
       const redirectPage = {
@@ -43,11 +46,10 @@ exports.createPages = async ({ graphql, actions }) => {
           languages,
           locale: '',
           routed: false,
-          redirectPage: `node.slug`,
         },
       }
       createPage(redirectPage)
-      
+
       languages.forEach(({value}) => {
         createPage({
           path: `/${value}/${node.slug}`,
@@ -69,7 +71,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })
 }
 
-exports.onCreatePage = async ({ page, actions }) => {
+exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
   return new Promise(resolve => {
     const redirect = path.resolve('src/i18n/redirect.js')
@@ -84,9 +86,7 @@ exports.onCreatePage = async ({ page, actions }) => {
         redirectPage: page.path,
       },
     }
-    deletePage(page)
     createPage(redirectPage)
-
     languages.forEach(({ value }) => {
       const localePage = {
         ...page,
@@ -99,16 +99,12 @@ exports.onCreatePage = async ({ page, actions }) => {
           originalPath: page.path,
         },
       }
-      
-      if (localePage.path === '/uk/404.html') {
-        localePage.matchPath = '/uk/*';
-      } else if (localePage.path === '/ru/404.html') {
-        localePage.matchPath = '/ru/*';
-    }
-
+      if (localePage.path.match(/^\/[a-z]{2}\/404\/$/)) {
+        localePage.matchPath = `${value}/*`
+      }
+        
       createPage(localePage)
     })
-
     resolve()
   })
 }
