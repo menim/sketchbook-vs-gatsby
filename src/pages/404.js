@@ -9,6 +9,9 @@ import Main from '../components/main'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
+import '../sass/main.scss'
+import '../sass/generic/_swiper.scss'
+
 import pen from './../../static/pen.svg'
 
 const NotFoundPage = () => (
