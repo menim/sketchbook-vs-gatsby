@@ -1,34 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
-  return (
-    <StaticQuery
-      query={detailsQuery}
-      render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description
+function SEO({ description='', lang='', meta='', keywords='', title='', author='', img = '', url = ''}) {
+
         return (
           <Helmet
             htmlAttributes={{
               lang,
             }}
             title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
                 name: `description`,
-                content: metaDescription,
+                content: description,
               },
               {
                 property: `og:title`,
                 content: title,
               },
               {
+                property: `og:url`,
+                content: `https://sketchbooki.info/${url}`
+              },
+              {
+                property: `og:image`,
+                content: `${img}.png`
+              },
+              {
                 property: `og:description`,
-                content: metaDescription,
+                content: description,
               },
               {
                 property: `og:type`,
@@ -40,7 +41,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
+                content: author,
               },
               {
                 name: `twitter:title`,
@@ -48,7 +49,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 name: `twitter:description`,
-                content: metaDescription,
+                content: description,
               },
             ]
               .concat(
@@ -62,27 +63,13 @@ function SEO({ description, lang, meta, keywords, title }) {
               .concat(meta)}
           />
         )
-      }}
-    />
-  )
 }
 
 export default SEO
 
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
-    site {
-      siteMetadata {
-        title
-        description
-        author
-      }
-    }
-  }
-`
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `uk`,
   meta: [],
   keywords: [],
 }
