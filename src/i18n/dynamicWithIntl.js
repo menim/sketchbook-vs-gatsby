@@ -36,7 +36,7 @@ export default (ComposedComponent) => {
 
     render() {
       const { language, langRu, langUk } = this.state
-      const locale = language.locale || "en"
+      const locale = language.locale || "uk"
       const staticMessages = require(`./locales/${locale}.js`) // eslint-disable-line 
       const dynamicMessages = locale === "uk" ? langUk : langRu
       const messages = {...staticMessages, ...dynamicMessages}  
