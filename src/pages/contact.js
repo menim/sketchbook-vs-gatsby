@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { FormattedMessage } from 'react-intl'
 import { withIntl } from '../i18n'
 
-import Seo from '../components/seo'
+//import Seo from '../components/seo'
 
 import '../sass/main.scss'
 import '../sass/generic/_swiper.scss'
@@ -23,11 +23,11 @@ const Contact = ({ intl }) => {
   return (
   <>
     <Layout>
-      <Seo
+      {/* <Seo
         description={intl.messages.contactPageDescription}
         title={intl.messages.contactPageTitle}
         lang={intl.locale}
-      />
+      /> */}
       <Header />
         <Main smVerticalOffset>
           <Container>

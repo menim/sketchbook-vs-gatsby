@@ -3,7 +3,7 @@ import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 
-import Seo from '../components/seo'
+//import Seo from '../components/seo'
 
 import Container from '../components/container'
 import Layout from '../components/layout'
@@ -18,11 +18,11 @@ import pen from './../../static/pen.svg'
 
 const NotFoundPage = ({intl}) => (
   <Layout>
-    <Seo
+    {/* <Seo
       description={intl.messages.notFoundDescription}
       title={intl.messages.notFoundTitle}
       lang={intl.locale}
-    />
+    /> */}
     <Header />
     <Main>
       <Container>

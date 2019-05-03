@@ -8,7 +8,7 @@ import { dynamicWithIntl, Link } from '../i18n'
 import '../sass/main.scss'
 import '../sass/generic/_swiper.scss'
 
-import Seo from '../components/seo'
+//import Seo from '../components/seo'
 
 import Layout from '../components/layout'
 import Header from '../components/header'
@@ -24,13 +24,13 @@ const product = data.allDataJson.edges[0].node
 return (
     <>
     <Layout>
-      <Seo 
+      {/* <Seo 
         description={`${intl.messages.productPageDescriptionTemplatePre}, «${intl.messages.title}», ${intl.messages.productPageDescriptionTemplatePost}`}
         title={`${intl.messages.title}. ${intl.messages.productPageTitleTemplate}`}
         lang={intl.locale}
         img={product.cover}
         url={product.slug}
-      />
+      /> */}
       <Header />
         <Main smVerticalOffset>
           <Container>
