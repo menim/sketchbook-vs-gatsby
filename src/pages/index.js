@@ -6,8 +6,9 @@ import { withIntl } from '../i18n'
 import '../sass/main.scss'
 import '../sass/generic/_swiper.scss'
 
+import Seo from '../components/seo'
+
 import Layout from '../components/layout'
-import SEO from '../components/seo'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Container from '../components/container'
@@ -19,6 +20,11 @@ import YtbVideo from '../components/ytb-video'
 
 const IndexPage = ({ intl }) => (
   <>
+  <Seo
+    title={intl.messages.mainPageTitle}
+    description={intl.messages.mainPageDescription}
+    lang={intl.locale}
+  />
   <Layout>
     <Header videoEnabled />
       <Main>
@@ -34,7 +40,6 @@ const IndexPage = ({ intl }) => (
           </FlexContainer> 
         </Container>
       </Main>
-      <SEO title='Home' keywords={[`gatsby`, `application`, `react`]} />
     <Footer />
   </Layout>
   </>

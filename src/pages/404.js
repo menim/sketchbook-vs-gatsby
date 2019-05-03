@@ -3,6 +3,8 @@ import React from 'react'
 import { FormattedMessage } from 'react-intl'
 import { withIntl, Link } from '../i18n'
 
+import Seo from '../components/seo'
+
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Main from '../components/main'
@@ -14,8 +16,13 @@ import '../sass/generic/_swiper.scss'
 
 import pen from './../../static/pen.svg'
 
-const NotFoundPage = () => (
+const NotFoundPage = ({intl}) => (
   <Layout>
+    <Seo
+      description={intl.messages.notFoundDescription}
+      title={intl.messages.notFoundTitle}
+      lang={intl.locale}
+    />
     <Header />
     <Main>
       <Container>

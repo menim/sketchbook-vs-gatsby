@@ -8,6 +8,8 @@ import { dynamicWithIntl, Link } from '../i18n'
 import '../sass/main.scss'
 import '../sass/generic/_swiper.scss'
 
+import Seo from '../components/seo'
+
 import Layout from '../components/layout'
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -19,10 +21,16 @@ import ModalToggleBtn from '../components/modal-toogle-btn'
 const ProductPage = ({ data, intl }) => {
 
 const product = data.allDataJson.edges[0].node
-
 return (
     <>
     <Layout>
+      <Seo 
+        description={`${intl.messages.productPageDescriptionTemplatePre}, «${intl.messages.title}», ${intl.messages.productPageDescriptionTemplatePost}`}
+        title={`${intl.messages.title}. ${intl.messages.productPageTitleTemplate}`}
+        lang={intl.locale}
+        img={product.cover}
+        url={product.slug}
+      />
       <Header />
         <Main smVerticalOffset>
           <Container>
@@ -65,6 +73,8 @@ query($slug: String!) {
       node {
         price
         spreadImg
+        slug
+        cover
         ru {
           lang
         }
