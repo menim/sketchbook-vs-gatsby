@@ -11,7 +11,7 @@ const Nav = ({ telephone, isPlace, mobile }) => (
       <li className='menu__item'><Link to='/delivery' className='menu__link menu__link--primary-theme'><FormattedMessage id='pay-delivery-title' /></Link></li>
       <li className='menu__item'><Link to='/contact/' className='menu__link menu__link--primary-theme'><FormattedMessage id='contact-page-title' /></Link></li>
       <li className='menu__item'><ModalToggleBtn><FormattedMessage id='button-order-title' /></ModalToggleBtn></li>
-      <li className='menu__item menu__telephone'>066-456-56-67</li>
+        <li className='menu__item menu__telephone'><a className='telephone' href='tel: +38066-456-56-67'>066-456-56-67</a></li>
     </ul>
   </nav>)
   : 
@@ -21,7 +21,7 @@ const Nav = ({ telephone, isPlace, mobile }) => (
         <li className='menu__item'><Link to='/contact/' className='menu__link menu__link--primary-theme'><FormattedMessage id='contact-page-title' /></Link></li>
         <li className='menu__item'><ModalToggleBtn><FormattedMessage id='button-order-title' /></ModalToggleBtn></li>
         { telephone ? 
-          (<li className='menu__item menu__telephone'>066-456-56-67</li>)
+          (<li className='menu__item menu__telephone'><a className='telephone' href='tel: +38066-456-56-67'>066-456-56-67</a></li>)
           : ''
         }   
       </ul>
