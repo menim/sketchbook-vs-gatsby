@@ -1,20 +1,31 @@
 import React, { Component } from 'react'
 import Nav from './nav'
 import Lang from './language'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 
 class NavMobile extends Component {
-   state = { isToggle: false }
+  state = { isToggle: false }
+  targetElement = null
+
+  componentDidMount() {
+    this.targetElement = document.querySelector('.nav-mobile__menu')
+  }
+
+  bodyScrollLockToggle = () => {
+    this.state.isToggle ? enableBodyScroll(this.targetElement) : disableBodyScroll(this.targetElement)
+  }
 
   toggleMenu = () => {
-    document.body.classList.toggle('hidden')
     this.setState((state) => { return {isToggle: !state.isToggle} })
+    this.bodyScrollLockToggle()
   }
+
   render() {
     return (
       <div className='nav-mobile'>
         <button onClick={this.toggleMenu} className={`nav-mobile__btn  ${this.state.isToggle ? 'nav-mobile__btn--close' : ''}`}></button>
-        <div className={`nav-mobile__menu ${this.state.isToggle ?  'nav-mobile__menu--open' : '' }`}><Nav mobile /></div>  
+        <div className={`nav-mobile__menu ${this.state.isToggle ? 'nav-mobile__menu--open' : ''}`}><Nav mobile /></div>  
       </div>
     )
   }
