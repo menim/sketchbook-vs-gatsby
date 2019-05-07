@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "autoprefixer": "^9.5.0",
+    "body-scroll-lock": "^2.6.1",
     "browser-lang": "0.0.1",
     "formik": "^1.5.1",
     "gatsby": "^2.3.30",
