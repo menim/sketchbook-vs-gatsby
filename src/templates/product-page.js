@@ -1,56 +1,66 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { graphql } from 'gatsby'
-import { FormattedMessage } from 'react-intl'
-import { dynamicWithIntl, Link } from '../i18n'
+import { graphql } from 'gatsby';
+import { FormattedMessage } from 'react-intl';
+import { dynamicWithIntl, Link } from '../i18n';
 
-import '../sass/main.scss'
-import '../sass/generic/_swiper.scss'
+import '../sass/main.scss';
+import '../sass/generic/_swiper.scss';
 
 //import Seo from '../components/seo'
 
-import Layout from '../components/layout'
-import Header from '../components/header'
-import Footer from '../components/footer'
-import Main from '../components/main'
-import Container from '../components/container'
-import SimpleSlider from '../components/swiper-gallery'
-import ModalToggleBtn from '../components/modal-toogle-btn'
+import Layout from '../components/layout';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import Main from '../components/main';
+import Container from '../components/container';
+import SimpleSlider from '../components/swiper-gallery';
+import ModalToggleBtn from '../components/modal-toogle-btn';
 
 const ProductPage = ({ data, intl }) => {
-
-const product = data.allDataJson.edges[0].node
-return (
+  const product = data.allDataJson.edges[0].node;
+  return (
     <>
-    <Layout>
-      {/* <Seo 
+      <Layout>
+        {/* <Seo 
         description={`${intl.messages.productPageDescriptionTemplatePre}, «${intl.messages.title}», ${intl.messages.productPageDescriptionTemplatePost}`}
         title={`${intl.messages.title}. ${intl.messages.productPageTitleTemplate}`}
         lang={intl.locale}
         img={product.cover}
         url={product.slug}
       /> */}
-      <Header />
+        <Header />
         <Main smVerticalOffset>
           <Container>
-            <div className='product'>
+            <div className="product">
               <section className="product__view">
-              <SimpleSlider imgs={product.spreadImg} />
+                <SimpleSlider imgs={product.spreadImg} />
               </section>
-              <section className='product__description'>
-                <h1 className='product__header'>Скетчбук. <FormattedMessage id='title' /></h1>
-                <span className='product__price'>₴ {product.price}</span>
-                <p className='product__overview'>
-                   <FormattedMessage id='description' />
+              <section className="product__description">
+                <h1 className="product__header">
+                  Скетчбук. <FormattedMessage id="title" />
+                </h1>
+                <span className="product__price">₴ {product.price}</span>
+                <p className="product__overview">
+                  <FormattedMessage id="description" />
                 </p>
                 <div className="lang product__lang">
-                  <h2 className="lang__title"><FormattedMessage id="lang-option-message" />:</h2>
+                  <h2 className="lang__title">
+                    <FormattedMessage id="lang-option-message" />:
+                  </h2>
                   <ul className="lang__list">
-                    { product[intl.locale].lang.map((item, index) => <li className='lang__item' key={index}> {item}/</li>)}
+                    {product[intl.locale].lang.map((item, index) => (
+                      <li className="lang__item" key={index}>
+                        {' '}
+                        {item}/
+                      </li>
+                    ))}
                   </ul>
                 </div>
-                <ModalToggleBtn><FormattedMessage id="button-order-title" /></ModalToggleBtn>
+                <ModalToggleBtn>
+                  <FormattedMessage id="button-order-title" />
+                </ModalToggleBtn>
                 <p className="product__paragraph">
                   <FormattedMessage id="wholesale-message" />
                 </p>
@@ -58,36 +68,36 @@ return (
             </div>
           </Container>
         </Main>
-      <Footer />
+        <Footer />
       </Layout>
     </>
-  )
-}
+  );
+};
 
-export default dynamicWithIntl(ProductPage)
+export default dynamicWithIntl(ProductPage);
 
 export const query = graphql`
-query($slug: String!) {
-  allDataJson (filter: {slug: {eq: $slug}}) {
-    edges {
-      node {
-        price
-        spreadImg
-        slug
-        cover
-        ru {
-          lang
-        }
-        uk {
-          lang
+  query($slug: String!) {
+    allDataJson(filter: { slug: { eq: $slug } }) {
+      edges {
+        node {
+          price
+          spreadImg
+          slug
+          cover
+          ru {
+            lang
+          }
+          uk {
+            lang
+          }
         }
       }
     }
   }
-}
-`
+`;
 
 ProductPage.propTypes = {
   data: PropTypes.object.isRequired,
   intl: PropTypes.object.isRequired
-}
+};

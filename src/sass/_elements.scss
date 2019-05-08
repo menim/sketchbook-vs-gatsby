@@ -11,12 +11,12 @@ html {
   box-sizing: inherit;
 }
 
-
 body {
-  font: #{$text-base-size} / #{$line-height-default} 'weblysleek regular', sans-serif;
+  font: #{$text-base-size} / #{$line-height-default} 'weblysleek regular',
+    sans-serif;
 }
 
-[href^="mailto"] {
+[href^='mailto'] {
   color: $white;
   text-decoration: none;
 }
@@ -24,7 +24,7 @@ body {
 #___gatsby {
   height: 100%;
 
-  >div {
+  > div {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -63,26 +63,26 @@ select:-moz-focusring {
 
 //hide arrows in number type input
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type=number] {
-    -moz-appearance:textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 fieldset {
   border: 0;
   padding: 0;
-  margin: 0
+  margin: 0;
 }
 
 input::-webkit-contacts-auto-fill-button {

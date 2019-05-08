@@ -9,22 +9,22 @@
   @return $random-num;
 }
 
-
 /* 
   add letters-animation (change fill property) to every letter in logo element 
 */
 
-@mixin letters-animation ($letters-colors, $length-letter) {
+@mixin letters-animation($letters-colors, $length-letter) {
   $len: length($letters-colors);
 
   @for $i from 1 through $length-letter {
-
     &:nth-child(#{$i}) {
-      animation: letter-animation#{$i} 4s cubic-bezier(.05, .35, 1, .77) infinite;
+      animation: letter-animation#{$i}
+        4s
+        cubic-bezier(0.05, 0.35, 1, 0.77)
+        infinite;
     }
 
     @keyframes letter-animation#{$i} {
-
       0% {
         fill: nth($letters-colors, random-number(1, $len));
       }
@@ -40,7 +40,6 @@
   }
 }
 
-
 // =============================================================================
 // String Replace
 // =============================================================================
@@ -49,8 +48,12 @@
   $index: str-index($string, $search);
 
   @if $index {
-
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -60,7 +63,13 @@
 // Font Face
 // =============================================================================
 
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2 woff ttf) {
+@mixin font-face(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: woff2 woff ttf
+) {
   $src: null;
 
   $extmods: (
@@ -74,9 +83,17 @@
   );
 
   @each $ext in $exts {
-    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
     $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
-    $src: append($src, url(quote($path + '.' + $extmod)) format(quote($format)), comma);
+    $src: append(
+      $src,
+      url(quote($path + '.' + $extmod)) format(quote($format)),
+      comma
+    );
   }
 
   @font-face {
@@ -91,7 +108,7 @@
 @mixin row-color($color) {
   background-color: $color;
   //background-color: rgba($color, .7);
-  box-shadow: -.2em 0 0 $color, .2em 0 0 $color;
+  box-shadow: -0.2em 0 0 $color, 0.2em 0 0 $color;
 }
 
 // edit font rendering -> tip: use for light text on dark backgrounds
@@ -109,32 +126,26 @@ $breakpoints: (
   m: 991px,
   l: 1199px,
   xl: 1366px,
-  xxl: 1450px 
+  xxl: 1450px
 );
 
 // @include respond-below(sm) {}
 
 @mixin respond-below($breakpoint) {
-
   // If the breakpoint exists in the map.
 
   @if map-has-key($breakpoints, $breakpoint) {
-
     // Get the breakpoint value.
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 
     // Write the media query.
 
     @media (max-width: ($breakpoint-value - 1)) {
-
       @content;
     }
-  
+
     // If the breakpoint doesn't exist in the map.
-  }
-
-  @else {
-
+  } @else {
     // Log a warning.
 
     @warn 'Invalid breakpoint: #{$breakpoint}.';
@@ -144,6 +155,3 @@ $breakpoints: (
 @mixin linear-gradient-add($color) {
   background: linear-gradient($color 0%, $color 55%, $white 55%, $white 100%);
 }
-
-
-

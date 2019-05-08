@@ -1,7 +1,6 @@
 @include font-face('weblysleek regular', '../fonts/weblysleekuisemilight');
 @include font-face('weblysleek bold', '../fonts/weblysleekuisemibold');
 
-
 // base font values
 $text-base-size: 16px;
 $text-scale-ratio: 1.2;
@@ -15,5 +14,7 @@ $text-sm: 14px;
 $text-md: 20px;
 $text-lg: 25px;
 $text-xl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
-$text-xxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
-$text-xxxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio;
+$text-xxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio *
+  $text-scale-ratio;
+$text-xxxl: 1em * $text-scale-ratio * $text-scale-ratio * $text-scale-ratio *
+  $text-scale-ratio * $text-scale-ratio;

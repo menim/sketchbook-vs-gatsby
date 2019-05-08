@@ -21,7 +21,7 @@
     height: 1.25em;
 
     @include respond-below(xs) {
-      font-size: $text-xxxsm;;
+      font-size: $text-xxxsm;
     }
   }
 

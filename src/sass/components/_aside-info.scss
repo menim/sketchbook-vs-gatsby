@@ -1,6 +1,6 @@
-.aside-info {  
+.aside-info {
   color: $ebony-clay;
-  background-color: $mountain-meadow; 
+  background-color: $mountain-meadow;
   border-radius: 16px;
 
   @include respond-below(s) {
@@ -20,7 +20,6 @@
     margin-top: 0;
     font-family: 'weblysleek bold', sans-serif;
     font-size: $text-base-size;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
-
 }

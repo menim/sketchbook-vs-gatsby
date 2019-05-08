@@ -1,35 +1,43 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { injectIntl } from 'react-intl'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 
-import { ModalContext } from './modal-context'
-import Modal from './modal'
-import Form from './order-form'
+import { ModalContext } from './modal-context';
+import Modal from './modal';
+import Form from './order-form';
 
 class Layout extends Component {
-  constructor(props){
-    super(props)  
-    this.state = { isShow: false, toggleModal: this.toggleModal }
+  constructor(props) {
+    super(props);
+    this.state = { isShow: false, toggleModal: this.toggleModal };
   }
 
-  toggleModal = () => { 
-    document.body.classList.contains('modal-open') ? document.body.classList.remove('modal-open') : document.body.classList.add('modal-open')
-    this.setState(prevState => ({ isShow: !prevState.isShow}))
-  }
- 
+  toggleModal = () => {
+    document.body.classList.contains('modal-open')
+      ? document.body.classList.remove('modal-open')
+      : document.body.classList.add('modal-open');
+    this.setState(prevState => ({ isShow: !prevState.isShow }));
+  };
+
   render() {
     return (
       <ModalContext.Provider value={this.state}>
-          {this.props.children}
-          {this.state.isShow ? <Modal close={this.toggleModal}><Form order locale={this.props.intl.locale} /></Modal> : '' }
+        {this.props.children}
+        {this.state.isShow ? (
+          <Modal close={this.toggleModal}>
+            <Form order locale={this.props.intl.locale} />
+          </Modal>
+        ) : (
+          ''
+        )}
       </ModalContext.Provider>
-    )
+    );
   }
 }
 
-export default injectIntl(Layout)
+export default injectIntl(Layout);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   intl: PropTypes.object.isRequired
-}
+};

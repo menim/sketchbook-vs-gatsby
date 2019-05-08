@@ -12,7 +12,7 @@
   }
 
   &:first-of-type {
-    margin-bottom: 4em;  
+    margin-bottom: 4em;
 
     @include respond-below(s) {
       margin-bottom: 2em;
@@ -36,7 +36,7 @@
     padding-left: 0;
     list-style-position: inside;
 
-    li+li {
+    li + li {
       margin-top: 1.25em;
     }
   }

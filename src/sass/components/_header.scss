@@ -1,5 +1,5 @@
 .header {
-  font-size: $text-base-size; 
+  font-size: $text-base-size;
 
   @include respond-below(l) {
     font-size: $text-sm;
@@ -54,7 +54,7 @@
     @include respond-below(l) {
       margin-right: auto;
     }
-  
+
     @include respond-below(s) {
       display: none;
     }
@@ -65,21 +65,21 @@
     color: $white;
     bottom: 10em;
     width: 60%;
-    z-index: 4;  
+    z-index: 4;
     transform: rotateX(0);
 
     @include respond-below(l) {
-      bottom: 9em
+      bottom: 9em;
     }
 
     @include respond-below(m) {
       bottom: 7em;
     }
-  
+
     @include respond-below(s) {
       bottom: 5em;
     }
-    
+
     @include respond-below(xs) {
       width: 90%;
       bottom: 3em;

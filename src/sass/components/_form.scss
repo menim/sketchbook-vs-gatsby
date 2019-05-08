@@ -17,7 +17,7 @@
   &--order {
     margin: 3em;
   }
-  
+
   &__title {
     display: block;
     font-size: 2em;
@@ -38,8 +38,8 @@
         border-left: 7px solid transparent;
         border-right: 7px solid transparent;
         position: absolute;
-        right: .8em;
-        margin-top: -.1875em;
+        right: 0.8em;
+        margin-top: -0.1875em;
         top: 50%;
       }
     }
@@ -55,7 +55,7 @@
     display: block;
     height: 3.75em;
     padding-left: 1.5em;
-    margin-top: .2em;
+    margin-top: 0.2em;
     margin-bottom: 2.25em;
     transition: border-color 150ms ease-in;
     width: 100%;
@@ -70,7 +70,7 @@
     &--quantity {
       width: 70%;
     }
-    
+
     &--error {
       border: 2px solid $carnation;
       margin-bottom: 0;
@@ -91,12 +91,12 @@
     padding: 0;
     width: 2.25em;
     transition: color, background-color 150ms ease-in;
-    margin-left: .5em;
-     
+    margin-left: 0.5em;
+
     &:hover {
       color: $mountain-meadow;
       background-color: $white;
-      border-color: $mountain-meadow; 
+      border-color: $mountain-meadow;
     }
   }
 
@@ -107,7 +107,7 @@
   &__error {
     color: $carnation;
     font-size: $text-xsm;
-    margin: .2em 0 1.25em 2.25em;
+    margin: 0.2em 0 1.25em 2.25em;
   }
 
   &__success-message {
@@ -123,7 +123,8 @@
     opacity: 0;
   }
 
- 50%,100% {
+  50%,
+  100% {
     opacity: 1;
   }
 }

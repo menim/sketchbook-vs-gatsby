@@ -5,7 +5,7 @@
   line-height: 1.2;
 
   &--primary-theme {
-    background-color: $ebony-clay; 
+    background-color: $ebony-clay;
   }
 
   &--secondary-theme {
@@ -14,12 +14,11 @@
 }
 
 @supports (-webkit-box-decoration-break: clone) or (box-decoration-break: clone) {
-
   .multiline-bg {
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
     box-shadow: none;
-    padding: 0 .3em;
+    padding: 0 0.3em;
   }
 }
 
@@ -27,7 +26,7 @@
   margin-top: 8.5em;
 
   @include respond-below(m) {
-    margin-top: 4em
+    margin-top: 4em;
   }
 }
 
@@ -47,7 +46,8 @@
 }
 
 .fade-in {
-  transition: opacity .35s cubic-bezier(0.33, 0.66, 0.66, 1) .2s, transform .35s cubic-bezier(0.33, 0.66, 0.66, 1) .2s;
+  transition: opacity 0.35s cubic-bezier(0.33, 0.66, 0.66, 1) 0.2s,
+    transform 0.35s cubic-bezier(0.33, 0.66, 0.66, 1) 0.2s;
 }
 
 .hide-overflow {
@@ -70,7 +70,7 @@
 }
 
 .backdrop {
-  background-color: rgba(0,0,0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,12 +82,15 @@
   z-index: 5;
 }
 
-.visuallyhidden { 
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .hidden {

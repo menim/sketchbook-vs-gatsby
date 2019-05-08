@@ -15,13 +15,13 @@
     font-size: 1.1875em;
     margin-top: 0;
   }
-   
+
   &__big-text {
     display: block;
     color: $mountain-meadow;
     font-size: 15em;
     line-height: 1;
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
 
     @include respond-below(s) {
       font-size: 10em;

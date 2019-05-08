@@ -6,14 +6,14 @@
 
 // You can delete this file if you're not using it
 
-const path = require(`path`)
-const { languages } = require('./src/i18n/locales')
+const path = require(`path`);
+const { languages } = require('./src/i18n/locales');
 
 exports.createPages = ({ graphql, actions }) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-  
-  const { createPage } = actions
+
+  const { createPage } = actions;
   return graphql(`
     {
       allDataJson {
@@ -32,25 +32,24 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `
-  ).then(result => {
-    if(result.errors) {
-      console.log(result.errors)
+  `).then(result => {
+    if (result.errors) {
+      console.log(result.errors);
     }
     result.data.allDataJson.edges.forEach(({ node }) => {
-      const redirect = path.resolve('src/i18n/redirect.js')
+      const redirect = path.resolve('src/i18n/redirect.js');
       const redirectPage = {
         path: node.slug,
         component: redirect,
         context: {
           languages,
           locale: '',
-          routed: false,
-        },
-      }
-      createPage(redirectPage)
+          routed: false
+        }
+      };
+      createPage(redirectPage);
 
-      languages.forEach(({value}) => {
+      languages.forEach(({ value }) => {
         createPage({
           path: `/${value}/${node.slug}`,
           component: path.resolve(`./src/templates/product-page.js`),
@@ -64,17 +63,17 @@ exports.createPages = ({ graphql, actions }) => {
             slug: node.slug,
             langRu: node.ru,
             langUk: node.uk
-          },
-        })
-      })
-    })
-  })
-}
+          }
+        });
+      });
+    });
+  });
+};
 
 exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions
+  const { createPage, deletePage } = actions;
   return new Promise(resolve => {
-    const redirect = path.resolve('src/i18n/redirect.js')
+    const redirect = path.resolve('src/i18n/redirect.js');
 
     const redirectPage = {
       ...page,
@@ -83,10 +82,10 @@ exports.onCreatePage = ({ page, actions }) => {
         languages,
         locale: '',
         routed: false,
-        redirectPage: page.path,
-      },
-    }
-    createPage(redirectPage)
+        redirectPage: page.path
+      }
+    };
+    createPage(redirectPage);
     languages.forEach(({ value }) => {
       const localePage = {
         ...page,
@@ -96,14 +95,14 @@ exports.onCreatePage = ({ page, actions }) => {
           languages,
           locale: value,
           routed: true,
-          originalPath: page.path,
-        },
-      }
+          originalPath: page.path
+        }
+      };
       // if (localePage.path.match(/^\/[a-z]{2}\/404\/$/)) {
       //   localePage.matchPath = `${value}/*`
       // }
-      createPage(localePage)
-    })
-    resolve()
-  })
-}
+      createPage(localePage);
+    });
+    resolve();
+  });
+};
