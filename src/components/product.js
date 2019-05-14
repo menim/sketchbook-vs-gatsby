@@ -32,10 +32,9 @@ const Product = ({ locale, productData }) => {
           <Swiper {...params}>
             {productData.cover.map((item, index) => (
               <div key={index}>
-                <Pict
+                <img
                   className="sketchbook__preview"
-                  src={withPrefix(item)}
-                  fallbackFormat="png"
+                  src={withPrefix(item)+".png"}
                 />
               </div>
             ))}
