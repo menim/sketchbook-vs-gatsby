@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withPrefix } from 'gatsby';
 import Swiper from 'react-id-swiper';
 
 export default class SimpleSlider extends Component {
@@ -51,8 +50,7 @@ export default class SimpleSlider extends Component {
       slidesPerView: 'auto',
       touchRatio: 0.2,
       slideToClickedSlide: true,
-      containerClass:
-        'swiper-container swiper-container-initialized swiper-container-horizontal thumbnail'
+      containerClass: 'swiper-container swiper-container-initialized swiper-container-horizontal thumbnail'
     };
 
     return (
@@ -60,14 +58,14 @@ export default class SimpleSlider extends Component {
         <Swiper {...galleryParams} ref={this.galleryRef}>
           {this.props.imgs.map((item, index) => (
             <div key={index}>
-              <img src={withPrefix(item)+'.jpg'} />
+              <img src={item.childImageSharp.fluid.src} />
             </div>
           ))}
         </Swiper>
         <Swiper {...thumbnailParams} ref={this.thumbRef}>
           {this.props.imgs.map((item, index) => (
             <div key={index}>
-              <img height="100" src={withPrefix(item)+'.jpg'} />
+              <img height="100" src={item.childImageSharp.fixed.src} />
             </div>
           ))}
         </Swiper>

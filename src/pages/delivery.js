@@ -9,8 +9,8 @@ import { withIntl } from '../i18n'
 import '../sass/main.scss'
 import '../sass/generic/_swiper.scss'
 
-import delivery from  './../../static/delivery.svg'
-import pay from './../../static/pay.svg'
+import delivery from  './../images/delivery.svg'
+import pay from './../images//pay.svg'
 
 import Header from '../components/header'
 import Layout from '../components/layout'

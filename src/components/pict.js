@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Pict = props => (
   <picture>
-    <source srcSet={`${props.src}.webp`} type="image/webp" />
-    <img height={props.height} src={`${props.src}.${props.fallbackFormat}`} />
+    <source srcSet={props.img.srcWebp} type="image/webp" />
+    <img height={props.height} src={props.img.src} />
   </picture>
 );
 
@@ -12,7 +12,7 @@ export default Pict;
 
 Pict.propTypes = {
   props: PropTypes.shape({
-    src: PropTypes.string.isRequired,
+    src: PropTypes.object.isRequired,
     height: PropTypes.number.isRequired,
     fallbackFormat: PropTypes.string.isRequired
   })

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { withPrefix } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { Link } from './../i18n';
 import Pict from './pict';
@@ -34,7 +33,7 @@ const Product = ({ locale, productData }) => {
               <div key={index}>
                 <img
                   className="sketchbook__preview"
-                  src={withPrefix(item)+".png"}
+                  src={item.childImageSharp.fixed.src}
                 />
               </div>
             ))}
@@ -42,9 +41,8 @@ const Product = ({ locale, productData }) => {
         ) : (
           <Pict
             className="sketchbook__preview"
-            src={withPrefix(productData.cover[0])}
-            fallbackFormat="png"
-          />
+            img={productData.cover[0].childImageSharp.fixed}
+          /> 
         )}
         <h2 className="sketchbook__title">{productData[locale].title}</h2>
         <div className="sketchbook__bottom-wrapper">

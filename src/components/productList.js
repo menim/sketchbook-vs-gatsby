@@ -11,10 +11,17 @@ const ProductList = ({ data }) => {
     <StaticQuery
       query={graphql`
         query {
-          allDataJson {
+          allDataNewJson {
             edges {
               node {
-                cover
+                cover {
+                  childImageSharp {
+                    fixed(pngCompressionSpeed: 10) {
+                      src
+                      srcWebp
+                    }
+                  }
+                }
                 price
                 slug
                 uk {
@@ -31,7 +38,7 @@ const ProductList = ({ data }) => {
         }
       `}
       render={data => {
-        return data.allDataJson.edges.map((product, index) => {
+        return data.allDataNewJson.edges.map((product, index) => {
           return (
             <Product locale={locale} key={index} productData={product.node} />
           );

@@ -17,11 +17,17 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `img`,
-        path: `${__dirname}/static`
+        path: `${__dirname}/src/images`
       }
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true,
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

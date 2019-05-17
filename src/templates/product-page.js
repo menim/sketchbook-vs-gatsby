@@ -19,7 +19,7 @@ import SimpleSlider from '../components/swiper-gallery';
 import ModalToggleBtn from '../components/modal-toogle-btn';
 
 const ProductPage = ({ data, intl }) => {
-  const product = data.allDataJson.edges[0].node;
+  const product = data.allDataNewJson.edges[0].node;
   return (
     <>
       <Layout>
@@ -78,13 +78,21 @@ export default dynamicWithIntl(ProductPage);
 
 export const query = graphql`
   query($slug: String!) {
-    allDataJson(filter: { slug: { eq: $slug } }) {
+    allDataNewJson(filter: { slug: { eq: $slug } }) {
       edges {
         node {
           price
-          spreadImg
+          spreadImg {
+            childImageSharp {
+              fluid(maxHeight: 500) {
+                src
+              }
+              fixed(height: 100) {
+                src
+              }
+            }
+          }
           slug
-          cover
           ru {
             lang
           }
