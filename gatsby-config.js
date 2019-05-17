@@ -50,6 +50,12 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: "gatsby-plugin-netlify-cache",
+      options: {
+        cachePublic: true
+      }
+    },
     `gatsby-plugin-netlify`
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
