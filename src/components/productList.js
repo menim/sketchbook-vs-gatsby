@@ -11,7 +11,7 @@ const ProductList = ({ data }) => {
     <StaticQuery
       query={graphql`
         query {
-          allDataNewJson {
+          allDataJson {
             edges {
               node {
                 cover {
@@ -38,7 +38,7 @@ const ProductList = ({ data }) => {
         }
       `}
       render={data => {
-        return data.allDataNewJson.edges.map((product, index) => {
+        return data.allDataJson.edges.map((product, index) => {
           return (
             <Product locale={locale} key={index} productData={product.node} />
           );
