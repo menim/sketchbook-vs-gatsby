@@ -37,10 +37,11 @@ export default class SimpleSlider extends Component {
   render() {
     const galleryParams = {
       threshold: 50,
+      containerClass: 'swiper-container swiper-container-initialized swiper-container-horizontal product__swiper',
       navigation: {
         nextEl: '.swiper-product-next.swiper-product-next--secondary',
         prevEl: '.swiper-product-prev.swiper-product-prev--secondary'
-      }
+      },
     };
 
     const thumbnailParams = {
