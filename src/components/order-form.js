@@ -117,7 +117,7 @@ class OrderForm extends Component {
               validationSchema={this.props.order ? orderSchema : contactSchema}
               onSubmit={(values, actions) => this.handleSubmit(values, actions)}
             >
-              {({ errors, touched, isSubmitting, status, values }) => {
+              {({ errors, touched, status, values }) => {
                 values.quantity = this.state.count;
                 return (
                   <Form
@@ -133,7 +133,7 @@ class OrderForm extends Component {
                       <legend
                         className={order ? 'form__title' : 'visuallyhidden'}
                       >
-                        Форма заказа
+                       <FormattedMessage id="form-order-title" />
                       </legend>
                       <label
                         className={

@@ -50,5 +50,6 @@ module.exports = {
   "notFoundTitle": "Сторінки не існує",
   "productPageTitleTemplate": "Купити скетчбук за ціною виробника в Україні",
   "productPageDescriptionTemplatePre": "Купити скетчбук видавництва Око",
-  "productPageDescriptionTemplatePost": "за ціною виробника у любому кутку УкраЇни"
+  "productPageDescriptionTemplatePost": "за ціною виробника у любому кутку УкраЇни",
+  "form-order-title": "Форма замовлення"
 }
