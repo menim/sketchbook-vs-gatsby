@@ -3,8 +3,27 @@ import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import Form from './order-form';
 
+
+const portalRoot = typeof document !== `undefined` ? document.getElementById('modal') : null;
+
 class Modal extends Component {
+  constructor() {
+    super();
+    // Use a ternary operator to make sure that the document object is defined
+    this.el =
+      typeof document !== `undefined` ? document.createElement('div') : null;
+  }
+
+  componentDidMount = () => {
+    portalRoot.appendChild(this.el);
+  };
+
+  componentWillUnmount = () => {
+    portalRoot.removeChild(this.el);
+  };
+
   render() {
+    if(this.el) {    
     return ReactDOM.createPortal(
       <div className={this.props.isShow ? '' : 'none'}>
         <div className="backdrop" onClick={this.props.close} />
@@ -13,8 +32,11 @@ class Modal extends Component {
           <Form order locale={this.props.locale} />
         </div>
       </div>,
-      document.getElementById('modal')
+     this.el
     );
+    } else {
+      return null
+    }
   }
 }
 
