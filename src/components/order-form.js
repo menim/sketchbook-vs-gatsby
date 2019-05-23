@@ -131,7 +131,7 @@ class OrderForm extends Component {
                     <input type="hidden" name="form-name" value="contact" />
                     <fieldset>
                       <legend
-                        className={order ? 'form__title' : 'visuallyhidden'}
+                        className={order ? 'form__title' : 'visuallyhidden none'}
                       >
                        <FormattedMessage id="form-order-title" />
                       </legend>
@@ -139,7 +139,7 @@ class OrderForm extends Component {
                         className={
                           order
                             ? 'form__label form__label--select-wrapper'
-                            : 'visuallyhidden'
+                            : 'visuallyhidden none'
                         }
                         htmlFor="select-sketch"
                       >
@@ -152,7 +152,7 @@ class OrderForm extends Component {
                         </Field>
                       </label>
                       <label
-                        className={order ? 'form__label' : 'visuallyhidden'}
+                        className={order ? 'form__label' : 'visuallyhidden none'}
                         htmlFor="quantity"
                       >
                         <FormattedMessage id="form-quantity-title" />:
@@ -196,7 +196,7 @@ class OrderForm extends Component {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'visuallyhidden' : 'form__label'}
+                        className={order ? 'visuallyhidden none' : 'form__label'}
                         htmlFor="email"
                       >
                         <FormattedMessage id="form-email-field" />
@@ -215,7 +215,7 @@ class OrderForm extends Component {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'visuallyhidden' : 'form__label'}
+                        className={order ? 'visuallyhidden none' : 'form__label'}
                         htmlFor="message"
                       >
                         <FormattedMessage id="form-message-field" />
@@ -233,7 +233,7 @@ class OrderForm extends Component {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'form__label' : 'visuallyhidden'}
+                        className={order ? 'form__label' : 'visuallyhidden none'}
                         htmlFor="telephone"
                       >
                         Телефон:*
