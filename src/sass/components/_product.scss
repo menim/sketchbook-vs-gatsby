@@ -24,6 +24,10 @@
 
   &__swiper {
     height: 500px;
+
+    @include respond-below(xs) {
+      height: auto;
+    }
   }
 
   &__description {
