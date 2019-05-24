@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Nav from './nav';
 import Lang from './language';
 import {
   disableBodyScroll,
   enableBodyScroll,
-  clearAllBodyScrollLocks
+  clearAllBodyScrollLocks,
 } from 'body-scroll-lock';
 
 class NavMobile extends Component {
-  state = { isToggle: false };
+  state = {isToggle: false};
   targetElement = null;
 
   componentDidMount() {
@@ -23,10 +23,14 @@ class NavMobile extends Component {
 
   toggleMenu = () => {
     this.setState(state => {
-      return { isToggle: !state.isToggle };
+      return {isToggle: !state.isToggle};
     });
     this.bodyScrollLockToggle();
   };
+
+  componentWillUnmount() {
+    enableBodyScroll(this.targetElement);
+  }
 
   render() {
     return (
