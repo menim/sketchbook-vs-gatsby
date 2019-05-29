@@ -34,13 +34,15 @@ class NavMobile extends Component {
 
   render() {
     return (
-      <div className="nav-mobile">
+      <div className='nav-mobile'>
         <button
           onClick={this.toggleMenu}
           className={`nav-mobile__btn  ${
             this.state.isToggle ? 'nav-mobile__btn--close' : ''
           }`}
-        />
+        >
+          <span className='visuallyhidden'>Меню</span>
+        </button>
         <div
           className={`nav-mobile__menu ${
             this.state.isToggle ? 'nav-mobile__menu--open' : ''
