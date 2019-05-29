@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import React, {Component} from 'react';
+import {StaticQuery, graphql} from 'gatsby';
 
-import { FormattedMessage } from 'react-intl';
-import { Formik, Form, Field } from 'formik';
+import {FormattedMessage} from 'react-intl';
+import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 
 const encode = data => {
@@ -15,65 +15,65 @@ const phoneRegExp = /^\+?3?8?(0\d{9})$/;
 
 const orderSchema = Yup.object().shape({
   name: Yup.string()
-    .min(5, <FormattedMessage id="error-short-name" />)
-    .max(30, <FormattedMessage id="error-long-name" />)
-    .required(<FormattedMessage id="error-void-message" />),
+    .min(5, <FormattedMessage id='error-short-name' />)
+    .max(30, <FormattedMessage id='error-long-name' />)
+    .required(<FormattedMessage id='error-void-message' />),
   telephone: Yup.string()
-    .matches(phoneRegExp, <FormattedMessage id="error-telephone-num" />)
-    .required(<FormattedMessage id="error-void-message" />),
-  quantity: Yup.number()
+    .matches(phoneRegExp, <FormattedMessage id='error-telephone-num' />)
+    .required(<FormattedMessage id='error-void-message' />),
+  quantity: Yup.number(),
 });
 
 const contactSchema = Yup.object().shape({
   name: Yup.string()
-    .min(5, <FormattedMessage id="error-short-name" />)
-    .max(30, <FormattedMessage id="error-long-name" />)
-    .required(<FormattedMessage id="error-void-message" />),
+    .min(5, <FormattedMessage id='error-short-name' />)
+    .max(30, <FormattedMessage id='error-long-name' />)
+    .required(<FormattedMessage id='error-void-message' />),
   email: Yup.string()
-    .email(<FormattedMessage id="error-email" />)
-    .required(<FormattedMessage id="error-void-message" />),
+    .email(<FormattedMessage id='error-email' />)
+    .required(<FormattedMessage id='error-void-message' />),
   message: Yup.string()
-    .min(5, <FormattedMessage id="error-short-message" />)
-    .max(500, <FormattedMessage id="error-long-message" />)
-    .required(<FormattedMessage id="error-void-message" />)
+    .min(5, <FormattedMessage id='error-short-message' />)
+    .max(500, <FormattedMessage id='error-long-message' />)
+    .required(<FormattedMessage id='error-void-message' />),
 });
 
 class OrderForm extends Component {
-  state = { count: 1 };
+  state = {count: 1};
 
   handleChange = event => {
-    this.setState({ count: event.target.value < 1 ? 1 : +event.target.value });
+    this.setState({count: event.target.value < 1 ? 1 : +event.target.value});
   };
 
   increment = () => {
-    this.setState({ count: this.state.count + 1 });
+    this.setState({count: this.state.count + 1});
   };
 
   decrement = () => {
-    this.setState({ count: this.state.count <= 1 ? 1 : this.state.count - 1 });
+    this.setState({count: this.state.count <= 1 ? 1 : this.state.count - 1});
   };
 
   handleSubmit = (values, actions) => {
     actions.setSubmitting(false);
     fetch(`/${this.props.locale}/`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...values })
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: encode({'form-name': 'contact', ...values}),
     }).then(response => {
       if (response.status === 200) {
         actions.setStatus({
-          success: <FormattedMessage id="success-message" />
+          success: <FormattedMessage id='success-message' />,
         });
         setTimeout(() => {
           actions.resetForm();
-          this.setState({ count: 1 });
+          this.setState({count: 1});
         }, 2000);
       }
     });
   };
 
   render() {
-    const { locale, order } = this.props;
+    const {locale, order} = this.props;
 
     return (
       <StaticQuery
@@ -111,77 +111,77 @@ class OrderForm extends Component {
                 quantity: this.state.count,
                 selectSketch: selectDefaultVal,
                 message: '',
-                email: ''
+                email: '',
               }}
               validateOnChange
               validationSchema={this.props.order ? orderSchema : contactSchema}
               onSubmit={(values, actions) => this.handleSubmit(values, actions)}
             >
-              {({ errors, touched, status, values }) => {
+              {({errors, touched, status, values}) => {
                 values.quantity = this.state.count;
                 return (
                   <Form
                     className={`form ${order ? 'form--order' : ''}`}
-                    name="contact"
-                    method="POST"
-                    netlify-honeypot="bot-field"
-                    data-netlify="true"
+                    name='contact'
+                    method='POST'
+                    netlify-honeypot='bot-field'
+                    data-netlify='true'
                     noValidate
                   >
-                    <input type="hidden" name="form-name" value="contact" />
+                    <input type='hidden' name='form-name' value='contact' />
                     <fieldset>
                       <legend
-                        className={order ? 'form__title' : 'visuallyhidden none'}
+                        className={order ? 'form__title' : 'sr-only none'}
                       >
-                       <FormattedMessage id="form-order-title" />
+                        <FormattedMessage id='form-order-title' />
                       </legend>
                       <label
                         className={
                           order
                             ? 'form__label form__label--select-wrapper'
-                            : 'visuallyhidden none'
+                            : 'sr-only none'
                         }
-                        htmlFor="select-sketch"
+                        htmlFor='select-sketch'
                       >
                         <Field
-                          className="form__input form__input--select"
-                          component="select"
-                          name="selectSketch"
+                          className='form__input form__input--select'
+                          component='select'
+                          name='selectSketch'
                         >
                           {listSketch}
                         </Field>
                       </label>
                       <label
-                        className={order ? 'form__label' : 'visuallyhidden none'}
-                        htmlFor="quantity"
+                        className={order ? 'form__label' : 'sr-only none'}
+                        htmlFor='quantity'
                       >
-                        <FormattedMessage id="form-quantity-title" />:
+                        <FormattedMessage id='form-quantity-title' />:
                         <div>
                           <Field
-                            className="form__input form__input--quantity"
+                            className='form__input form__input--quantity'
                             onChange={this.handleChange}
                             value={this.state.count}
-                            name="quantity"
-                            type="number"
+                            name='quantity'
+                            type='number'
                           />
                           <button
-                            className="form__control"
+                            className='form__control'
                             onClick={this.increment}
-                            type="button"
+                            type='button'
                           >
                             +
                           </button>
                           <button
-                            className="form__control"
+                            className='form__control'
                             onClick={this.decrement}
-                            type="button"
+                            type='button'
                           >
                             -
                           </button>
                         </div>
                       </label>
-                      <label className="form__label" htmlFor="name">
-                        <FormattedMessage id="form-name-field" />
+                      <label className='form__label' htmlFor='name'>
+                        <FormattedMessage id='form-name-field' />
                         *:
                         <Field
                           className={
@@ -189,17 +189,17 @@ class OrderForm extends Component {
                               ? 'form__input form__input--error'
                               : 'form__input'
                           }
-                          name="name"
+                          name='name'
                         />
                         {errors.name && touched.name ? (
-                          <div className="form__error">{errors.name}</div>
+                          <div className='form__error'>{errors.name}</div>
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'visuallyhidden none' : 'form__label'}
-                        htmlFor="email"
+                        className={order ? 'sr-only none' : 'form__label'}
+                        htmlFor='email'
                       >
-                        <FormattedMessage id="form-email-field" />
+                        <FormattedMessage id='form-email-field' />
                         *:
                         <Field
                           className={
@@ -207,18 +207,18 @@ class OrderForm extends Component {
                               ? 'form__input form__input--error'
                               : 'form__input'
                           }
-                          name="email"
-                          type="email"
+                          name='email'
+                          type='email'
                         />
                         {errors.email && touched.email ? (
-                          <div className="form__error">{errors.email}</div>
+                          <div className='form__error'>{errors.email}</div>
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'visuallyhidden none' : 'form__label'}
-                        htmlFor="message"
+                        className={order ? 'sr-only none' : 'form__label'}
+                        htmlFor='message'
                       >
-                        <FormattedMessage id="form-message-field" />
+                        <FormattedMessage id='form-message-field' />
                         *:
                         <Field
                           className={
@@ -226,15 +226,15 @@ class OrderForm extends Component {
                               ? 'form__input form__input--textarea form__input--error'
                               : 'form__input form__input--textarea'
                           }
-                          name="message"
+                          name='message'
                         />
                         {errors.message && touched.message ? (
-                          <div className="form__error">{errors.message}</div>
+                          <div className='form__error'>{errors.message}</div>
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'form__label' : 'visuallyhidden none'}
-                        htmlFor="telephone"
+                        className={order ? 'form__label' : 'sr-only none'}
+                        htmlFor='telephone'
                       >
                         Телефон:*
                         <Field
@@ -243,26 +243,26 @@ class OrderForm extends Component {
                               ? 'form__input form__input--error'
                               : 'form__input'
                           }
-                          name="telephone"
-                          type="numeber"
-                          placeholder=""
+                          name='telephone'
+                          type='numeber'
+                          placeholder=''
                         />
                         {errors.telephone && touched.telephone ? (
-                          <div className="form__error">{errors.telephone}</div>
+                          <div className='form__error'>{errors.telephone}</div>
                         ) : null}
                       </label>
                       <button
-                        className="form__btn btn btn--primary-theme"
-                        type="submit"
+                        className='form__btn btn btn--primary-theme'
+                        type='submit'
                       >
                         {order ? (
-                          <FormattedMessage id="button-order-title" />
+                          <FormattedMessage id='button-order-title' />
                         ) : (
-                          <FormattedMessage id="button-sent-title" />
+                          <FormattedMessage id='button-sent-title' />
                         )}
                       </button>
                       {status && status.success ? (
-                        <div className="form__success-message">
+                        <div className='form__success-message'>
                           {status.success}
                         </div>
                       ) : (

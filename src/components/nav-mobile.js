@@ -41,7 +41,7 @@ class NavMobile extends Component {
             this.state.isToggle ? 'nav-mobile__btn--close' : ''
           }`}
         >
-          <span className='visuallyhidden'>Меню</span>
+          <span className='sr-only'>Меню</span>
         </button>
         <div
           className={`nav-mobile__menu ${
