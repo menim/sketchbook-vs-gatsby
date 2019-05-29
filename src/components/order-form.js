@@ -130,16 +130,14 @@ class OrderForm extends Component {
                   >
                     <input type='hidden' name='form-name' value='contact' />
                     <fieldset>
-                      <legend
-                        className={order ? 'form__title' : 'sr-only none'}
-                      >
+                      <legend className={order ? 'form__title' : 'none'}>
                         <FormattedMessage id='form-order-title' />
                       </legend>
                       <label
                         className={
                           order
                             ? 'form__label form__label--select-wrapper'
-                            : 'sr-only none'
+                            : 'none'
                         }
                         htmlFor='select-sketch'
                       >
@@ -152,7 +150,7 @@ class OrderForm extends Component {
                         </Field>
                       </label>
                       <label
-                        className={order ? 'form__label' : 'sr-only none'}
+                        className={order ? 'form__label' : 'none'}
                         htmlFor='quantity'
                       >
                         <FormattedMessage id='form-quantity-title' />:
@@ -196,7 +194,7 @@ class OrderForm extends Component {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'sr-only none' : 'form__label'}
+                        className={order ? 'none' : 'form__label'}
                         htmlFor='email'
                       >
                         <FormattedMessage id='form-email-field' />
@@ -215,7 +213,7 @@ class OrderForm extends Component {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'sr-only none' : 'form__label'}
+                        className={order ? 'none' : 'form__label'}
                         htmlFor='message'
                       >
                         <FormattedMessage id='form-message-field' />
@@ -233,7 +231,7 @@ class OrderForm extends Component {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'form__label' : 'sr-only none'}
+                        className={order ? 'form__label' : 'none'}
                         htmlFor='telephone'
                       >
                         Телефон:*
