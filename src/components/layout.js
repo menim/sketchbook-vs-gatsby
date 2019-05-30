@@ -20,7 +20,7 @@ class Layout extends Component {
       <ModalContext.Provider value={this.toggleModal}>
         {this.props.children}
         <Modal
-          isShow={this.state.isShow ? true : false}
+          isShow={this.state.isShow}
           close={this.toggleModal}
           locale={this.props.intl.locale}
         />
