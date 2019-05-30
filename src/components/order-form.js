@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PureComponent} from 'react';
 import {StaticQuery, graphql} from 'gatsby';
 
 import {FormattedMessage} from 'react-intl';
@@ -38,7 +38,7 @@ const contactSchema = Yup.object().shape({
     .required(<FormattedMessage id='error-void-message' />),
 });
 
-class OrderForm extends Component {
+class OrderForm extends PureComponent {
   state = {count: 1};
 
   handleChange = event => {
