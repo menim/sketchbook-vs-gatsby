@@ -1,5 +1,3 @@
 import React from 'react';
 
-export const ModalContext = React.createContext({
-  toggleModal: () => {}
-});
+export const ModalContext = React.createContext();
