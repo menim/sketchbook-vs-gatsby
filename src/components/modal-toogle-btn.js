@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ModalContext } from './modal-context';
+import {ModalContext} from './modal-context';
 import Modal from './modal';
 
-function ModalToggleButton({ children }) {
+function ModalToggleButton({children}) {
   return (
     <ModalContext.Consumer>
-      {({ toggleModal }) => (
-        <button onClick={toggleModal} className="btn btn--primary-theme">
-          {children}
-        </button>
-      )}
+      {toggleModal => {
+        return (
+          <button onClick={toggleModal} className='btn btn--primary-theme'>
+            {children}
+          </button>
+        );
+      }}
     </ModalContext.Consumer>
   );
 }
@@ -18,9 +20,9 @@ function ModalToggleButton({ children }) {
 export default ModalToggleButton;
 
 Modal.defaultProps = {
-  children: ''
+  children: '',
 };
 
 Modal.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
