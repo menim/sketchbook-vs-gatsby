@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@welldone-software/why-did-you-render": "^3.0.9",
     "autoprefixer": "^9.5.0",
     "body-scroll-lock": "^2.6.1",
     "formik": "^1.5.1",
