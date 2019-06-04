@@ -6,14 +6,24 @@
 
 // You can delete this file if you're not using it
 
-const path = require(`path`);
-const { languages } = require('./src/i18n/locales');
+exports.onCreateWebpackConfig = ({getConfig, stage}) => {
+  const config = getConfig();
+  if (stage.startsWith('develop') && config.resolve) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      'react-dom': '@hot-loader/react-dom',
+    };
+  }
+};
 
-exports.createPages = ({ graphql, actions }) => {
+const path = require(`path`);
+const {languages} = require('./src/i18n/locales');
+
+exports.createPages = ({graphql, actions}) => {
   // **Note:** The graphql function call returns a Promise
   // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
 
-  const { createPage } = actions;
+  const {createPage} = actions;
   return graphql(`
     {
       allDataJson {
@@ -36,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
     if (result.errors) {
       console.log(result.errors);
     }
-    result.data.allDataJson.edges.forEach(({ node }) => {
+    result.data.allDataJson.edges.forEach(({node}) => {
       const redirect = path.resolve('src/i18n/redirect.js');
       const redirectPage = {
         path: node.slug,
@@ -44,12 +54,12 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
           languages,
           locale: '',
-          routed: false
-        }
+          routed: false,
+        },
       };
       createPage(redirectPage);
 
-      languages.forEach(({ value }) => {
+      languages.forEach(({value}) => {
         createPage({
           path: `/${value}/${node.slug}`,
           component: path.resolve(`./src/templates/product-page.js`),
@@ -62,16 +72,16 @@ exports.createPages = ({ graphql, actions }) => {
             originalPath: `/${node.slug}`,
             slug: node.slug,
             langRu: node.ru,
-            langUk: node.uk
-          }
+            langUk: node.uk,
+          },
         });
       });
     });
   });
 };
 
-exports.onCreatePage = ({ page, actions }) => {
-  const { createPage, deletePage } = actions;
+exports.onCreatePage = ({page, actions}) => {
+  const {createPage, deletePage} = actions;
   return new Promise(resolve => {
     const redirect = path.resolve('src/i18n/redirect.js');
 
@@ -82,11 +92,11 @@ exports.onCreatePage = ({ page, actions }) => {
         languages,
         locale: '',
         routed: false,
-        redirectPage: page.path
-      }
+        redirectPage: page.path,
+      },
     };
     createPage(redirectPage);
-    languages.forEach(({ value }) => {
+    languages.forEach(({value}) => {
       const localePage = {
         ...page,
         originalPath: page.path,
@@ -95,8 +105,8 @@ exports.onCreatePage = ({ page, actions }) => {
           languages,
           locale: value,
           routed: true,
-          originalPath: page.path
-        }
+          originalPath: page.path,
+        },
       };
       // if (localePage.path.match(/^\/[a-z]{2}\/404\/$/)) {
       //   localePage.matchPath = `${value}/*`
