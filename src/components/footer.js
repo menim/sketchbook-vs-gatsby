@@ -3,7 +3,7 @@ import {FormattedMessage} from 'react-intl';
 
 import Container from './shared/container';
 import Nav from './Nav/nav';
-import Logo from './logo';
+import Logo from './shared/logo';
 
 const Footer = () => (
   <footer className='footer'>

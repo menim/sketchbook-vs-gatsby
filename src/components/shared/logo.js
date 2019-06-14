@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Link} from './../i18n';
+import {Link} from '../../i18n';
 
 const Logo = ({logoSize}) => (
   <Link className='header__logo' to='/'>
