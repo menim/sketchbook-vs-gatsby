@@ -9,8 +9,8 @@ import webpVideo from '../video/sketch-ai.webm';
 
 import Nav from './nav';
 import Logo from './logo';
-import Container from './container';
-import MultilineBg from './multilineBg';
+import Container from './shared/container';
+import MultilineBg from './shared/multilineBg';
 import Language from './language';
 import NavMobile from './navMobile';
 

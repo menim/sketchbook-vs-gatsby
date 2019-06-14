@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
 
-import { FormattedMessage } from 'react-intl'
-import { withIntl, Link } from '../i18n'
+import {FormattedMessage} from 'react-intl';
+import {withIntl, Link} from '../i18n';
 
 //import Seo from '../components/seo'
 
-import Container from '../components/container'
-import Layout from '../components/layout'
-import Main from '../components/main'
-import Header from '../components/header'
-import Footer from '../components/footer'
+import Container from '../components/shared/container';
+import Layout from '../components/layout';
+import Main from '../components/main';
+import Header from '../components/header';
+import Footer from '../components/footer';
 
-import '../sass/main.scss'
-import '../sass/generic/_swiper.scss'
+import '../sass/main.scss';
+import '../sass/generic/_swiper.scss';
 
-import pen from './../images/pen.svg'
+import pen from './../images/pen.svg';
 
 const NotFoundPage = ({intl}) => (
   <Layout>
@@ -27,17 +27,25 @@ const NotFoundPage = ({intl}) => (
     <Main>
       <Container>
         <div className='page-404'>
-          <h1 className='page-404__header'><span className='page-404__big-text'>404</span> <FormattedMessage id='header-404-title' /></h1>
-          <p className="page-404__paragraph">
+          <h1 className='page-404__header'>
+            <span className='page-404__big-text'>404</span>{' '}
+            <FormattedMessage id='header-404-title' />
+          </h1>
+          <p className='page-404__paragraph'>
             <FormattedMessage id='paragraph-404-title' />
           </p>
-          <Link to='/' className='page-404__btn btn btn--secondary-theme btn--fluid'><FormattedMessage id='return-main-title' /></Link>
+          <Link
+            to='/'
+            className='page-404__btn btn btn--secondary-theme btn--fluid'
+          >
+            <FormattedMessage id='return-main-title' />
+          </Link>
           <img className='page-404__img' src={pen} alt='' />
         </div>
-  </Container>
-  </Main>
-  <Footer />
+      </Container>
+    </Main>
+    <Footer />
   </Layout>
-)
+);
 
-export default withIntl(NotFoundPage)
+export default withIntl(NotFoundPage);

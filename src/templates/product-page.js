@@ -14,7 +14,7 @@ import Layout from '../components/layout';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Main from '../components/main';
-import Container from '../components/container';
+import Container from '../components/shared/container';
 import SimpleSlider from '../components/swiperGallery';
 import ModalToggleBtn from '../components/modalToggleBtn';
 
