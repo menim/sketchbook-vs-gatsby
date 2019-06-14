@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {injectIntl} from 'react-intl';
 
-import {ModalContext} from './modal-context';
+import {ModalContext} from '../context/modalContext';
 import Modal from './modal';
 
 class Layout extends Component {
