@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Nav from './nav';
-import Lang from './language';
+import Lang from '../language';
 import {
   disableBodyScroll,
   enableBodyScroll,

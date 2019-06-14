@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
-import {Link} from './../i18n';
-import ModalToggleBtn from './modalToggleBtn';
+import {Link} from '../../i18n';
+import ModalToggleBtn from '../modalToggleBtn';
 
 const Nav = ({telephone, isPlace, mobile}) =>
   mobile ? (

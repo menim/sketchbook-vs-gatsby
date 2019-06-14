@@ -7,12 +7,12 @@ import {FormattedMessage} from 'react-intl';
 import mp4Video from '../video/sketch-ai.mp4';
 import webpVideo from '../video/sketch-ai.webm';
 
-import Nav from './nav';
+import Nav from './Nav/nav';
+import NavMobile from './Nav/navMobile';
 import Logo from './logo';
 import Container from './shared/container';
 import MultilineBg from './shared/multilineBg';
 import Language from './language';
-import NavMobile from './navMobile';
 
 const Header = ({videoEnabled}) =>
   videoEnabled ? (
