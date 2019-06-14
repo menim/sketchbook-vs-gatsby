@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import Form from './order-form';
+import Form from './orderForm';
 
 const portalRoot =
   typeof document !== `undefined` ? document.getElementById('modal') : null;

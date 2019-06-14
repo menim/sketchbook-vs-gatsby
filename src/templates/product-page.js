@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { graphql } from 'gatsby';
-import { FormattedMessage } from 'react-intl';
-import { dynamicWithIntl, Link } from '../i18n';
+import {graphql} from 'gatsby';
+import {FormattedMessage} from 'react-intl';
+import {dynamicWithIntl, Link} from '../i18n';
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
@@ -15,10 +15,10 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import Main from '../components/main';
 import Container from '../components/container';
-import SimpleSlider from '../components/swiper-gallery';
-import ModalToggleBtn from '../components/modal-toogle-btn';
+import SimpleSlider from '../components/swiperGallery';
+import ModalToggleBtn from '../components/modalToggleBtn';
 
-const ProductPage = ({ data, intl }) => {
+const ProductPage = ({data, intl}) => {
   const product = data.allDataJson.edges[0].node;
   return (
     <>
@@ -33,25 +33,25 @@ const ProductPage = ({ data, intl }) => {
         <Header />
         <Main smVerticalOffset>
           <Container>
-            <div className="product">
-              <section className="product__view">
+            <div className='product'>
+              <section className='product__view'>
                 <SimpleSlider imgs={product.spreadImg} />
               </section>
-              <section className="product__description">
-                <h1 className="product__header">
-                  Скетчбук. <FormattedMessage id="title" />
+              <section className='product__description'>
+                <h1 className='product__header'>
+                  Скетчбук. <FormattedMessage id='title' />
                 </h1>
-                <span className="product__price">₴ {product.price}</span>
-                <p className="product__overview">
-                  <FormattedMessage id="description" />
+                <span className='product__price'>₴ {product.price}</span>
+                <p className='product__overview'>
+                  <FormattedMessage id='description' />
                 </p>
-                <div className="lang product__lang">
-                  <h2 className="lang__title">
-                    <FormattedMessage id="lang-option-message" />:
+                <div className='lang product__lang'>
+                  <h2 className='lang__title'>
+                    <FormattedMessage id='lang-option-message' />:
                   </h2>
-                  <ul className="lang__list">
+                  <ul className='lang__list'>
                     {product[intl.locale].lang.map((item, index) => (
-                      <li className="lang__item" key={index}>
+                      <li className='lang__item' key={index}>
                         {' '}
                         {item}/
                       </li>
@@ -59,10 +59,10 @@ const ProductPage = ({ data, intl }) => {
                   </ul>
                 </div>
                 <ModalToggleBtn>
-                  <FormattedMessage id="button-order-title" />
+                  <FormattedMessage id='button-order-title' />
                 </ModalToggleBtn>
-                <p className="product__paragraph">
-                  <FormattedMessage id="wholesale-message" />
+                <p className='product__paragraph'>
+                  <FormattedMessage id='wholesale-message' />
                 </p>
               </section>
             </div>
@@ -78,7 +78,7 @@ export default dynamicWithIntl(ProductPage);
 
 export const query = graphql`
   query($slug: String!) {
-    allDataJson(filter: { slug: { eq: $slug } }) {
+    allDataJson(filter: {slug: {eq: $slug}}) {
       edges {
         node {
           price
@@ -107,5 +107,5 @@ export const query = graphql`
 
 ProductPage.propTypes = {
   data: PropTypes.object.isRequired,
-  intl: PropTypes.object.isRequired
+  intl: PropTypes.object.isRequired,
 };
