@@ -9,7 +9,7 @@ import '../sass/generic/_swiper.scss';
 //import Seo from '../components/seo'
 
 import Layout from '../components/layout';
-import Header from '../components/header';
+import Header from '../components/Header';
 import Footer from '../components/footer';
 import Container from '../components/shared/container';
 import FlexContainer from '../components/shared/flexContainer';

@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import Parallax from 'react-rellax';
 import {FormattedMessage} from 'react-intl';
 
-import mp4Video from '../video/sketch-ai.mp4';
-import webpVideo from '../video/sketch-ai.webm';
+import mp4Video from '../../video/sketch-ai.mp4';
+import webpVideo from '../../video/sketch-ai.webm';
 
-import Nav from './Nav/nav';
-import NavMobile from './Nav/navMobile';
-import Logo from './shared/logo';
-import Container from './shared/container';
-import MultilineBg from './shared/multilineBg';
+import Nav from './../Nav/nav';
+import NavMobile from './../Nav/navMobile';
+import Logo from './../shared/logo';
+import Container from './../shared/container';
+import MultilineBg from './../shared/multilineBg';
 import Language from './language';
 
 const Header = ({videoEnabled}) =>

@@ -9,7 +9,7 @@ import {withIntl} from '../i18n';
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
 
-import Header from '../components/header';
+import Header from '../components/Header';
 import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Container from '../components/shared/container';

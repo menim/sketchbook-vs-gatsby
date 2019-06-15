@@ -11,7 +11,7 @@ import '../sass/generic/_swiper.scss';
 //import Seo from '../components/seo'
 
 import Layout from '../components/layout';
-import Header from '../components/header';
+import Header from '../components/Header';
 import Footer from '../components/footer';
 import Main from '../components/main';
 import Container from '../components/shared/container';
