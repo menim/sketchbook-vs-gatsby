@@ -14,7 +14,7 @@ import Layout from '../components/layout';
 import Footer from '../components/footer';
 import Container from '../components/shared/container';
 import FlexContainer from '../components/shared/flexContainer';
-import Main from '../components/main';
+import Main from '../components/shared/main';
 import Headline from '../components/headline';
 import Form from '../components/orderForm';
 

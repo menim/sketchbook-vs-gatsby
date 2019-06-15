@@ -14,7 +14,7 @@ import pay from './../images//pay.svg';
 
 import Header from '../components/Header';
 import Layout from '../components/layout';
-import Main from '../components/main';
+import Main from '../components/shared/main';
 import Container from '../components/shared/container';
 import Footer from '../components/footer';
 import Headline from '../components/headline';

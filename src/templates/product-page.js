@@ -13,7 +13,7 @@ import '../sass/generic/_swiper.scss';
 import Layout from '../components/layout';
 import Header from '../components/Header';
 import Footer from '../components/footer';
-import Main from '../components/main';
+import Main from '../components/shared/main';
 import Container from '../components/shared/container';
 import SimpleSlider from '../components/swiperGallery';
 import ModalToggleBtn from '../components/modalToggleBtn';

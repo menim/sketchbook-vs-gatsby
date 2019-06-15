@@ -13,7 +13,7 @@ import Header from '../components/Header';
 import Footer from '../components/footer';
 import Container from '../components/shared/container';
 import FlexContainer from '../components/shared/flexContainer';
-import Main from '../components/main';
+import Main from '../components/shared/main';
 import ProductList from '../components/productList';
 import WhtSketch from '../components/sketchDescription';
 import YtbVideo from '../components/youtubeVideo';
