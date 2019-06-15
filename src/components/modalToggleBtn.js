@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {ModalContext} from '../context/modalContext';
-import Modal from './modal';
 
 function ModalToggleButton({children}) {
   return (
@@ -18,11 +17,3 @@ function ModalToggleButton({children}) {
 }
 
 export default ModalToggleButton;
-
-Modal.defaultProps = {
-  children: '',
-};
-
-Modal.propTypes = {
-  children: PropTypes.node,
-};

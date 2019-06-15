@@ -6,10 +6,9 @@ import {withIntl, Link} from '../i18n';
 //import Seo from '../components/seo'
 
 import Container from '../components/shared/container';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Main from '../components/shared/main';
 import Header from '../components/Header';
-import Footer from '../components/footer';
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
@@ -44,7 +43,6 @@ const NotFoundPage = ({intl}) => (
         </div>
       </Container>
     </Main>
-    <Footer />
   </Layout>
 );
 

@@ -13,10 +13,9 @@ import delivery from './../images/delivery.svg';
 import pay from './../images//pay.svg';
 
 import Header from '../components/Header';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
-import Footer from '../components/footer';
 import Headline from '../components/headline';
 
 const Delivery = ({intl}) => (
@@ -76,7 +75,6 @@ const Delivery = ({intl}) => (
           </section>
         </Container>
       </Main>
-      <Footer />
     </Layout>
   </>
 );

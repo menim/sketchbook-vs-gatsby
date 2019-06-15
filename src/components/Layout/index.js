@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl} from 'react-intl';
+import {injectIntl, FormattedTime} from 'react-intl';
 
-import {ModalContext} from '../context/modalContext';
+import Footer from './footer';
+
+import {ModalContext} from '../../context/modalContext';
 import Modal from './modal';
 
 class Layout extends Component {
@@ -19,6 +21,7 @@ class Layout extends Component {
     return (
       <ModalContext.Provider value={this.toggleModal}>
         {this.props.children}
+        <Footer />
         <Modal
           isShow={this.state.isShow}
           close={this.toggleModal}

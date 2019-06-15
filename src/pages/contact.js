@@ -10,8 +10,7 @@ import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
 
 import Header from '../components/Header';
-import Layout from '../components/layout';
-import Footer from '../components/footer';
+import Layout from '../components/Layout';
 import Container from '../components/shared/container';
 import FlexContainer from '../components/shared/flexContainer';
 import Main from '../components/shared/main';
@@ -79,7 +78,6 @@ const Contact = ({intl}) => {
             </FlexContainer>
           </Container>
         </Main>
-        <Footer />
       </Layout>
     </>
   );

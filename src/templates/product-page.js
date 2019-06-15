@@ -10,9 +10,8 @@ import '../sass/generic/_swiper.scss';
 
 //import Seo from '../components/seo'
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Header from '../components/Header';
-import Footer from '../components/footer';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
 import SimpleSlider from '../components/swiperGallery';
@@ -68,7 +67,6 @@ const ProductPage = ({data, intl}) => {
             </div>
           </Container>
         </Main>
-        <Footer />
       </Layout>
     </>
   );
