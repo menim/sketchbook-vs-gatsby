@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Swiper from 'react-id-swiper';
 
-export default class SimpleSlider extends Component {
+export default class ProductItemSlider extends Component {
   constructor(props) {
     super(props);
     this.state = {
       gallerySwiper: null,
-      thumbnailSwiper: null
+      thumbnailSwiper: null,
     };
 
     this.galleryRef = this.galleryRef.bind(this);
@@ -15,7 +15,7 @@ export default class SimpleSlider extends Component {
   //unsafe try to fix
   componentWillUpdate(nextProps, nextState) {
     if (nextState.gallerySwiper && nextState.thumbnailSwiper) {
-      const { gallerySwiper, thumbnailSwiper } = nextState;
+      const {gallerySwiper, thumbnailSwiper} = nextState;
 
       gallerySwiper.controller.control = thumbnailSwiper;
       thumbnailSwiper.controller.control = gallerySwiper;
@@ -24,23 +24,24 @@ export default class SimpleSlider extends Component {
 
   galleryRef(ref) {
     if (ref) {
-      this.setState({ gallerySwiper: ref.swiper });
+      this.setState({gallerySwiper: ref.swiper});
     }
   }
 
   thumbRef(ref) {
     if (ref) {
-      this.setState({ thumbnailSwiper: ref.swiper });
+      this.setState({thumbnailSwiper: ref.swiper});
     }
   }
 
   render() {
     const galleryParams = {
       threshold: 50,
-      containerClass: 'swiper-container swiper-container-initialized swiper-container-horizontal product__swiper',
+      containerClass:
+        'swiper-container swiper-container-initialized swiper-container-horizontal product__swiper',
       navigation: {
         nextEl: '.swiper-product-next.swiper-product-next--secondary',
-        prevEl: '.swiper-product-prev.swiper-product-prev--secondary'
+        prevEl: '.swiper-product-prev.swiper-product-prev--secondary',
       },
     };
 
@@ -51,7 +52,8 @@ export default class SimpleSlider extends Component {
       slidesPerView: 'auto',
       touchRatio: 0.2,
       slideToClickedSlide: true,
-      containerClass: 'swiper-container swiper-container-initialized swiper-container-horizontal thumbnail'
+      containerClass:
+        'swiper-container swiper-container-initialized swiper-container-horizontal thumbnail',
     };
 
     return (
@@ -66,7 +68,7 @@ export default class SimpleSlider extends Component {
         <Swiper {...thumbnailParams} ref={this.thumbRef}>
           {this.props.imgs.map((item, index) => (
             <div key={index}>
-              <img height="100" src={item.childImageSharp.fixed.src} />
+              <img height='100' src={item.childImageSharp.fixed.src} />
             </div>
           ))}
         </Swiper>

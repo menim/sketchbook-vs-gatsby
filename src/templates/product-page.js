@@ -14,7 +14,7 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
-import SimpleSlider from '../components/swiperGallery';
+import ProductItemSlider from '../components/productItemSlider';
 import ModalToggleBtn from '../components/shared/modalToggleBtn';
 
 const ProductPage = ({data, intl}) => {
@@ -34,7 +34,7 @@ const ProductPage = ({data, intl}) => {
           <Container>
             <div className='product'>
               <section className='product__view'>
-                <SimpleSlider imgs={product.spreadImg} />
+                <ProductItemSlider imgs={product.spreadImg} />
               </section>
               <section className='product__description'>
                 <h1 className='product__header'>
