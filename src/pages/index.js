@@ -13,9 +13,9 @@ import Header from '../components/Header';
 import Container from '../components/shared/container';
 import FlexContainer from '../components/shared/flexContainer';
 import Main from '../components/shared/main';
-import ProductList from '../components/productList';
-import WhtSketch from '../components/sketchDescription';
-import YtbVideo from '../components/youtubeVideo';
+import ProductList from '../components/MainPage/productList';
+import WhtSketch from '../components/MainPage/sketchDescription';
+import YtbVideo from '../components/MainPage/youtubeVideo';
 
 const IndexPage = ({intl}) => (
   <>

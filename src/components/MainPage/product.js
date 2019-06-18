@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {FormattedMessage} from 'react-intl';
-import {Link} from './../i18n';
-import Pict from './shared/pict';
+import {Link} from '../../i18n';
+import Pict from '../shared/pict';
 import Swiper from 'react-id-swiper';
 
 const Product = ({locale, productData}) => {
