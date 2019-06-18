@@ -3,7 +3,7 @@ import React from 'react';
 import {FormattedMessage} from 'react-intl';
 import {withIntl, Link} from '../i18n';
 
-//import Seo from '../components/seo'
+//import Seo from '../components/shared/seo'
 
 import Container from '../components/shared/container';
 import Layout from '../components/Layout';

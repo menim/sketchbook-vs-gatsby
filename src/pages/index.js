@@ -6,7 +6,7 @@ import {withIntl} from '../i18n';
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
 
-//import Seo from '../components/seo'
+//import Seo from '../components/shared/seo'
 
 import Layout from '../components/Layout';
 import Header from '../components/Header';

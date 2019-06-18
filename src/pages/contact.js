@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {FormattedMessage} from 'react-intl';
 import {withIntl} from '../i18n';
 
-//import Seo from '../components/seo'
+//import Seo from '../components/shared/seo'
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
