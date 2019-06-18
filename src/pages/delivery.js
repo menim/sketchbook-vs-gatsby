@@ -16,7 +16,7 @@ import Header from '../components/Header';
 import Layout from '../components/Layout';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
-import Headline from '../components/headline';
+import Headline from '../components/shared/headline';
 
 const Delivery = ({intl}) => (
   <>
