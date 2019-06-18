@@ -15,7 +15,7 @@ import Header from '../components/Header';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
 import SimpleSlider from '../components/swiperGallery';
-import ModalToggleBtn from '../components/modalToggleBtn';
+import ModalToggleBtn from '../components/shared/modalToggleBtn';
 
 const ProductPage = ({data, intl}) => {
   const product = data.allDataJson.edges[0].node;

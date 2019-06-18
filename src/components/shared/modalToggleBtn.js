@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ModalContext} from '../context/modalContext';
+import {ModalContext} from '../../context/modalContext';
 
 function ModalToggleButton({children}) {
   return (
