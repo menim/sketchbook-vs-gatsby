@@ -14,7 +14,7 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
-import ProductItemSlider from '../components/productItemSlider';
+import ProductItemSlider from '../components/ProductPage/productItemSlider';
 import ModalToggleBtn from '../components/shared/modalToggleBtn';
 
 const ProductPage = ({data, intl}) => {
