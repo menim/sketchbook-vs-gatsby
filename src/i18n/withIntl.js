@@ -1,20 +1,20 @@
-import React, { Component } from "react"
-import PropTypes from "prop-types"
-import { IntlProvider, addLocaleData, injectIntl } from "react-intl"
-import { localeData } from "./locales"
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {IntlProvider, addLocaleData, injectIntl} from 'react-intl';
+import {localeData} from './locales';
 
-addLocaleData(localeData)
+addLocaleData(localeData);
 
 export default ComposedComponent => {
   class withIntl extends Component {
     static childContextTypes = {
       language: PropTypes.object,
-    }
+    };
 
     constructor(props) {
-      super()
-      const { pageContext } = props
-      const { locale, languages, originalPath } = pageContext
+      super(props);
+      const {pageContext} = props;
+      const {locale, languages, originalPath, langUk, langRu} = pageContext;
 
       this.state = {
         language: {
@@ -22,27 +22,35 @@ export default ComposedComponent => {
           languages,
           originalPath,
         },
-      }
+        langRu,
+        langUk,
+      };
     }
 
     getChildContext() {
-      const { language } = this.state
+      const {language} = this.state;
       return {
         language,
-      }
+      };
     }
 
     render() {
-      const { language } = this.state
-      const locale = language.locale
-      const messages = require(`./locales/${locale}.js`) // eslint-disable-line
-      const IntlComponent = injectIntl(ComposedComponent)
+      const {language, langRu, langUk} = this.state;
+      const locale = language.locale || 'uk';
+      const staticMessages = require(`./locales/${locale}.js`); // eslint-disable-line
+      const dynamicMessages = locale === 'uk' ? langUk : langRu;
+      const messages = {...staticMessages, ...dynamicMessages};
+      const IntlComponent = injectIntl(ComposedComponent);
       return (
-        <IntlProvider textComponent={React.Fragment} locale={locale} messages={messages}>
+        <IntlProvider
+          textComponent={React.Fragment}
+          locale={locale}
+          messages={messages}
+        >
           <IntlComponent {...this.props} />
         </IntlProvider>
-      )
+      );
     }
   }
-  return withIntl
-}
+  return withIntl;
+};
