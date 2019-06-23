@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 import {IntlProvider, addLocaleData, injectIntl} from 'react-intl';
 import {localeData} from './locales';
 
+import {LangContext} from '../context/langContext';
+
 addLocaleData(localeData);
 
 export default ComposedComponent => {
   class withIntl extends Component {
-    static childContextTypes = {
-      language: PropTypes.object,
-    };
-
     constructor(props) {
       super(props);
       const {pageContext} = props;
@@ -27,13 +25,6 @@ export default ComposedComponent => {
       };
     }
 
-    getChildContext() {
-      const {language} = this.state;
-      return {
-        language,
-      };
-    }
-
     render() {
       const {language, langRu, langUk} = this.state;
       const locale = language.locale || 'uk';
@@ -47,7 +38,9 @@ export default ComposedComponent => {
           locale={locale}
           messages={messages}
         >
-          <IntlComponent {...this.props} />
+          <LangContext.Provider value={this.state.language}>
+            <IntlComponent {...this.props} />
+          </LangContext.Provider>
         </IntlProvider>
       );
     }

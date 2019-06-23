@@ -1,49 +1,46 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {LangContext} from '../../context/langContext';
 
 class Language extends Component {
-  static contextTypes = {
-    language: PropTypes.object
-  };
+  static contextType = LangContext;
 
   state = {
-    value: ''
+    value: '',
   };
 
   componentDidMount() {
-    const { language } = this.context;
+    const {locale} = this.context;
     this.setState({
-      value: language.locale || language.detected
+      value: locale,
     });
   }
 
   handleClick = event => {
-    const { language } = this.context;
-    const { originalPath } = language;
-    const { value } = event.target;
+    const {originalPath} = this.context;
+    const {value} = event.target;
     if (value === this.state.value) {
       return;
     }
 
-    this.setState({ value }, () => {
+    this.setState({value}, () => {
       localStorage.setItem('language', value);
       window.location.href = `/${value}${originalPath}`;
     });
   };
 
   render() {
-    const { language } = this.context;
-    const { languages, locale } = language;
-    const { value } = this.state;
-    const { mobile } = this.props;
+    const {languages, locale} = this.context;
+    const {value} = this.state;
+    const {mobile} = this.props;
 
     if (!value) {
       return null;
     }
 
     return (
-      <div className="languages">
-        {languages.map(({ value, text }) => (
+      <div className='languages'>
+        {languages.map(({value, text}) => (
           <button
             className={
               locale === value
