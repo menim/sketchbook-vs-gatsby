@@ -55,6 +55,7 @@
       width: 0;
     }
 
+    &--active,
     &:hover {
       &::after {
         height: 2px;

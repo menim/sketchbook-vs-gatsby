@@ -10,7 +10,7 @@ const I18nLink = ({to, children, ...rest}) => (
       const {locale} = context;
       const toWithLang = locale ? `/${locale}${to}` : `${to}`;
       return (
-        <Link to={toWithLang} {...rest}>
+        <Link activeClassName='menu__link--active' to={toWithLang} {...rest}>
           {children}
         </Link>
       );
