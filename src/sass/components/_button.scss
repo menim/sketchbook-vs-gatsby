@@ -1,27 +1,15 @@
 .btn {
-  align-items: center;
   border-radius: 1.4285em;
   color: $white;
   border: 1px solid transparent;
-  display: flex;
+  display: inline-block;
   font-size: $text-sm;
-  justify-content: center;
-  height: 2.66em;
   line-height: 1;
+  padding: 0.7em 2em;
   text-align: center;
   text-decoration: none;
   transition: color 150ms ease-out, background-color 150ms ease-out,
     border 150ms ease-out;
-  width: 8.93em;
-
-  &--link {
-    &::after {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      vertical-align: middle;
-    }
-  }
 
   &--primary-theme {
     background-color: $carnation;
@@ -37,22 +25,6 @@
       border: 1px solid $mountain-meadow;
       color: $mountain-meadow;
     }
-  }
-
-  &--lg {
-    font-size: $text-md;
-    margin-top: 1.25em;
-    padding: 0.375em 1.25em;
-  }
-
-  &--block {
-    display: block;
-  }
-
-  &--fluid {
-    width: auto;
-    height: auto;
-    padding: 1em 1.25em;
   }
 
   &:hover {
