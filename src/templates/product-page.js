@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import {graphql} from 'gatsby';
 import {FormattedMessage} from 'react-intl';
-import {dynamicWithIntl, Link} from '../i18n';
+import {withIntl, Link} from '../i18n';
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
@@ -21,7 +21,7 @@ const ProductPage = ({data, intl}) => {
   const product = data.allDataJson.edges[0].node;
   return (
     <>
-      <Layout>
+      <Layout locale={intl.locale}>
         {/* <Seo 
         description={`${intl.messages.productPageDescriptionTemplatePre}, «${intl.messages.title}», ${intl.messages.productPageDescriptionTemplatePost}`}
         title={`${intl.messages.title}. ${intl.messages.productPageTitleTemplate}`}
@@ -32,6 +32,9 @@ const ProductPage = ({data, intl}) => {
         <Header />
         <Main smVerticalOffset>
           <Container>
+            <Link to='/' className='l-container__btn btn btn--secondary-theme'>
+              <FormattedMessage id='return-main-title' />
+            </Link>
             <div className='product'>
               <section className='product__view'>
                 <ProductItemSlider imgs={product.spreadImg} />
@@ -72,7 +75,7 @@ const ProductPage = ({data, intl}) => {
   );
 };
 
-export default dynamicWithIntl(ProductPage);
+export default withIntl(ProductPage);
 
 export const query = graphql`
   query($slug: String!) {
