@@ -58,6 +58,9 @@ class Layout extends Component {
               close={this.state.modal.toggle}
               locale={this.props.intl.locale}
             />
+            <div
+              className={`backdrop ${this.state.cart.cartStatus ? '' : 'none'}`}
+            />
           </CartContext.Provider>
         </ModalContext.Provider>
       </InterfaceContext.Provider>
