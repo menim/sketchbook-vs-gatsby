@@ -1,22 +1,21 @@
 .close {
   background-color: transparent;
-  border: 0;
-  width: 2.75rem;
-  height: 2.75rem;
-  opacity: 0.3;
-
-  &:hover {
-    opacity: 1;
-  }
 
   &::before,
   &::after {
+    content: '';
     position: absolute;
     top: 0;
-    content: '';
     height: 2.0625rem;
-    width: 0.125rem;
+    width: 0.325rem;
     background-color: #333;
+  }
+
+  &--theme-secondary {
+    &::after,
+    &::before {
+      background-color: $mountain-meadow;
+    }
   }
 
   &::before {
