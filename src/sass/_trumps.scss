@@ -100,3 +100,11 @@
 .none {
   display: none;
 }
+
+.animationZoomIn {
+  transform: scale(1);
+}
+
+.animationZoomOut {
+  transform: scale(0);
+}
