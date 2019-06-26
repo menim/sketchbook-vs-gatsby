@@ -12,6 +12,18 @@ import Modal from './modal';
 
 class Layout extends Component {
   state = {
+    cart: {
+      cartStatus: false,
+      toggle: () => {
+        this.setState(prevState => ({
+          cart: {
+            ...prevState.cart,
+            cartStatus: !prevState.cart.cartStatus,
+          },
+        }));
+        this.state.interface.hideScroll();
+      },
+    },
     interface: {
       hideScroll: () => {
         document.body.classList.contains('modal-open')

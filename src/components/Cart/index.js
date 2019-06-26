@@ -1,35 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
 import CartToggleBtn from './cartToggleBtn';
+import {CartContext} from '../../context/cartContext';
 
-class Cart extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cartStatus: false,
-    };
-  }
-
-  toggleCart = () => {
-    this.setState(prevState => ({
-      cartStatus: !prevState.cartStatus,
-    }));
-  };
-
-  render() {
-    return (
-      <article
-        className={`cart ${
-          this.state.cartStatus ? 'cart--open' : 'cart--close'
-        } `}
-      >
-        <CartToggleBtn
-          toggle={this.toggleCart}
-          status={this.state.cartStatus}
-        />
-        <div className='cart__content'>Cart is Empty</div>
-      </article>
-    );
-  }
-}
+const Cart = () => (
+  <CartContext.Consumer>
+    {cart => (
+      <>
+        <article
+          className={`cart ${cart.cartStatus ? 'cart--open' : 'cart--close'} `}
+        >
+          <CartToggleBtn />
+          <div className='cart__content'>Cart is Empty</div>
+        </article>
+      </>
+    )}
+  </CartContext.Consumer>
+);
 
 export default Cart;
