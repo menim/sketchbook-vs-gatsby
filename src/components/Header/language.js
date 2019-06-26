@@ -39,7 +39,7 @@ class Language extends Component {
     }
 
     return (
-      <div className='languages'>
+      <div className='header__languages languages'>
         {languages.map(({value, text}) => (
           <button
             className={
