@@ -8,6 +8,8 @@ import Footer from './footer';
 import {ModalContext} from '../../context/modalContext';
 import {CartContext} from '../../context/cartContext';
 import {InterfaceContext} from '../../context/interfaceContext';
+
+import Backdrop from '../shared/backdrop';
 import Modal from './modal';
 
 class Layout extends Component {
@@ -58,9 +60,7 @@ class Layout extends Component {
               close={this.state.modal.toggle}
               locale={this.props.intl.locale}
             />
-            <div
-              className={`backdrop ${this.state.cart.cartStatus ? '' : 'none'}`}
-            />
+            <Backdrop isVisible={this.state.cart.cartStatus} />
           </CartContext.Provider>
         </ModalContext.Provider>
       </InterfaceContext.Provider>

@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
+
 import Form from '../shared/orderForm';
+import Backdrop from '../shared/backdrop';
 
 const portalRoot =
   typeof document !== `undefined` ? document.getElementById('modal') : null;
@@ -26,7 +28,7 @@ class Modal extends Component {
     if (this.el) {
       return ReactDOM.createPortal(
         <div className={this.props.isShow ? '' : 'none'}>
-          <div className='backdrop' onClick={this.props.close} />
+          <Backdrop closeModal={this.props.close} isVisible />
           <div className='modal'>
             <button className='modal__close close' onClick={this.props.close} />
             <Form order locale={this.props.locale} />
