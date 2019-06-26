@@ -6,6 +6,7 @@ import Cart from '../Cart';
 import Footer from './footer';
 
 import {ModalContext} from '../../context/modalContext';
+import {CartContext} from '../../context/cartContext';
 import Modal from './modal';
 
 class Layout extends Component {
@@ -34,14 +35,16 @@ class Layout extends Component {
   render() {
     return (
       <ModalContext.Provider value={this.state.modal.toggle}>
-        <Cart />
-        {this.props.children}
-        <Footer />
-        <Modal
-          isShow={this.state.modal.isShow}
-          close={this.state.modal.toggle}
-          locale={this.props.intl.locale}
-        />
+        <CartContext.Provider>
+          <Cart />
+          {this.props.children}
+          <Footer />
+          <Modal
+            isShow={this.state.modal.isShow}
+            close={this.state.modal.toggle}
+            locale={this.props.intl.locale}
+          />
+        </CartContext.Provider>
       </ModalContext.Provider>
     );
   }
