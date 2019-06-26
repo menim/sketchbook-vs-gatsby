@@ -35,9 +35,9 @@ class Layout extends Component {
 
   render() {
     return (
-      <InterfaceContext.Provider>
-        <ModalContext.Provider value={this.state.modal.toggle}>
-          <CartContext.Provider>
+      <InterfaceContext.Provider value={this.state.interface}>
+        <ModalContext.Provider value={this.state.modal}>
+          <CartContext.Provider value={this.state.cart}>
             <Cart />
             {this.props.children}
             <Footer />

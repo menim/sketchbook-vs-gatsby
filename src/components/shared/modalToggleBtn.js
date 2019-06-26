@@ -5,9 +5,9 @@ import {ModalContext} from '../../context/modalContext';
 function ModalToggleButton({children}) {
   return (
     <ModalContext.Consumer>
-      {toggleModal => {
+      {modal => {
         return (
-          <button onClick={toggleModal} className='btn btn--primary-theme'>
+          <button onClick={modal.toggle} className='btn btn--primary-theme'>
             {children}
           </button>
         );
