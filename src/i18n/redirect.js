@@ -1,18 +1,16 @@
-import React, { PureComponent } from 'react';
-import { withPrefix } from 'gatsby';
-import { languages } from './index';
+import React, {PureComponent} from 'react';
+import {navigate} from 'gatsby';
 
 class Redirect extends PureComponent {
   constructor(props) {
     super(props);
-    const langKeys = languages.map(language => language.value);
-    const { pathname } = props.location; // Skip build, Browsers only
+    const {pathname} = props.location;
     if (typeof window !== 'undefined') {
       const detected = window.localStorage.getItem('language') || 'uk';
+      const newUrl = `/${detected}/${pathname}`;
 
-      const newUrl = withPrefix(`/${detected}/${pathname}`);
       window.localStorage.setItem('language', detected);
-      window.location.replace(newUrl);
+      navigate(newUrl);
     }
   }
 
