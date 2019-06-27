@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 
-import Form from '../shared/orderForm';
+import Form from '../shared/form';
 import Backdrop from '../shared/backdrop';
 
 const portalRoot =

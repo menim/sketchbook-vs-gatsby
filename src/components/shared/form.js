@@ -32,7 +32,7 @@ const contactSchema = Yup.object().shape({
     .required(<FormattedMessage id='error-void-message' />),
 });
 
-class OrderForm extends PureComponent {
+class SimpleForm extends PureComponent {
   state = {count: 1};
 
   handleChange = event => {
@@ -253,6 +253,7 @@ class OrderForm extends PureComponent {
                           <FormattedMessage id='button-sent-title' />
                         )}
                       </button>
+
                       {status && status.success ? (
                         <div className='form__success-message'>
                           {status.success}
@@ -272,4 +273,4 @@ class OrderForm extends PureComponent {
   }
 }
 
-export default OrderForm;
+export default SimpleForm;
