@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Backdrop = ({isVisible, closeModal}) => (
+const Backdrop = ({isVisible, ...restProps}) => (
   <div
     className={`backdrop ${isVisible ? '' : 'none'}`}
-    onClick={typeof closeModal === 'function' ? closeModal : null}
+    onClick={restProps.closeModal || null}
   />
 );
 
@@ -12,5 +12,4 @@ export default Backdrop;
 
 Backdrop.propTypes = {
   isVisible: PropTypes.bool.isRequired,
-  closeModal: PropTypes.func,
 };
