@@ -31,7 +31,7 @@ class Modal extends Component {
           <Backdrop closeModal={this.props.close} isVisible />
           <div className='modal'>
             <button className='modal__close close' onClick={this.props.close} />
-            <Form order locale={this.props.locale} />
+            <Form formType='order' locale={this.props.locale} />
           </div>
         </div>,
         this.el

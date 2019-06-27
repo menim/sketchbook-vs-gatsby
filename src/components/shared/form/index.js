@@ -6,7 +6,7 @@ import {encode} from '../../../helpers';
 import {FormattedMessage} from 'react-intl';
 import {Formik, Form, Field} from 'formik';
 
-import {orderSchema, contactSchema} from './schemas';
+import {schemas} from './schemas';
 
 class SimpleForm extends PureComponent {
   state = {count: 1};
@@ -43,7 +43,7 @@ class SimpleForm extends PureComponent {
   };
 
   render() {
-    const {locale, order} = this.props;
+    const {locale, formType, order} = this.props;
 
     return (
       <StaticQuery
@@ -72,7 +72,6 @@ class SimpleForm extends PureComponent {
             </option>
           ));
           const selectDefaultVal = listSketch[0].props.value; // get default value for select component
-
           return (
             <Formik
               initialValues={{
@@ -84,28 +83,32 @@ class SimpleForm extends PureComponent {
                 email: '',
               }}
               validateOnChange
-              validationSchema={this.props.order ? orderSchema : contactSchema}
+              validationSchema={schemas[formType]}
               onSubmit={(values, actions) => this.handleSubmit(values, actions)}
             >
               {({errors, touched, status, values}) => {
                 values.quantity = this.state.count;
                 return (
                   <Form
-                    className={`form ${order ? 'form--order' : ''}`}
                     name='contact'
                     method='POST'
                     netlify-honeypot='bot-field'
                     data-netlify='true'
                     noValidate
+                    className={`form form--${formType}`}
                   >
                     <input type='hidden' name='form-name' value='contact' />
                     <fieldset>
-                      <legend className={order ? 'form__title' : 'none'}>
+                      <legend
+                        className={
+                          formType === 'order' ? 'form__title' : 'none'
+                        }
+                      >
                         <FormattedMessage id='form-order-title' />
                       </legend>
                       <label
                         className={
-                          order
+                          formType === 'order'
                             ? 'form__label form__label--select-wrapper'
                             : 'none'
                         }
@@ -120,7 +123,9 @@ class SimpleForm extends PureComponent {
                         </Field>
                       </label>
                       <label
-                        className={order ? 'form__label' : 'none'}
+                        className={
+                          formType === 'order' ? 'form__label' : 'none'
+                        }
                         htmlFor='quantity'
                       >
                         <FormattedMessage id='form-quantity-title' />:
@@ -164,7 +169,11 @@ class SimpleForm extends PureComponent {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'none' : 'form__label'}
+                        className={
+                          formType === 'order' || formType === 'cartOrder'
+                            ? 'none'
+                            : 'form__label'
+                        }
                         htmlFor='email'
                       >
                         <FormattedMessage id='form-email-field' />
@@ -183,25 +192,11 @@ class SimpleForm extends PureComponent {
                         ) : null}
                       </label>
                       <label
-                        className={order ? 'none' : 'form__label'}
-                        htmlFor='message'
-                      >
-                        <FormattedMessage id='form-message-field' />
-                        *:
-                        <Field
-                          className={
-                            errors.message && touched.message
-                              ? 'form__input form__input--textarea form__input--error'
-                              : 'form__input form__input--textarea'
-                          }
-                          name='message'
-                        />
-                        {errors.message && touched.message ? (
-                          <div className='form__error'>{errors.message}</div>
-                        ) : null}
-                      </label>
-                      <label
-                        className={order ? 'form__label' : 'none'}
+                        className={
+                          formType === 'order' || formType == 'cartOrder'
+                            ? 'form__label'
+                            : 'none'
+                        }
                         htmlFor='telephone'
                       >
                         Телефон:*
@@ -219,11 +214,33 @@ class SimpleForm extends PureComponent {
                           <div className='form__error'>{errors.telephone}</div>
                         ) : null}
                       </label>
+                      <label
+                        className={
+                          formType === 'order' || formType === 'cartOrder'
+                            ? 'none'
+                            : 'form__label'
+                        }
+                        htmlFor='message'
+                      >
+                        <FormattedMessage id='form-message-field' />
+                        *:
+                        <Field
+                          className={
+                            errors.message && touched.message
+                              ? 'form__input form__input--textarea form__input--error'
+                              : 'form__input form__input--textarea'
+                          }
+                          name='message'
+                        />
+                        {errors.message && touched.message ? (
+                          <div className='form__error'>{errors.message}</div>
+                        ) : null}
+                      </label>
                       <button
                         className='form__btn btn btn--primary-theme'
                         type='submit'
                       >
-                        {order ? (
+                        {formType === 'order' || formType === 'cartOrder' ? (
                           <FormattedMessage id='button-order-title' />
                         ) : (
                           <FormattedMessage id='button-sent-title' />
