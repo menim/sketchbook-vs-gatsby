@@ -1,17 +1,11 @@
-import React, {Component, PureComponent} from 'react';
+import React, {PureComponent} from 'react';
 import {StaticQuery, graphql} from 'gatsby';
+
+import {encode, phoneRegExp} from '../../helpers';
 
 import {FormattedMessage} from 'react-intl';
 import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
-
-const encode = data => {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
-};
-
-const phoneRegExp = /^\+?3?8?(0\d{9})$/;
 
 const orderSchema = Yup.object().shape({
   name: Yup.string()
