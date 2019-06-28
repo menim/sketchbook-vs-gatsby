@@ -21,7 +21,7 @@ const ProductPage = ({data, intl}) => {
   const product = data.allDataJson.edges[0].node;
   return (
     <>
-      <Layout locale={intl.locale}>
+      <Layout>
         {/* <Seo 
         description={`${intl.messages.productPageDescriptionTemplatePre}, «${intl.messages.title}», ${intl.messages.productPageDescriptionTemplatePost}`}
         title={`${intl.messages.title}. ${intl.messages.productPageTitleTemplate}`}
@@ -32,39 +32,76 @@ const ProductPage = ({data, intl}) => {
         <Header />
         <Main smVerticalOffset>
           <Container>
-            <Link to='/' className='l-container__btn btn btn--secondary-theme'>
-              <FormattedMessage id='return-main-title' />
+            <Link to="/" className="l-container__btn btn btn--secondary-theme">
+              <FormattedMessage id="return-main-title" />
             </Link>
-            <div className='product'>
-              <section className='product__view'>
+            <div className="product">
+              <section className="product__view">
                 <ProductItemSlider imgs={product.spreadImg} />
               </section>
-              <section className='product__description'>
-                <h1 className='product__header'>
-                  Скетчбук. <FormattedMessage id='title' />
+              <section className="product__description">
+                <h1 className="product__header">
+                  Скетчбук. <FormattedMessage id="title" />
                 </h1>
-                <span className='product__price'>₴ {product.price}</span>
-                <p className='product__overview'>
-                  <FormattedMessage id='description' />
+                <span className="product__price">₴ {product.price}</span>
+                <p className="product__overview">
+                  <FormattedMessage id="description" />
                 </p>
-                <div className='lang product__lang'>
-                  <h2 className='lang__title'>
-                    <FormattedMessage id='lang-option-message' />:
-                  </h2>
-                  <ul className='lang__list'>
-                    {product[intl.locale].lang.map((item, index) => (
-                      <li className='lang__item' key={index}>
-                        {' '}
-                        {item}/
-                      </li>
+                <form className="productForm" onSubmit={console.log('test')}>
+                  <fieldset className="options-list product__options-list">
+                    <legend className="options-list__title">
+                      <FormattedMessage id="lang-option-title" />:
+                    </legend>
+                    {product[intl.locale].lang.map((lang, index) => (
+                      <div className="options-list__item" key={index}>
+                        <input
+                          className="options-list__input sr-only"
+                          id={`lang${index}`}
+                          type="radio"
+                          name="lang"
+                          value={lang}
+                          defaultChecked={index === 0 ? true : false}
+                        />
+                        <label
+                          className="options-list__label"
+                          htmlFor={`lang${index}`}
+                        >
+                          {lang}
+                        </label>
+                      </div>
                     ))}
-                  </ul>
-                </div>
-                <ModalToggleBtn>
-                  <FormattedMessage id='button-order-title' />
-                </ModalToggleBtn>
-                <p className='product__paragraph'>
-                  <FormattedMessage id='wholesale-message' />
+                  </fieldset>
+                  <fieldset className="options-list product__options-list">
+                    <legend className="options-list__title">
+                      <FormattedMessage id="cover-option-title" />:
+                    </legend>
+                    {product.cover.map((cover, index) => (
+                      <div className="options-list__item" key={index}>
+                        <input
+                          className="options-list__input sr-only"
+                          id={`${product.color[index]}`}
+                          type="radio"
+                          name="cover"
+                          value={`${cover.childImageSharp.fixed.src} ${
+                            product.color[index]
+                          }`}
+                          defaultChecked={index === 0 ? true : false}
+                        />
+                        <label
+                          className="options-list__label"
+                          htmlFor={`${product.color[index]}`}
+                        >
+                          <img src={cover.childImageSharp.fixed.src} alt="" />
+                        </label>
+                      </div>
+                    ))}
+                  </fieldset>
+                  <button className="btn btn--primary-theme">
+                    <FormattedMessage id="cart-btn-title" />
+                  </button>
+                </form>
+                <p className="product__paragraph">
+                  <FormattedMessage id="wholesale-message" />
                 </p>
               </section>
             </div>
@@ -83,6 +120,14 @@ export const query = graphql`
       edges {
         node {
           price
+          color
+          cover {
+            childImageSharp {
+              fixed(height: 80) {
+                src
+              }
+            }
+          }
           spreadImg {
             childImageSharp {
               fluid(maxHeight: 500) {

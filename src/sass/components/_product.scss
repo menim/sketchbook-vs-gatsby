@@ -62,8 +62,8 @@
     text-align: left;
   }
 
-  &__lang {
-    margin-bottom: 4em;
+  &__options-list {
+    margin-bottom: 2em;
 
     @include respond-below(m) {
       margin-bottom: 2em;
