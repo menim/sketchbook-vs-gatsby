@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Nav from './nav';
+import Button from '../shared/button';
+
 import {
   disableBodyScroll,
   enableBodyScroll,
@@ -33,15 +35,15 @@ class NavMobile extends Component {
 
   render() {
     return (
-      <div className='nav-mobile'>
-        <button
+      <div className="nav-mobile">
+        <Button
           onClick={this.toggleMenu}
           className={`nav-mobile__btn  ${
             this.state.isToggle ? 'nav-mobile__btn--close' : ''
           }`}
         >
-          <span className='sr-only'>Меню</span>
-        </button>
+          <span className="sr-only">Меню</span>
+        </Button>
         <div
           className={`nav-mobile__menu ${
             this.state.isToggle ? 'nav-mobile__menu--open' : ''

@@ -16,6 +16,7 @@ import Main from '../components/shared/main';
 import Container from '../components/shared/container';
 import ProductItemSlider from '../components/ProductPage/productItemSlider';
 import ModalToggleBtn from '../components/shared/modalToggleBtn';
+import Button from '../components/shared/button';
 
 const ProductPage = ({data, intl}) => {
   const product = data.allDataJson.edges[0].node;
@@ -32,9 +33,14 @@ const ProductPage = ({data, intl}) => {
         <Header />
         <Main smVerticalOffset>
           <Container>
-            <Link to="/" className="l-container__btn btn btn--secondary-theme">
+            <Button
+              as={Link}
+              to="/"
+              theme="secondary"
+              className="l-container__btn"
+            >
               <FormattedMessage id="return-main-title" />
-            </Link>
+            </Button>
             <div className="product">
               <section className="product__view">
                 <ProductItemSlider imgs={product.spreadImg} />
@@ -96,9 +102,9 @@ const ProductPage = ({data, intl}) => {
                       </div>
                     ))}
                   </fieldset>
-                  <button className="btn btn--primary-theme">
+                  <Button theme="primary">
                     <FormattedMessage id="cart-btn-title" />
-                  </button>
+                  </Button>
                 </form>
                 <p className="product__paragraph">
                   <FormattedMessage id="wholesale-message" />

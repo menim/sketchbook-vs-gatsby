@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {FormattedMessage} from 'react-intl';
-import {Link} from '../../i18n';
+import Button from '../shared/button';
 import Pict from '../shared/pict';
 import Swiper from 'react-id-swiper';
+
+import {Link} from '../../i18n/';
 
 const Product = ({locale, productData}) => {
   const params = {
@@ -27,26 +29,28 @@ const Product = ({locale, productData}) => {
   return (
     <div className="l-item">
       <div className="sketchbook">
-        {productData.cover.length > 1
-          ? <Swiper {...params}>
-              {productData.cover.map ((item, index) => (
-                <div key={index}>
-                  <img
-                    className="sketchbook__preview"
-                    src={item.childImageSharp.fixed.src}
-                  />
-                </div>
-              ))}
-            </Swiper>
-          : <Pict
-              className="sketchbook__preview"
-              img={productData.cover[0].childImageSharp.fixed}
-            />}
+        {productData.cover.length > 1 ? (
+          <Swiper {...params}>
+            {productData.cover.map((item, index) => (
+              <div key={index}>
+                <img
+                  className="sketchbook__preview"
+                  src={item.childImageSharp.fixed.src}
+                />
+              </div>
+            ))}
+          </Swiper>
+        ) : (
+          <Pict
+            className="sketchbook__preview"
+            img={productData.cover[0].childImageSharp.fixed}
+          />
+        )}
         <h2 className="sketchbook__title">{productData[locale].title}</h2>
         <div className="sketchbook__bottom-wrapper">
-          <Link className="btn btn--secondary-theme" to={slug}>
+          <Button as={Link} theme="secondary" to={slug}>
             <FormattedMessage id="button-more-details" />
-          </Link>
+          </Button>
           <span className="sketchbook__price"> {productData.price} грн</span>
         </div>
       </div>

@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 import Form from '../shared/form';
 import Backdrop from '../shared/backdrop';
+import Button from '../shared/button';
 
 const portalRoot =
   typeof document !== `undefined` ? document.getElementById('modal') : null;
@@ -29,9 +30,9 @@ class Modal extends Component {
       return ReactDOM.createPortal(
         <div className={this.props.isShow ? '' : 'none'}>
           <Backdrop closeModal={this.props.close} isVisible />
-          <div className='modal'>
-            <button className='modal__close close' onClick={this.props.close} />
-            <Form formType='order' locale={this.props.locale} />
+          <div className="modal">
+            <Button className="modal__close close" onClick={this.props.close} />
+            <Form formType="order" locale={this.props.locale} />
           </div>
         </div>,
         this.el

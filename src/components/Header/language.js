@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {LangContext} from '../../context/langContext';
+import Button from '../shared/button';
 
 class Language extends Component {
   static contextType = LangContext;
@@ -39,9 +40,9 @@ class Language extends Component {
     }
 
     return (
-      <div className='header__languages languages'>
+      <div className="header__languages languages">
         {languages.map(({value, text}) => (
-          <button
+          <Button
             className={
               locale === value
                 ? 'languages__item  languages__item--active'
@@ -52,7 +53,7 @@ class Language extends Component {
             value={value}
           >
             {text}
-          </button>
+          </Button>
         ))}
       </div>
     );

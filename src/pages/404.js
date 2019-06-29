@@ -8,6 +8,7 @@ import {withIntl, Link} from '../i18n';
 import Container from '../components/shared/container';
 import Layout from '../components/Layout';
 import Main from '../components/shared/main';
+import Button from '../components/shared/button';
 import Header from '../components/Header';
 
 import '../sass/main.scss';
@@ -25,21 +26,18 @@ const NotFoundPage = ({intl}) => (
     <Header />
     <Main>
       <Container>
-        <div className='page-404'>
-          <h1 className='page-404__header'>
-            <span className='page-404__big-text'>404</span>{' '}
-            <FormattedMessage id='header-404-title' />
+        <div className="page-404">
+          <h1 className="page-404__header">
+            <span className="page-404__big-text">404</span>{' '}
+            <FormattedMessage id="header-404-title" />
           </h1>
-          <p className='page-404__paragraph'>
-            <FormattedMessage id='paragraph-404-title' />
+          <p className="page-404__paragraph">
+            <FormattedMessage id="paragraph-404-title" />
           </p>
-          <Link
-            to='/'
-            className='page-404__btn btn btn--secondary-theme btn--fluid'
-          >
-            <FormattedMessage id='return-main-title' />
-          </Link>
-          <img className='page-404__img' src={pen} alt='' />
+          <Button as={Link} to="/" theme="secondary" className="page-404__btn">
+            <FormattedMessage id="return-main-title" />
+          </Button>
+          <img className="page-404__img" src={pen} alt="" />
         </div>
       </Container>
     </Main>
