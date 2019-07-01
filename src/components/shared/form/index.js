@@ -8,7 +8,7 @@ import {Formik, Form, Field} from 'formik';
 
 import {schemas} from './schemas';
 
-import QuantityCounter from '../quantityCounter';
+import QuantityCounter from './quantityCounter';
 
 class SimpleForm extends PureComponent {
   state = {count: 1};
