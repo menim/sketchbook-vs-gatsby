@@ -62,19 +62,21 @@
     text-align: left;
   }
 
-  &__options-list {
-    margin-bottom: 2em;
-
-    @include respond-below(m) {
-      margin-bottom: 2em;
-    }
-  }
-
   &__paragraph {
     margin-top: 4em;
 
     @include respond-below(m) {
       margin-top: 2em;
     }
+  }
+
+  .form__radio-list {
+    margin-top: 2em;
+  }
+
+  .form__input--quantity {
+    display: inline-block;
+    margin-top: 2em;
+    width: 25%;
   }
 }

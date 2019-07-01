@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {FormattedMessage} from 'react-intl';
 
 import Button from '../shared/button';
+import QuantityCounter from '../shared/form/quantityCounter';
 
 export default class ProductForm extends Component {
   state = {count: 1};
@@ -63,6 +64,7 @@ export default class ProductForm extends Component {
             </div>
           ))}
         </fieldset>
+        <QuantityCounter counter={this.state.count} setInput={this.setInput} />
         <Button theme="primary">
           <FormattedMessage id="cart-btn-title" />
         </Button>
