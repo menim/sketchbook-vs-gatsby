@@ -8,12 +8,25 @@ import Footer from './footer';
 import {ModalContext} from '../../context/modalContext';
 import {CartContext} from '../../context/cartContext';
 import {InterfaceContext} from '../../context/interfaceContext';
+import {StoreContext} from '../../context/storeContext';
 
 import Backdrop from '../shared/backdrop';
 import Modal from './modal';
 
 class Layout extends Component {
   state = {
+    store: {
+      items: [],
+      addItem: () => {
+
+      },
+      removeItem: () => {
+
+      },
+      updateItem: () => {
+
+      }
+    }
     cart: {
       cartStatus: false,
       toggle: () => {
@@ -50,19 +63,21 @@ class Layout extends Component {
   render() {
     return (
       <InterfaceContext.Provider value={this.state.interface}>
-        <ModalContext.Provider value={this.state.modal}>
-          <CartContext.Provider value={this.state.cart}>
-            <Cart />
-            {this.props.children}
-            <Footer />
-            <Modal
-              isShow={this.state.modal.isShow}
-              close={this.state.modal.toggle}
-              locale={this.props.intl.locale}
-            />
-            <Backdrop isVisible={this.state.cart.cartStatus} />
-          </CartContext.Provider>
-        </ModalContext.Provider>
+        <StoreContext.Provider value={this.state.store}>
+          <ModalContext.Provider value={this.state.modal}>
+            <CartContext.Provider value={this.state.cart}>
+              <Cart />
+              {this.props.children}
+              <Footer />
+              <Modal
+                isShow={this.state.modal.isShow}
+                close={this.state.modal.toggle}
+                locale={this.props.intl.locale}
+              />
+              <Backdrop isVisible={this.state.cart.cartStatus} />
+            </CartContext.Provider>
+          </ModalContext.Provider>
+        </StoreContext.Provider>
       </InterfaceContext.Provider>
     );
   }
