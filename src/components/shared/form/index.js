@@ -8,19 +8,13 @@ import {Formik, Form, Field} from 'formik';
 
 import {schemas} from './schemas';
 
+import QuantityCounter from '../quantityCounter';
+
 class SimpleForm extends PureComponent {
   state = {count: 1};
 
-  handleChange = event => {
-    this.setState({count: event.target.value < 1 ? 1 : +event.target.value});
-  };
-
-  increment = () => {
-    this.setState({count: this.state.count + 1});
-  };
-
-  decrement = () => {
-    this.setState({count: this.state.count <= 1 ? 1 : this.state.count - 1});
+  setInput = value => {
+    this.setState({count: value});
   };
 
   handleSubmit = (values, actions) => {
@@ -32,7 +26,7 @@ class SimpleForm extends PureComponent {
     }).then(response => {
       if (response.status === 200) {
         actions.setStatus({
-          success: <FormattedMessage id='success-message' />,
+          success: <FormattedMessage id="success-message" />,
         });
         setTimeout(() => {
           actions.resetForm();
@@ -90,21 +84,21 @@ class SimpleForm extends PureComponent {
                 values.quantity = this.state.count;
                 return (
                   <Form
-                    name='contact'
-                    method='POST'
-                    netlify-honeypot='bot-field'
-                    data-netlify='true'
+                    name="contact"
+                    method="POST"
+                    netlify-honeypot="bot-field"
+                    data-netlify="true"
                     noValidate
                     className={`form form--${formType}`}
                   >
-                    <input type='hidden' name='form-name' value='contact' />
+                    <input type="hidden" name="form-name" value="contact" />
                     <fieldset>
                       <legend
                         className={
                           formType === 'order' ? 'form__title' : 'none'
                         }
                       >
-                        <FormattedMessage id='form-order-title' />
+                        <FormattedMessage id="form-order-title" />
                       </legend>
                       <label
                         className={
@@ -112,12 +106,12 @@ class SimpleForm extends PureComponent {
                             ? 'form__label form__label--select-wrapper'
                             : 'none'
                         }
-                        htmlFor='select-sketch'
+                        htmlFor="select-sketch"
                       >
                         <Field
-                          className='form__input form__input--select'
-                          component='select'
-                          name='selectSketch'
+                          className="form__input form__input--select"
+                          component="select"
+                          name="selectSketch"
                         >
                           {listSketch}
                         </Field>
@@ -126,35 +120,17 @@ class SimpleForm extends PureComponent {
                         className={
                           formType === 'order' ? 'form__label' : 'none'
                         }
-                        htmlFor='quantity'
+                        htmlFor="quantity"
                       >
-                        <FormattedMessage id='form-quantity-title' />:
-                        <div>
-                          <Field
-                            className='form__input form__input--quantity'
-                            onChange={this.handleChange}
-                            value={this.state.count}
-                            name='quantity'
-                            type='number'
-                          />
-                          <button
-                            className='form__control'
-                            onClick={this.increment}
-                            type='button'
-                          >
-                            +
-                          </button>
-                          <button
-                            className='form__control'
-                            onClick={this.decrement}
-                            type='button'
-                          >
-                            -
-                          </button>
-                        </div>
+                        <FormattedMessage id="form-quantity-title" />
+                        :
+                        <QuantityCounter
+                          setInput={this.setInput}
+                          counter={this.state.count}
+                        />
                       </label>
-                      <label className='form__label' htmlFor='name'>
-                        <FormattedMessage id='form-name-field' />
+                      <label className="form__label" htmlFor="name">
+                        <FormattedMessage id="form-name-field" />
                         *:
                         <Field
                           className={
@@ -162,10 +138,10 @@ class SimpleForm extends PureComponent {
                               ? 'form__input form__input--error'
                               : 'form__input'
                           }
-                          name='name'
+                          name="name"
                         />
                         {errors.name && touched.name ? (
-                          <div className='form__error'>{errors.name}</div>
+                          <div className="form__error">{errors.name}</div>
                         ) : null}
                       </label>
                       <label
@@ -174,9 +150,9 @@ class SimpleForm extends PureComponent {
                             ? 'none'
                             : 'form__label'
                         }
-                        htmlFor='email'
+                        htmlFor="email"
                       >
-                        <FormattedMessage id='form-email-field' />
+                        <FormattedMessage id="form-email-field" />
                         *:
                         <Field
                           className={
@@ -184,11 +160,11 @@ class SimpleForm extends PureComponent {
                               ? 'form__input form__input--error'
                               : 'form__input'
                           }
-                          name='email'
-                          type='email'
+                          name="email"
+                          type="email"
                         />
                         {errors.email && touched.email ? (
-                          <div className='form__error'>{errors.email}</div>
+                          <div className="form__error">{errors.email}</div>
                         ) : null}
                       </label>
                       <label
@@ -197,7 +173,7 @@ class SimpleForm extends PureComponent {
                             ? 'form__label'
                             : 'none'
                         }
-                        htmlFor='telephone'
+                        htmlFor="telephone"
                       >
                         Телефон:*
                         <Field
@@ -206,12 +182,12 @@ class SimpleForm extends PureComponent {
                               ? 'form__input form__input--error'
                               : 'form__input'
                           }
-                          name='telephone'
-                          type='numeber'
-                          placeholder=''
+                          name="telephone"
+                          type="numeber"
+                          placeholder=""
                         />
                         {errors.telephone && touched.telephone ? (
-                          <div className='form__error'>{errors.telephone}</div>
+                          <div className="form__error">{errors.telephone}</div>
                         ) : null}
                       </label>
                       <label
@@ -220,9 +196,9 @@ class SimpleForm extends PureComponent {
                             ? 'none'
                             : 'form__label'
                         }
-                        htmlFor='message'
+                        htmlFor="message"
                       >
-                        <FormattedMessage id='form-message-field' />
+                        <FormattedMessage id="form-message-field" />
                         *:
                         <Field
                           className={
@@ -230,25 +206,25 @@ class SimpleForm extends PureComponent {
                               ? 'form__input form__input--textarea form__input--error'
                               : 'form__input form__input--textarea'
                           }
-                          name='message'
+                          name="message"
                         />
                         {errors.message && touched.message ? (
-                          <div className='form__error'>{errors.message}</div>
+                          <div className="form__error">{errors.message}</div>
                         ) : null}
                       </label>
                       <button
-                        className='form__btn btn btn--primary-theme'
-                        type='submit'
+                        className="form__btn btn btn--primary-theme"
+                        type="submit"
                       >
                         {formType === 'order' || formType === 'cartOrder' ? (
-                          <FormattedMessage id='button-order-title' />
+                          <FormattedMessage id="button-order-title" />
                         ) : (
-                          <FormattedMessage id='button-sent-title' />
+                          <FormattedMessage id="button-sent-title" />
                         )}
                       </button>
 
                       {status && status.success ? (
-                        <div className='form__success-message'>
+                        <div className="form__success-message">
                           {status.success}
                         </div>
                       ) : (
