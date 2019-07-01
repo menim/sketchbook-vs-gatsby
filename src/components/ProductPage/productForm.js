@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {StoreContext} from '../../context/storeContext';
+import {StoreContext} from '../../context';
 
 import Button from '../shared/button';
 import QuantityCounter from '../shared/form/quantityCounter';

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {IntlProvider, addLocaleData, injectIntl} from 'react-intl';
 import {localeData} from './locales';
 
-import {LangContext} from '../context/langContext';
+import {LangContext} from '../context';
 
 addLocaleData(localeData);
 

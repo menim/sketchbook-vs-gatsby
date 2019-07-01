@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from 'gatsby';
 
-import {LangContext} from '../context/langContext';
+import {LangContext} from '../context';
 
 const I18nLink = ({to, children, ...rest}) => (
   <LangContext.Consumer>

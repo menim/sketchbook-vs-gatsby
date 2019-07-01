@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Button from '../shared/button';
 
 import cartImage from '../../images/cart-icon.svg';
-import {CartContext} from '../../context/cartContext';
+import {CartContext} from '../../context';
 
 const CartToggleBtn = () => (
   <CartContext.Consumer>

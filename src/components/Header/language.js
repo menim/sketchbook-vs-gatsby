@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {LangContext} from '../../context/langContext';
+import {LangContext} from '../../context';
 import Button from '../shared/button';
 
 class Language extends Component {
