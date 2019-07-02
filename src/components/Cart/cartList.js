@@ -1,8 +1,19 @@
 import React from 'react';
+import {StoreContext} from '../../context';
+
+import CartItem from './cartItem';
 
 const CartList = () => (
-  <>
-    <ul className="cart__list" />
-  </>
+  <StoreContext.Consumer>
+    {store => {
+      return (
+        <ul className="cart__list">
+          {store.productItems.map((product, index) => (
+            <CartItem key={index} productProps={product} />
+          ))}
+        </ul>
+      );
+    }}
+  </StoreContext.Consumer>
 );
 export default CartList;
