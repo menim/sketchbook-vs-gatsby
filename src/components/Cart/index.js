@@ -7,8 +7,11 @@ const Cart = ({cart}) => (
     className={`cart ${cart.cartStatus ? 'cart--open' : 'cart--close'} `}
   >
     <CartToggleBtn />
-    <div className="cart__content">Cart is Empty</div>
-    <CartList />
+    {cart.isEmpty() ? (
+      <div className="cart__content">Cart is Empty</div>
+    ) : (
+      <CartList />
+    )}
   </article>
 );
 

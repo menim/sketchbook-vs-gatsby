@@ -32,6 +32,9 @@ class Layout extends Component {
         }));
         this.state.interface.hideScroll();
       },
+      isEmpty: () => {
+        return this.state.store.productItems.length === 0;
+      },
     },
     interface: {
       hideScroll: () => {
