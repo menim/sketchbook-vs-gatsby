@@ -17,7 +17,12 @@ class Layout extends Component {
   state = {
     store: {
       productItems: [],
-      addItem: () => {},
+      addItem: product => {
+        this.setState(prevState => {
+          let products = prevState.store.productItems.push(product);
+          return {...prevState.store, products};
+        });
+      },
       removeItem: () => {},
       updateItem: () => {},
     },
