@@ -93,9 +93,11 @@ export const query = graphql`
           }
           slug
           ru {
+            title
             lang
           }
           uk {
+            title
             lang
           }
         }
