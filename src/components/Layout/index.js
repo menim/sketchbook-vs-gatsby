@@ -16,17 +16,11 @@ import Modal from './modal';
 class Layout extends Component {
   state = {
     store: {
-      items: [],
-      addItem: () => {
-
-      },
-      removeItem: () => {
-
-      },
-      updateItem: () => {
-
-      }
-    }
+      productItems: [],
+      addItem: () => {},
+      removeItem: () => {},
+      updateItem: () => {},
+    },
     cart: {
       cartStatus: false,
       toggle: () => {
@@ -66,7 +60,7 @@ class Layout extends Component {
         <StoreContext.Provider value={this.state.store}>
           <ModalContext.Provider value={this.state.modal}>
             <CartContext.Provider value={this.state.cart}>
-              <Cart />
+              <Cart cart={this.state.cart} />
               {this.props.children}
               <Footer />
               <Modal
