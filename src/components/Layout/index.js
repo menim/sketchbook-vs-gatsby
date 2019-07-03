@@ -18,10 +18,22 @@ class Layout extends Component {
     store: {
       productItems: [],
       addItem: product => {
-        this.setState(prevState => {
-          let products = prevState.store.productItems.push(product);
-          return {...prevState.store, products};
-        });
+        let productInStoreIndex = this.state.store.productItems.findIndex(
+          productItem =>
+            productItem.lang === product.lang &&
+            productItem.cover === product.cover
+        );
+
+        productInStoreIndex < 0
+          ? this.setState(prevState => {
+              let products = prevState.store.productItems.push(product);
+              return {...prevState.store, products};
+            })
+          : this.setState(prevState => {
+              prevState.store.productItems[productInStoreIndex].count +=
+                product.count;
+              return {...prevState.store.productItems};
+            });
       },
       removeItem: () => {},
       updateItem: () => {},
