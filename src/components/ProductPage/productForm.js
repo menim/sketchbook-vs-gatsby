@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {FormattedMessage} from 'react-intl';
 
-import {uniqueId} from '../../helpers';
-
 import {StoreContext} from '../../context';
 
 import Button from '../shared/button';
@@ -13,7 +11,6 @@ export default class ProductForm extends Component {
     super(props);
     this.state = {
       count: 1,
-      id: uniqueId(),
       lang: '',
       title: `Скетчбук. ${this.props.product[this.props.locale].title}`,
       cover: '',
@@ -41,7 +38,6 @@ export default class ProductForm extends Component {
       return {
         ...prevState,
         count: 1,
-        id: uniqueId(),
       };
     });
   };
