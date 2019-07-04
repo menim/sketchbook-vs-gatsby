@@ -26,16 +26,55 @@ class Layout extends Component {
 
         productInStoreIndex < 0
           ? this.setState(prevState => {
-              let products = prevState.store.productItems.push(product);
-              return {...prevState.store, products};
+              let newProductItems = prevState.store.productItems.concat(
+                product
+              );
+              return {
+                ...prevState,
+                store: {...prevState.store, productItems: newProductItems},
+              };
             })
           : this.setState(prevState => {
-              prevState.store.productItems[productInStoreIndex].count +=
-                product.count;
-              return {...prevState.store.productItems};
+              let productItemInStore = {
+                ...prevState.store.productItems[productInStoreIndex],
+              };
+              productItemInStore.count += product.count;
+
+              let newProductItems = prevState.store.productItems.map(
+                (item, index) => {
+                  if (index === productInStoreIndex) {
+                    item = productItemInStore;
+                  }
+                  return item;
+                }
+              );
+
+              return {
+                ...prevState,
+                store: {
+                  ...prevState.store,
+                  productItems: newProductItems,
+                },
+              };
             });
       },
-      removeItem: () => {},
+      removeItem: (itemLang, itemCover) => {
+        let productInStoreIndex = this.state.store.productItems.findIndex(
+          productItem =>
+            productItem.lang === itemLang && productItem.cover === itemCover
+        );
+
+        this.setState(prevState => {
+          let newProductItems = prevState.store.productItems.filter(
+            (productItem, index) => index !== productInStoreIndex
+          );
+
+          return {
+            ...prevState,
+            store: {...prevState.store, productItems: newProductItems},
+          };
+        });
+      },
       updateItem: () => {},
     },
     cart: {
