@@ -119,7 +119,7 @@ class Layout extends Component {
         <StoreContext.Provider value={this.state.store}>
           <ModalContext.Provider value={this.state.modal}>
             <CartContext.Provider value={this.state.cart}>
-              <Cart cart={this.state.cart} />
+              <Cart cart={this.state.cart} locale={this.props.intl.locale} />
               {this.props.children}
               <Footer />
               <Modal
