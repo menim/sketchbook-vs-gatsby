@@ -18,13 +18,11 @@ exports.onCreateWebpackConfig = ({getConfig, stage}) => {
 
 const path = require(`path`);
 const {languages} = require('./src/i18n/locales');
+const redirect = path.resolve('src/i18n/redirect.js');
 
 exports.createPages = ({graphql, actions}) => {
-  // **Note:** The graphql function call returns a Promise
-  // see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise for more info
-
   const {createPage} = actions;
-  return graphql(`
+  const dataQuery = graphql(`
     {
       allDataJson {
         edges {
@@ -42,20 +40,16 @@ exports.createPages = ({graphql, actions}) => {
         }
       }
     }
-  `).then(result => {
+  `);
+
+  return dataQuery.then(result => {
     if (result.errors) {
       console.log(result.errors);
     }
     result.data.allDataJson.edges.forEach(({node}) => {
-      const redirect = path.resolve('src/i18n/redirect.js');
       const redirectPage = {
         path: node.slug,
         component: redirect,
-        context: {
-          languages,
-          locale: '',
-          routed: false,
-        },
       };
       createPage(redirectPage);
 
@@ -68,7 +62,6 @@ exports.createPages = ({graphql, actions}) => {
             // in page queries as GraphQL variables.
             languages,
             locale: value,
-            routed: true,
             originalPath: `/${node.slug}`,
             slug: node.slug,
             langRu: node.ru,
@@ -81,36 +74,23 @@ exports.createPages = ({graphql, actions}) => {
 };
 
 exports.onCreatePage = ({page, actions}) => {
-  const {createPage, deletePage} = actions;
+  const {createPage} = actions;
   return new Promise(resolve => {
-    const redirect = path.resolve('src/i18n/redirect.js');
-
     const redirectPage = {
-      ...page,
+      path: page.path,
       component: redirect,
-      context: {
-        languages,
-        locale: '',
-        routed: false,
-        redirectPage: page.path,
-      },
     };
     createPage(redirectPage);
     languages.forEach(({value}) => {
       const localePage = {
-        ...page,
-        originalPath: page.path,
+        component: page.component,
         path: `/${value}${page.path}`,
         context: {
           languages,
           locale: value,
-          routed: true,
           originalPath: page.path,
         },
       };
-      // if (localePage.path.match(/^\/[a-z]{2}\/404\/$/)) {
-      //   localePage.matchPath = `${value}/*`
-      // }
       createPage(localePage);
     });
     resolve();
