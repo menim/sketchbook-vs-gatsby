@@ -19,10 +19,15 @@
     transform: translateX(100%);
   }
 
+  &__title {
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 1em;
+  }
+
   &__toggle-btn {
     background-color: transparent;
     border: 0;
-    position: relative;
+    position: absolute;
     top: 1.4375em;
     height: 3rem;
     width: 3rem;

@@ -70,4 +70,5 @@ module.exports = {
   productPageDescriptionTemplatePost:
     'за ціною виробника у любому кутку УкраЇни',
   'form-order-title': 'Форма замовлення',
+  'cart-title': 'Ваші скетчбуки',
 };
