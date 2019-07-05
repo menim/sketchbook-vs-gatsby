@@ -29,6 +29,22 @@
     transform: translateX(-110%);
   }
 
+  &__products-quantity {
+    color: $white;
+    background-color: $mountain-meadow;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $text-xxsm;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 0;
+    right: 0.8rem;
+    z-index: 7;
+  }
+
   &__remove-btn {
     border: 0;
     padding: 0;
