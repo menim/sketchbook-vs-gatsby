@@ -18,7 +18,7 @@ import {addDataToLocalStorage, getDataFromLocalStorage} from '../../helpers';
 class Layout extends Component {
   state = {
     store: {
-      productItems: getDataFromLocalStorage ('productItems') || [],
+      productItems: [],
       addItem: product => {
         let productInStoreIndex = this.state.store.productItems.findIndex (
           productItem =>
@@ -116,6 +116,17 @@ class Layout extends Component {
       },
     },
   };
+
+  componentDidMount () {
+    this.setState (prevState => {
+      return {
+        store: {
+          ...prevState.store,
+          productItems: getDataFromLocalStorage ('productItems') || [],
+        },
+      };
+    });
+  }
 
   render () {
     return (
