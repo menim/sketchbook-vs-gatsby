@@ -2,6 +2,7 @@
   position: fixed;
   font-size: 1em;
   background-color: $iceberg;
+  padding: 0 2rem 2rem;
   right: 0;
   min-width: 400px;
   transform: translateX(100%);
@@ -26,7 +27,7 @@
     height: 3rem;
     width: 3rem;
     padding: 0;
-    transform: translateX(-110%);
+    transform: translateX(-5rem);
   }
 
   &__products-quantity {
