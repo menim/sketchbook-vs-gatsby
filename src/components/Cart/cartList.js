@@ -9,7 +9,11 @@ const CartList = () => (
       return (
         <ul className="cart__list">
           {store.productItems.map((product, index) => (
-            <CartItem key={index} productProps={product} />
+            <CartItem
+              key={index}
+              productProps={product}
+              remove={store.removeItem}
+            />
           ))}
         </ul>
       );
