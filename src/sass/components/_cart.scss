@@ -22,6 +22,7 @@
   &__title {
     border-bottom: 2px solid currentColor;
     padding-bottom: 1em;
+    position: relative;
   }
 
   &__toggle-btn {
@@ -49,6 +50,13 @@
     top: 0;
     right: 0.8rem;
     z-index: 7;
+
+    &--size-lg {
+      width: 2rem;
+      height: 2rem;
+      font-size: $text-sm;
+      top: -5px;
+    }
   }
 
   &__remove-btn {
