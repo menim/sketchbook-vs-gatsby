@@ -13,34 +13,37 @@ import {StoreContext} from '../../context/storeContext';
 import Backdrop from '../shared/backdrop';
 import Modal from './modal';
 
+import {addDataToLocalStorage, getDataFromLocalStorage} from '../../helpers';
+
 class Layout extends Component {
   state = {
     store: {
-      productItems: [],
+      productItems: getDataFromLocalStorage ('productItems') || [],
       addItem: product => {
-        let productInStoreIndex = this.state.store.productItems.findIndex(
+        let productInStoreIndex = this.state.store.productItems.findIndex (
           productItem =>
             productItem.lang === product.lang &&
             productItem.cover === product.cover
         );
 
         productInStoreIndex < 0
-          ? this.setState(prevState => {
-              let newProductItems = prevState.store.productItems.concat(
+          ? this.setState (prevState => {
+              let newProductItems = prevState.store.productItems.concat (
                 product
               );
+              addDataToLocalStorage ('productItems', newProductItems);
               return {
                 ...prevState,
                 store: {...prevState.store, productItems: newProductItems},
               };
             })
-          : this.setState(prevState => {
+          : this.setState (prevState => {
               let productItemInStore = {
                 ...prevState.store.productItems[productInStoreIndex],
               };
               productItemInStore.count += product.count;
 
-              let newProductItems = prevState.store.productItems.map(
+              let newProductItems = prevState.store.productItems.map (
                 (item, index) => {
                   if (index === productInStoreIndex) {
                     item = productItemInStore;
@@ -49,6 +52,7 @@ class Layout extends Component {
                 }
               );
 
+              addDataToLocalStorage ('productItems', newProductItems);
               return {
                 ...prevState,
                 store: {
@@ -59,16 +63,16 @@ class Layout extends Component {
             });
       },
       removeItem: (itemLang, itemCover) => {
-        let productInStoreIndex = this.state.store.productItems.findIndex(
+        let productInStoreIndex = this.state.store.productItems.findIndex (
           productItem =>
             productItem.lang === itemLang && productItem.cover === itemCover
         );
 
-        this.setState(prevState => {
-          let newProductItems = prevState.store.productItems.filter(
+        this.setState (prevState => {
+          let newProductItems = prevState.store.productItems.filter (
             (productItem, index) => index !== productInStoreIndex
           );
-
+          addDataToLocalStorage ('productItems', newProductItems);
           return {
             ...prevState,
             store: {...prevState.store, productItems: newProductItems},
@@ -80,13 +84,13 @@ class Layout extends Component {
     cart: {
       cartStatus: false,
       toggle: () => {
-        this.setState(prevState => ({
+        this.setState (prevState => ({
           cart: {
             ...prevState.cart,
             cartStatus: !prevState.cart.cartStatus,
           },
         }));
-        this.state.interface.hideScroll();
+        this.state.interface.hideScroll ();
       },
       isEmpty: () => {
         return this.state.store.productItems.length === 0;
@@ -94,26 +98,26 @@ class Layout extends Component {
     },
     interface: {
       hideScroll: () => {
-        document.body.classList.contains('modal-open')
-          ? document.body.classList.remove('modal-open')
-          : document.body.classList.add('modal-open');
+        document.body.classList.contains ('modal-open')
+          ? document.body.classList.remove ('modal-open')
+          : document.body.classList.add ('modal-open');
       },
     },
     modal: {
       isShow: false,
       toggle: () => {
-        this.setState(prevState => ({
+        this.setState (prevState => ({
           modal: {
             ...prevState.modal,
             isShow: !prevState.modal.isShow,
           },
         }));
-        this.state.interface.hideScroll();
+        this.state.interface.hideScroll ();
       },
     },
   };
 
-  render() {
+  render () {
     return (
       <InterfaceContext.Provider value={this.state.interface}>
         <StoreContext.Provider value={this.state.store}>
@@ -136,7 +140,7 @@ class Layout extends Component {
   }
 }
 
-export default injectIntl(Layout);
+export default injectIntl (Layout);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
