@@ -1,9 +1,9 @@
 .cart {
-  display: flex;
   position: fixed;
+  font-size: 1em;
   background-color: #e3e3e3;
   right: 0;
-  width: 400px;
+  min-width: 400px;
   transform: translateX(100%);
   height: 100vh;
   min-height: 100%;
@@ -23,10 +23,18 @@
     border: 0;
     position: relative;
     top: 1.4375em;
-    width: 3em;
-    height: 3em;
+    height: 3rem;
+    width: 3rem;
     padding: 0;
     transform: translateX(-110%);
+  }
+
+  &__remove-btn {
+    border: 0;
+    padding: 0;
+    position: relative;
+    height: 1.5625rem;
+    width: 0.325rem;
   }
 
   &__close {
@@ -58,10 +66,17 @@
     transition: transform 300ms ease-in;
   }
 
-  &__innerWrapper {
-    display: flex;
+  &__list {
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
   }
 
-  &__content {
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style-type: none;
+    margin-bottom: 2em;
   }
 }
