@@ -37,7 +37,7 @@ class SimpleForm extends PureComponent {
   };
 
   render() {
-    const {locale, formType, order} = this.props;
+    const {locale, formType, inputCommonClasses} = this.props;
 
     return (
       <StaticQuery
@@ -136,7 +136,7 @@ class SimpleForm extends PureComponent {
                           className={
                             errors.name && touched.name
                               ? 'form__input form__input--error'
-                              : 'form__input'
+                              : `form__input ${inputCommonClasses}`
                           }
                           name="name"
                         />
@@ -158,7 +158,7 @@ class SimpleForm extends PureComponent {
                           className={
                             errors.email && touched.email
                               ? 'form__input form__input--error'
-                              : 'form__input'
+                              : `form__input ${inputCommonClasses}`
                           }
                           name="email"
                           type="email"
@@ -180,7 +180,7 @@ class SimpleForm extends PureComponent {
                           className={
                             errors.telephone && touched.telephone
                               ? 'form__input form__input--error'
-                              : 'form__input'
+                              : `form__input ${inputCommonClasses}`
                           }
                           name="telephone"
                           type="numeber"

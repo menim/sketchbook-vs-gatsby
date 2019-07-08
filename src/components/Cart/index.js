@@ -10,7 +10,7 @@ const Cart = ({cart, locale}) => (
     className={`cart ${cart.cartStatus ? 'cart--open' : 'cart--close'} `}
   >
     <h3 className="cart__title">
-      <FormattedMessage id="cart-title" />{' '}
+      <FormattedMessage id="cart-title" />
       <span className="cart__products-quantity cart__products-quantity--size-lg">
         {cart.getProductsInCart()}
       </span>
@@ -23,7 +23,11 @@ const Cart = ({cart, locale}) => (
     ) : (
       <>
         <CartList />
-        <CheckoutForm locale={locale} formType="cartOrder" />
+        <CheckoutForm
+          locale={locale}
+          formType="cartOrder"
+          inputCommonClasses="form__input--size-md"
+        />
       </>
     )}
   </article>
