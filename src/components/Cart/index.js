@@ -17,7 +17,7 @@ const Cart = ({cart, locale}) => (
     </h3>
     <CartToggleBtn />
     {cart.isEmpty() ? (
-      <div className="cart__empty">
+      <div className="cart__empty center-vs-transform">
         <FormattedMessage id="cart-empty-text" />
       </div>
     ) : (
