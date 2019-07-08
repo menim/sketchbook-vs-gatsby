@@ -111,6 +111,11 @@
     transition: border-color 150ms ease-in;
     width: 100%;
 
+    &--size-md {
+      font-size: $text-xxsm;
+      width: 50%;
+    }
+
     &--select {
       -webkit-appearance: none;
       appearance: none;
