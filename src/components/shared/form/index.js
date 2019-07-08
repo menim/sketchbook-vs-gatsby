@@ -14,29 +14,29 @@ class SimpleForm extends PureComponent {
   state = {count: 1};
 
   setInput = value => {
-    this.setState({count: value});
+    this.setState ({count: value});
   };
 
   handleSubmit = (values, actions) => {
-    actions.setSubmitting(false);
-    fetch(`/${this.props.locale}/`, {
+    actions.setSubmitting (false);
+    fetch (`/${this.props.locale}/`, {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: encode({'form-name': 'contact', ...values}),
-    }).then(response => {
+      body: encode ({'form-name': 'contact', ...values}),
+    }).then (response => {
       if (response.status === 200) {
-        actions.setStatus({
+        actions.setStatus ({
           success: <FormattedMessage id="success-message" />,
         });
-        setTimeout(() => {
-          actions.resetForm();
-          this.setState({count: 1});
+        setTimeout (() => {
+          actions.resetForm ();
+          this.setState ({count: 1});
         }, 2000);
       }
     });
   };
 
-  render() {
+  render () {
     const {locale, formType, inputCommonClasses} = this.props;
 
     return (
@@ -60,7 +60,7 @@ class SimpleForm extends PureComponent {
           }
         `}
         render={data => {
-          const listSketch = data.allDataJson.edges.map((product, index) => (
+          const listSketch = data.allDataJson.edges.map ((product, index) => (
             <option value={product.node[locale].title} key={index}>
               {product.node[locale].title}
             </option>
@@ -78,7 +78,8 @@ class SimpleForm extends PureComponent {
               }}
               validateOnChange
               validationSchema={schemas[formType]}
-              onSubmit={(values, actions) => this.handleSubmit(values, actions)}
+              onSubmit={(values, actions) =>
+                this.handleSubmit (values, actions)}
             >
               {({errors, touched, status, values}) => {
                 values.quantity = this.state.count;
@@ -135,14 +136,14 @@ class SimpleForm extends PureComponent {
                         <Field
                           className={
                             errors.name && touched.name
-                              ? 'form__input form__input--error'
+                              ? `form__input form__input--error ${inputCommonClasses}`
                               : `form__input ${inputCommonClasses}`
                           }
                           name="name"
                         />
-                        {errors.name && touched.name ? (
-                          <div className="form__error">{errors.name}</div>
-                        ) : null}
+                        {errors.name && touched.name
+                          ? <div className="form__error">{errors.name}</div>
+                          : null}
                       </label>
                       <label
                         className={
@@ -163,9 +164,9 @@ class SimpleForm extends PureComponent {
                           name="email"
                           type="email"
                         />
-                        {errors.email && touched.email ? (
-                          <div className="form__error">{errors.email}</div>
-                        ) : null}
+                        {errors.email && touched.email
+                          ? <div className="form__error">{errors.email}</div>
+                          : null}
                       </label>
                       <label
                         className={
@@ -179,16 +180,18 @@ class SimpleForm extends PureComponent {
                         <Field
                           className={
                             errors.telephone && touched.telephone
-                              ? 'form__input form__input--error'
+                              ? `form__input form__input--error ${inputCommonClasses}`
                               : `form__input ${inputCommonClasses}`
                           }
                           name="telephone"
                           type="numeber"
                           placeholder=""
                         />
-                        {errors.telephone && touched.telephone ? (
-                          <div className="form__error">{errors.telephone}</div>
-                        ) : null}
+                        {errors.telephone && touched.telephone
+                          ? <div className="form__error">
+                              {errors.telephone}
+                            </div>
+                          : null}
                       </label>
                       <label
                         className={
@@ -208,28 +211,24 @@ class SimpleForm extends PureComponent {
                           }
                           name="message"
                         />
-                        {errors.message && touched.message ? (
-                          <div className="form__error">{errors.message}</div>
-                        ) : null}
+                        {errors.message && touched.message
+                          ? <div className="form__error">{errors.message}</div>
+                          : null}
                       </label>
                       <button
                         className="form__btn btn btn--primary-theme"
                         type="submit"
                       >
-                        {formType === 'order' || formType === 'cartOrder' ? (
-                          <FormattedMessage id="button-order-title" />
-                        ) : (
-                          <FormattedMessage id="button-sent-title" />
-                        )}
+                        {formType === 'order' || formType === 'cartOrder'
+                          ? <FormattedMessage id="button-order-title" />
+                          : <FormattedMessage id="button-sent-title" />}
                       </button>
 
-                      {status && status.success ? (
-                        <div className="form__success-message">
-                          {status.success}
-                        </div>
-                      ) : (
-                        ''
-                      )}
+                      {status && status.success
+                        ? <div className="form__success-message">
+                            {status.success}
+                          </div>
+                        : ''}
                     </fieldset>
                   </Form>
                 );
