@@ -6,7 +6,7 @@ const CartItem = ({productProps, remove}) => {
   return (
     <li className="cart__item">
       <img src={productCover} alt="" />
-      <span>{title}</span>
+      <span className="cart__title title">{title}</span>
       <span>{lang}</span>
       <span>{count}</span>
       <span>₴ {` ${180 * count}`} </span>

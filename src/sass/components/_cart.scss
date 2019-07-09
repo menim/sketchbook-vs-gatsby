@@ -21,7 +21,7 @@
     transform: translateX(100%);
   }
 
-  &__title {
+  &__header {
     border-bottom: 2px solid currentColor;
     padding-bottom: 1em;
     position: relative;
@@ -114,5 +114,9 @@
     list-style-type: none;
     margin-bottom: 2em;
     flex-basis: 20%;
+  }
+
+  &__title {
+    flex-basis: 35%;
   }
 }

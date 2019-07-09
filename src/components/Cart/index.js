@@ -9,7 +9,7 @@ const Cart = ({cart, locale}) => (
   <article
     className={`cart ${cart.cartStatus ? 'cart--open' : 'cart--close'} `}
   >
-    <h3 className="cart__title">
+    <h3 className="cart__header">
       <FormattedMessage id="cart-title" />
       <span className="cart__products-quantity cart__products-quantity--size-lg">
         {cart.getProductsInCart()}
