@@ -13,11 +13,11 @@
   transition: transform 300ms ease-in;
   z-index: 6;
 
-  &--open {
+  &--is-open {
     transform: translateX(0%);
   }
 
-  &--close {
+  &--is-hide {
     transform: translateX(100%);
   }
 

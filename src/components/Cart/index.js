@@ -7,7 +7,7 @@ import {FormattedMessage} from 'react-intl';
 
 const Cart = ({cart, locale}) => (
   <article
-    className={`cart ${cart.cartStatus ? 'cart--open' : 'cart--close'} `}
+    className={`cart ${cart.cartStatus ? 'cart--is-open' : 'cart--is-hide'} `}
   >
     <h3 className="cart__header">
       <FormattedMessage id="cart-title" />
