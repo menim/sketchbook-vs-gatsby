@@ -29,24 +29,22 @@ const Product = ({locale, productData}) => {
   return (
     <div className="l-item">
       <div className="sketchbook">
-        {productData.cover.length > 1 ? (
-          <Swiper {...params}>
-            {productData.cover.map((item, index) => (
-              <div key={index}>
-                <img
-                  className="sketchbook__preview"
-                  src={item.childImageSharp.fixed.src}
-                />
-              </div>
-            ))}
-          </Swiper>
-        ) : (
-          <Pict
-            className="sketchbook__preview"
-            img={productData.cover[0].childImageSharp.fixed}
-          />
-        )}
-        <h2 className="sketchbook__title">{productData[locale].title}</h2>
+        {productData.cover.length > 1
+          ? <Swiper {...params}>
+              {productData.cover.map ((item, index) => (
+                <div key={index}>
+                  <img
+                    className="sketchbook__preview"
+                    src={item.childImageSharp.fixed.src}
+                  />
+                </div>
+              ))}
+            </Swiper>
+          : <Pict
+              className="sketchbook__preview"
+              img={productData.cover[0].childImageSharp.fixed}
+            />}
+        <h2 className="sketchbook__title title">{productData[locale].title}</h2>
         <div className="sketchbook__bottom-wrapper">
           <Button as={Link} theme="secondary" to={slug}>
             <FormattedMessage id="button-more-details" />

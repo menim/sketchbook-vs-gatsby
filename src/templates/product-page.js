@@ -46,7 +46,7 @@ const ProductPage = ({data, intl}) => {
               <ProductItemSlider imgs={product.spreadImg} />
             </section>
             <section className="product__description">
-              <h1 className="product__header">
+              <h1 className="product__title title title--size-lg">
                 Скетчбук. <FormattedMessage id="title" />
               </h1>
               <span className="product__price">₴ {product.price}</span>
@@ -65,7 +65,7 @@ const ProductPage = ({data, intl}) => {
   );
 };
 
-export default withIntl(ProductPage);
+export default withIntl (ProductPage);
 
 export const query = graphql`
   query($slug: String!) {

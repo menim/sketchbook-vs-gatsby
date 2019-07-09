@@ -58,16 +58,12 @@
   }
 
   &__title {
-    color: $ebony-clay;
-    font-size: $text-base-size;
-    font-weight: normal;
     margin-bottom: 0;
     margin-top: 1.25em;
     padding: 0 1em;
     text-align: center;
 
     @include respond-below(xl) {
-      font-size: $text-sm;
       margin-top: 1.5em;
     }
   }

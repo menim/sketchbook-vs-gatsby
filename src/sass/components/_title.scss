@@ -1,0 +1,13 @@
+.title {
+  color: $ebony-clay;
+  font-size: $text-base-size;
+  font-weight: normal;
+
+  &--size-lg {
+    font-size: 2em;
+  }
+
+  @include respond-below(xl) {
+    font-size: $text-sm;
+  }
+}
