@@ -1,7 +1,9 @@
 import React from 'react';
 import CartToggleBtn from './cartToggleBtn';
 import CartList from './cartList';
+import CartTotal from './total';
 import CheckoutForm from '../shared/form';
+
 
 import {FormattedMessage} from 'react-intl';
 
@@ -23,6 +25,7 @@ const Cart = ({cart, locale}) => (
     ) : (
       <>
         <CartList />
+        <CartTotal />
         <CheckoutForm
           locale={locale}
           formType="cartOrder"
