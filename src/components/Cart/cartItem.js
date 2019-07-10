@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CartItem = ({productProps, remove}) => {
-  const {lang, cover, title, count} = productProps;
+  const {lang, cover, title, count, price} = productProps;
   const [productCover, color] = cover.split (' ');
   return (
     <li className="cart__item">
@@ -9,7 +9,7 @@ const CartItem = ({productProps, remove}) => {
       <span className="cart__title title">{title}</span>
       <span>{lang}</span>
       <span>{count}</span>
-      <span>₴ {` ${180 * count}`} </span>
+      <span>₴ {` ${price * count}`} </span>
       <button
         onClick={() => {
           remove (lang, cover);
