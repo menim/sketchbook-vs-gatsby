@@ -6,32 +6,36 @@ import Form from '../shared/form';
 import Backdrop from '../shared/backdrop';
 import Button from '../shared/button';
 
-const portalRoot =
-  typeof document !== `undefined` ? document.getElementById('modal') : null;
+const portalRoot = typeof document !== `undefined`
+  ? document.getElementById ('modal')
+  : null;
 
 class Modal extends Component {
-  constructor() {
-    super();
+  constructor () {
+    super ();
     // Use a ternary operator to make sure that the document object is defined
-    this.el =
-      typeof document !== `undefined` ? document.createElement('div') : null;
+    this.el = typeof document !== `undefined`
+      ? document.createElement ('div')
+      : null;
   }
 
   componentDidMount = () => {
-    portalRoot.appendChild(this.el);
+    portalRoot.appendChild (this.el);
   };
 
   componentWillUnmount = () => {
-    portalRoot.removeChild(this.el);
+    portalRoot.removeChild (this.el);
   };
 
-  render() {
+  render () {
+    const {modalStatus, modalToggle} = this.props.appInterface;
+
     if (this.el) {
-      return ReactDOM.createPortal(
-        <div className={this.props.isShow ? '' : 'none'}>
-          <Backdrop closeModal={this.props.close} isVisible />
+      return ReactDOM.createPortal (
+        <div className={modalStatus ? '' : 'none'}>
+          <Backdrop closeModal={modalToggle} isVisible />
           <div className="modal">
-            <Button className="modal__close close" onClick={this.props.close} />
+            <Button className="modal__close close" onClick={modalToggle} />
             <Form formType="order" locale={this.props.locale} />
           </div>
         </div>,
@@ -46,7 +50,5 @@ class Modal extends Component {
 export default Modal;
 
 Modal.propTypes = {
-  isShow: PropTypes.bool.isRequired,
-  close: PropTypes.func.isRequired,
   locale: PropTypes.string.isRequired,
 };

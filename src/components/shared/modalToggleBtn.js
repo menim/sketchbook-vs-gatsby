@@ -1,19 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {ModalContext} from '../../context';
+import {InterfaceContext} from '../../context';
 import Button from './button';
 
 function ModalToggleButton({children}) {
   return (
-    <ModalContext.Consumer>
-      {modal => {
+    <InterfaceContext.Consumer>
+      {appInterface => {
         return (
-          <Button onClick={modal.toggle} theme="primary">
+          <Button onClick={appInterface.modalToggle} theme="primary">
             {children}
           </Button>
         );
       }}
-    </ModalContext.Consumer>
+    </InterfaceContext.Consumer>
   );
 }
 

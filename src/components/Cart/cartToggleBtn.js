@@ -4,25 +4,25 @@ import PropTypes from 'prop-types';
 import Button from '../shared/button';
 
 import cartImage from '../../images/cart-icon.svg';
-import {CartContext} from '../../context';
+import {InterfaceContext} from '../../context';
 
-const CartToggleBtn = () => (
-  <CartContext.Consumer>
-    {cart => {
-      const productsInCart = cart.getProductsInCart();
+const CartToggleBtn = ({getProductsInCart}) => (
+  <InterfaceContext.Consumer>
+    {(appInterface)=> {
+      const productsInCart = getProductsInCart();
       return (
         <>
-          <Button onClick={cart.toggle} className="cart__toggle-btn">
+          <Button onClick={appInterface.cartToggle} className="cart__toggle-btn">
             <span
               className={`${
                 productsInCart === 0 ? 'none' : 'cart__products-quantity'
-              } ${cart.cartStatus ? 'animationZoomOut' : 'animationZoomIn'}`}
+              } ${appInterface.cartStatus ? 'animationZoomOut' : 'animationZoomIn'}`}
             >
               {productsInCart}
             </span>
             <img
               className={`cart__basket-img  ${
-                cart.cartStatus ? 'animationZoomOut' : 'animationZoomIn'
+                appInterface.cartStatus ? 'animationZoomOut' : 'animationZoomIn'
               } `}
               src={cartImage}
               height="36"
@@ -31,14 +31,14 @@ const CartToggleBtn = () => (
             />
             <span
               className={`cart__close close close--theme-secondary ${
-                cart.cartStatus ? 'animationZoomIn' : 'animationZoomOut'
+                appInterface.cartStatus ? 'animationZoomIn' : 'animationZoomOut'
               } `}
             />
           </Button>
         </>
       );
     }}
-  </CartContext.Consumer>
+  </InterfaceContext.Consumer>
 );
 
 export default CartToggleBtn;
