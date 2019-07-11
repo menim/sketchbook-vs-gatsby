@@ -21,9 +21,9 @@ class SimpleForm extends PureComponent {
     actions.setSubmitting(false);
     let dataToEmail = '';
     if (formType === 'cartOrder') {
-      let {telephone, name} = values;
-      let cartData = JSON.stringify(cartData);
-      dataToEmail = {telephone, name, cartData};
+      let {telephone, name, message} = values;
+      message = JSON.stringify(cartData);
+      dataToEmail = {telephone, name, message};
     } else {
       dataToEmail = values;
     }
