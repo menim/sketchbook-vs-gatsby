@@ -25,7 +25,7 @@ const Cart = ({appInterface, store, locale}) => (
     ) : (
       <>
         <CartList />
-        <CartTotal />
+        <CartTotal totalPrice={store.totalPrice} />
         <CheckoutForm
           locale={locale}
           formType="cartOrder"

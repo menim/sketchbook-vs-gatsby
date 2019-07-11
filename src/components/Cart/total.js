@@ -1,12 +1,12 @@
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
 
-const Total = () => (
+const Total = ({totalPrice}) => (
   <div className="cart__total total">
     <div className="total__label">
       <FormattedMessage id="cart-total-title" />:
     </div>
-    <strong className="total__price">0</strong>
+    <strong className="total__price">{totalPrice}</strong>
   </div>
 );
 

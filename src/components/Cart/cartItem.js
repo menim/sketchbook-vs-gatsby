@@ -12,7 +12,7 @@ const CartItem = ({productProps, remove}) => {
       <span>₴ {` ${price * count}`} </span>
       <button
         onClick={() => {
-          remove (lang, cover);
+          remove (productProps);
         }}
         className="cart__remove-btn close close--size-sm"
       >

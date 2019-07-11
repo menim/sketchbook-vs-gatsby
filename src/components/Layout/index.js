@@ -11,37 +11,50 @@ import {StoreContext} from '../../context/storeContext';
 import Backdrop from '../shared/backdrop';
 import Modal from './modal';
 
-import {addDataToLocalStorage, getDataFromLocalStorage} from '../../helpers';
+import {
+  addDataToLocalStorage,
+  getDataFromLocalStorage,
+  getProductItemsInStore,
+} from '../../helpers';
 
 class Layout extends Component {
   state = {
     store: {
       productItems: [],
+      totalPrice: 0,
+
       addItem: product => {
-        let productInStoreIndex = this.state.store.productItems.findIndex (
-          productItem =>
-            productItem.lang === product.lang &&
-            productItem.cover === product.cover
+        let productInStoreIndex = getProductItemsInStore(
+          this.state.store.productItems,
+          product
         );
 
+        let newTotalPrice =
+          this.state.store.totalPrice + product.count * product.price;
+
         productInStoreIndex < 0
-          ? this.setState (prevState => {
-              let newProductItems = prevState.store.productItems.concat (
+          ? this.setState(prevState => {
+              let newProductItems = prevState.store.productItems.concat(
                 product
               );
-              addDataToLocalStorage ('productItems', newProductItems);
+              let localStorageData = [newProductItems, newTotalPrice];
+              addDataToLocalStorage('localStorageData', localStorageData);
               return {
                 ...prevState,
-                store: {...prevState.store, productItems: newProductItems},
+                store: {
+                  ...prevState.store,
+                  totalPrice: newTotalPrice,
+                  productItems: newProductItems,
+                },
               };
             })
-          : this.setState (prevState => {
+          : this.setState(prevState => {
               let productItemInStore = {
                 ...prevState.store.productItems[productInStoreIndex],
               };
               productItemInStore.count += product.count;
 
-              let newProductItems = prevState.store.productItems.map (
+              let newProductItems = prevState.store.productItems.map(
                 (item, index) => {
                   if (index === productInStoreIndex) {
                     item = productItemInStore;
@@ -50,36 +63,47 @@ class Layout extends Component {
                 }
               );
 
-              addDataToLocalStorage ('productItems', newProductItems);
+              let localStorageData = [newProductItems, newTotalPrice];
+              addDataToLocalStorage('localStorageData', localStorageData);
+
               return {
                 ...prevState,
                 store: {
                   ...prevState.store,
+                  totalPrice: newTotalPrice,
                   productItems: newProductItems,
                 },
               };
             });
       },
-      removeItem: (itemLang, itemCover) => {
-        let productInStoreIndex = this.state.store.productItems.findIndex (
-          productItem =>
-            productItem.lang === itemLang && productItem.cover === itemCover
+      removeItem: product => {
+        let productInStoreIndex = getProductItemsInStore(
+          this.state.store.productItems,
+          product
         );
 
-        this.setState (prevState => {
-          let newProductItems = prevState.store.productItems.filter (
+        let newTotalPrice =
+          this.state.store.totalPrice - product.price * product.count;
+
+        this.setState(prevState => {
+          let newProductItems = prevState.store.productItems.filter(
             (productItem, index) => index !== productInStoreIndex
           );
-          addDataToLocalStorage ('productItems', newProductItems);
+          let localStorageData = [newProductItems, newTotalPrice];
+          addDataToLocalStorage('localStorageData', localStorageData);
           return {
             ...prevState,
-            store: {...prevState.store, productItems: newProductItems},
+            store: {
+              ...prevState.store,
+              productItems: newProductItems,
+              totalPrice: newTotalPrice,
+            },
           };
         });
       },
       updateItem: () => {},
       getProductsInCart: () => {
-        return this.state.store.productItems.reduce (
+        return this.state.store.productItems.reduce(
           (count, productItem) => (count += productItem.count),
           0
         );
@@ -89,46 +113,50 @@ class Layout extends Component {
       cartStatus: false,
       modalStatus: false,
       hideScroll: () => {
-        document.body.classList.contains ('modal-open')
-          ? document.body.classList.remove ('modal-open')
-          : document.body.classList.add ('modal-open');
+        document.body.classList.contains('modal-open')
+          ? document.body.classList.remove('modal-open')
+          : document.body.classList.add('modal-open');
       },
       cartToggle: () => {
-        this.setState (prevState => ({
+        this.setState(prevState => ({
           interface: {
             ...prevState.interface,
             cartStatus: !prevState.interface.cartStatus,
           },
         }));
-        this.state.interface.hideScroll ();
+        this.state.interface.hideScroll();
       },
       cartIsEmpty: () => {
         return this.state.store.productItems.length === 0;
       },
       modalToggle: () => {
-        this.setState (prevState => ({
+        this.setState(prevState => ({
           interface: {
             ...prevState.interface,
             modalStatus: !prevState.interface.modalStatus,
           },
         }));
-        this.state.interface.hideScroll ();
+        this.state.interface.hideScroll();
       },
     },
   };
 
-  componentDidMount () {
-    this.setState (prevState => {
+  componentDidMount() {
+    this.setState(prevState => {
+      let [productItems, totalPrice] = getDataFromLocalStorage(
+        'localStorageData'
+      ) || [[], 0];
       return {
         store: {
           ...prevState.store,
-          productItems: getDataFromLocalStorage ('productItems') || [],
+          productItems: productItems,
+          totalPrice: totalPrice,
         },
       };
     });
   }
 
-  render () {
+  render() {
     return (
       <InterfaceContext.Provider value={this.state.interface}>
         <StoreContext.Provider value={this.state.store}>
@@ -150,7 +178,7 @@ class Layout extends Component {
   }
 }
 
-export default injectIntl (Layout);
+export default injectIntl(Layout);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
