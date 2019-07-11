@@ -4,12 +4,13 @@ import CartList from './cartList';
 import CartTotal from './total';
 import CheckoutForm from '../shared/form';
 
-
 import {FormattedMessage} from 'react-intl';
 
 const Cart = ({appInterface, store, locale}) => (
   <article
-    className={`cart ${appInterface.cartStatus ? 'cart--is-open' : 'cart--is-hide'} `}
+    className={`cart ${
+      appInterface.cartStatus ? 'cart--is-open' : 'cart--is-hide'
+    } `}
   >
     <h3 className="cart__header">
       <FormattedMessage id="cart-title" />
@@ -30,6 +31,7 @@ const Cart = ({appInterface, store, locale}) => (
           locale={locale}
           formType="cartOrder"
           inputCommonClasses="form__input--size-md"
+          cartData={store.productItems}
         />
       </>
     )}

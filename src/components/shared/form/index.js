@@ -14,30 +14,37 @@ class SimpleForm extends PureComponent {
   state = {count: 1};
 
   setInput = value => {
-    this.setState ({count: value});
+    this.setState({count: value});
   };
 
-  handleSubmit = (values, actions) => {
-    actions.setSubmitting (false);
-    fetch (`/${this.props.locale}/`, {
+  handleSubmit = (values, actions, cartData, formType) => {
+    actions.setSubmitting(false);
+
+    let {telephone, name} = values;
+    let dataToEmail =
+      formType === 'cartOrder' ? {...cartData, telephone, name} : values;
+    fetch(`/${this.props.locale}/`, {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: encode ({'form-name': 'contact', ...values}),
-    }).then (response => {
+      body: encode({'form-name': 'contact', ...dataToEmail}),
+    }).then(response => {
       if (response.status === 200) {
-        actions.setStatus ({
+        actions.setStatus({
           success: <FormattedMessage id="success-message" />,
         });
-        setTimeout (() => {
-          actions.resetForm ();
-          this.setState ({count: 1});
+        setTimeout(() => {
+          actions.resetForm();
+          if (formType === 'cartOrder') {
+            localStorage.clear();
+          }
+          this.setState({count: 1});
         }, 2000);
       }
     });
   };
 
-  render () {
-    const {locale, formType, inputCommonClasses} = this.props;
+  render() {
+    const {locale, formType, inputCommonClasses, cartData = ''} = this.props;
 
     return (
       <StaticQuery
@@ -60,7 +67,7 @@ class SimpleForm extends PureComponent {
           }
         `}
         render={data => {
-          const listSketch = data.allDataJson.edges.map ((product, index) => (
+          const listSketch = data.allDataJson.edges.map((product, index) => (
             <option value={product.node[locale].title} key={index}>
               {product.node[locale].title}
             </option>
@@ -79,7 +86,8 @@ class SimpleForm extends PureComponent {
               validateOnChange
               validationSchema={schemas[formType]}
               onSubmit={(values, actions) =>
-                this.handleSubmit (values, actions)}
+                this.handleSubmit(values, actions, cartData, formType)
+              }
             >
               {({errors, touched, status, values}) => {
                 values.quantity = this.state.count;
@@ -141,9 +149,9 @@ class SimpleForm extends PureComponent {
                           }
                           name="name"
                         />
-                        {errors.name && touched.name
-                          ? <div className="form__error">{errors.name}</div>
-                          : null}
+                        {errors.name && touched.name ? (
+                          <div className="form__error">{errors.name}</div>
+                        ) : null}
                       </label>
                       <label
                         className={
@@ -164,9 +172,9 @@ class SimpleForm extends PureComponent {
                           name="email"
                           type="email"
                         />
-                        {errors.email && touched.email
-                          ? <div className="form__error">{errors.email}</div>
-                          : null}
+                        {errors.email && touched.email ? (
+                          <div className="form__error">{errors.email}</div>
+                        ) : null}
                       </label>
                       <label
                         className={
@@ -187,11 +195,9 @@ class SimpleForm extends PureComponent {
                           type="numeber"
                           placeholder=""
                         />
-                        {errors.telephone && touched.telephone
-                          ? <div className="form__error">
-                              {errors.telephone}
-                            </div>
-                          : null}
+                        {errors.telephone && touched.telephone ? (
+                          <div className="form__error">{errors.telephone}</div>
+                        ) : null}
                       </label>
                       <label
                         className={
@@ -211,24 +217,29 @@ class SimpleForm extends PureComponent {
                           }
                           name="message"
                         />
-                        {errors.message && touched.message
-                          ? <div className="form__error">{errors.message}</div>
-                          : null}
+                        {errors.message && touched.message ? (
+                          <div className="form__error">{errors.message}</div>
+                        ) : null}
                       </label>
+
                       <button
                         className="form__btn btn btn--primary-theme"
                         type="submit"
                       >
-                        {formType === 'order' || formType === 'cartOrder'
-                          ? <FormattedMessage id="button-order-title" />
-                          : <FormattedMessage id="button-sent-title" />}
+                        {formType === 'order' || formType === 'cartOrder' ? (
+                          <FormattedMessage id="button-order-title" />
+                        ) : (
+                          <FormattedMessage id="button-sent-title" />
+                        )}
                       </button>
 
-                      {status && status.success
-                        ? <div className="form__success-message">
-                            {status.success}
-                          </div>
-                        : ''}
+                      {status && status.success ? (
+                        <div className="form__success-message">
+                          {status.success}
+                        </div>
+                      ) : (
+                        ''
+                      )}
                     </fieldset>
                   </Form>
                 );
