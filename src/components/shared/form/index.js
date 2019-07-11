@@ -19,10 +19,15 @@ class SimpleForm extends PureComponent {
 
   handleSubmit = (values, actions, cartData, formType) => {
     actions.setSubmitting(false);
+    let dataToEmail = '';
+    if (formType === 'cartOrder') {
+      let {telephone, name} = values;
+      let cartData = JSON.stringify(cartData);
+      dataToEmail = {telephone, name, cartData};
+    } else {
+      dataToEmail = values;
+    }
 
-    let {telephone, name} = values;
-    let dataToEmail =
-      formType === 'cartOrder' ? {...cartData, telephone, name} : values;
     fetch(`/${this.props.locale}/`, {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
