@@ -1,23 +1,32 @@
 .close {
   background-color: transparent;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
 
   &::before,
   &::after {
     content: '';
     position: absolute;
-    top: 0;
     height: 2.0625rem;
     width: 0.325rem;
     background-color: #333;
+    top: 50%;
+    left: 50%;
+  }
+
+  &::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   &--size-sm {
-    &::before,
-    &::after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-color: #333;
+    &::after,
+    &::before {
+      height: 1.5rem;
     }
   }
 
@@ -26,13 +35,5 @@
     &::before {
       background-color: $mountain-meadow;
     }
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
   }
 }
