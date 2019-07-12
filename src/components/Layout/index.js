@@ -178,7 +178,10 @@ class Layout extends Component {
             appInterface={this.state.interface}
             locale={this.props.intl.locale}
           />
-          <Backdrop isVisible={this.state.interface.cartStatus} />
+          <Backdrop
+            isVisible={this.state.interface.cartStatus}
+            closeModal={this.state.interface.cartToggle}
+          />
         </StoreContext.Provider>
       </InterfaceContext.Provider>
     );
