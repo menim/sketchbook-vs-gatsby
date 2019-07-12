@@ -31,10 +31,12 @@ class Modal extends Component {
     if (this.el) {
       return ReactDOM.createPortal(
         <div className={modalStatus ? '' : 'none'}>
-          <Backdrop
-            hideBackdrop={modalToggle}
-            isBackdropVisible={modalStatus}
-          />
+          <div style={{zIndex: 6, position: 'relative'}}>
+            <Backdrop
+              hideBackdrop={modalToggle}
+              isBackdropVisible={modalStatus}
+            />
+          </div>
           <div className="modal">
             <Button className="modal__close close" onClick={modalToggle} />
             <Form formType="order" locale={this.props.locale} />
