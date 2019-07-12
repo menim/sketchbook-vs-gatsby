@@ -17,7 +17,7 @@ class SimpleForm extends PureComponent {
     this.setState({count: value});
   };
 
-  handleSubmit = (values, actions, cartData, formType) => {
+  handleSubmit = (values, actions, cartData, formType, removeAllItems) => {
     actions.setSubmitting(false);
     let dataToEmail = '';
     if (formType === 'cartOrder') {
@@ -38,18 +38,26 @@ class SimpleForm extends PureComponent {
           success: <FormattedMessage id="success-message" />,
         });
         setTimeout(() => {
-          actions.resetForm();
           if (formType === 'cartOrder') {
             localStorage.clear();
+            removeAllItems();
+          } else {
+            actions.resetForm();
+            this.setState({count: 1});
           }
-          this.setState({count: 1});
         }, 2000);
       }
     });
   };
 
   render() {
-    const {locale, formType, inputCommonClasses, cartData = ''} = this.props;
+    const {
+      locale,
+      formType,
+      inputCommonClasses,
+      cartData = '',
+      removeAll = () => {},
+    } = this.props;
 
     return (
       <StaticQuery
@@ -91,7 +99,13 @@ class SimpleForm extends PureComponent {
               validateOnChange
               validationSchema={schemas[formType]}
               onSubmit={(values, actions) =>
-                this.handleSubmit(values, actions, cartData, formType)
+                this.handleSubmit(
+                  values,
+                  actions,
+                  cartData,
+                  formType,
+                  removeAll
+                )
               }
             >
               {({errors, touched, status, values}) => {

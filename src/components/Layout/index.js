@@ -101,6 +101,13 @@ class Layout extends Component {
           };
         });
       },
+      removeAllItems: () => {
+        this.setState(prevState => ({
+          ...prevState,
+          store: {...prevState.store, productItems: []},
+        }));
+        localStorage.clear();
+      },
       updateItem: () => {},
       getProductsInCart: () => {
         return this.state.store.productItems.reduce(

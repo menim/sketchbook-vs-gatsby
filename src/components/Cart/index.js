@@ -32,6 +32,7 @@ const Cart = ({appInterface, store, locale}) => (
           formType="cartOrder"
           inputCommonClasses="form__input--size-md"
           cartData={store.productItems}
+          removeAll={store.removeAllItems}
         />
       </>
     )}
