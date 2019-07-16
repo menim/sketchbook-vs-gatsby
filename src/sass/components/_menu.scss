@@ -66,6 +66,10 @@
 
   &__telephone {
     color: $white;
+
+    @include respond-below(m) {
+      display: none;
+    }
   }
 
   &--mobile {
