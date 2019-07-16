@@ -6,77 +6,73 @@ import ModalToggleBtn from '../shared/modalToggleBtn';
 import Button from '../shared/button';
 
 const Nav = ({telephone, isPlace, mobile}) =>
-  mobile ? (
-    <nav className="menu menu--mobile">
-      <ul className="menu__list">
-        <li className="menu__item">
-          <Button
-            as={Link}
-            to="/delivery"
-            className="menu__link menu__link--primary-theme"
-          >
-            <FormattedMessage id="pay-delivery-title" />
-          </Button>
-        </li>
-        <li className="menu__item">
-          <Button
-            as={Link}
-            to="/contact/"
-            className="menu__link menu__link--primary-theme"
-          >
-            <FormattedMessage id="contact-page-title" />
-          </Button>
-        </li>
-        <li className="menu__item">
-          <ModalToggleBtn>
-            <FormattedMessage id="button-order-title" />
-          </ModalToggleBtn>
-        </li>
-        <li className="menu__item menu__telephone">
-          <a className="telephone" href="tel: +38066-456-56-67">
-            066-456-56-67
-          </a>
-        </li>
-      </ul>
-    </nav>
-  ) : (
-    <nav className={`menu ${isPlace && isPlace + '__menu'}`}>
-      <ul className="menu__list">
-        <li className="menu__item">
-          <Button
-            as={Link}
-            to="/delivery"
-            className="menu__link menu__link--primary-theme"
-          >
-            <FormattedMessage id="pay-delivery-title" />
-          </Button>
-        </li>
-        <li className="menu__item">
-          <Button
-            as={Link}
-            to="/contact/"
-            className="menu__link menu__link--primary-theme"
-          >
-            <FormattedMessage id="contact-page-title" />
-          </Button>
-        </li>
-        <li className="menu__item">
-          <ModalToggleBtn>
-            <FormattedMessage id="button-order-title" />
-          </ModalToggleBtn>
-        </li>
-        {telephone ? (
+  mobile
+    ? <nav className="menu menu--mobile">
+        <ul className="menu__list">
+          <li className="menu__item">
+            <Button
+              as={Link}
+              to="/delivery"
+              className="menu__link menu__link--primary-theme"
+            >
+              <FormattedMessage id="pay-delivery-title" />
+            </Button>
+          </li>
+          <li className="menu__item">
+            <Button
+              as={Link}
+              to="/contact/"
+              className="menu__link menu__link--primary-theme"
+            >
+              <FormattedMessage id="contact-page-title" />
+            </Button>
+          </li>
+          <li className="menu__item">
+            <ModalToggleBtn>
+              <FormattedMessage id="quick-order-title" />
+            </ModalToggleBtn>
+          </li>
           <li className="menu__item menu__telephone">
             <a className="telephone" href="tel: +38066-456-56-67">
               066-456-56-67
             </a>
           </li>
-        ) : (
-          ''
-        )}
-      </ul>
-    </nav>
-  );
+        </ul>
+      </nav>
+    : <nav className={`menu ${isPlace && isPlace + '__menu'}`}>
+        <ul className="menu__list">
+          <li className="menu__item">
+            <Button
+              as={Link}
+              to="/delivery"
+              className="menu__link menu__link--primary-theme"
+            >
+              <FormattedMessage id="pay-delivery-title" />
+            </Button>
+          </li>
+          <li className="menu__item">
+            <Button
+              as={Link}
+              to="/contact/"
+              className="menu__link menu__link--primary-theme"
+            >
+              <FormattedMessage id="contact-page-title" />
+            </Button>
+          </li>
+          <li className="menu__item">
+            <ModalToggleBtn>
+              <FormattedMessage id="quick-order-title" />
+            </ModalToggleBtn>
+          </li>
+          {telephone
+            ? <li className="menu__item menu__telephone">
+                <a className="telephone" href="tel: +38066-456-56-67">
+                  066-456-56-67
+                </a>
+              </li>
+            : ''}
+        </ul>
+      </nav>;
 
 export default Nav;
 
