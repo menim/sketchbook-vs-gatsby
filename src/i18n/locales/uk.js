@@ -57,4 +57,5 @@ module.exports = {
   'cart-title': 'Ваші скетчбуки',
   'cart-empty-text': 'Ваша корзина на даний момент порожня',
   'cart-total-title': 'Всього до сплати',
+  'quick-order-title': 'Швидке замовлення',
 };
