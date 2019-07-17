@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const Backdrop = ({isBackdropVisible, hideBackdrop}) => (
   <div
-    className={`backdrop ${isBackdropVisible ? '' : 'none'}`}
+    className={`backdrop ${
+      isBackdropVisible ? 'animationShow' : 'animationHide'
+    }`}
     onClick={hideBackdrop || null}
   />
 );

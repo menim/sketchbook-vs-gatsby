@@ -30,13 +30,14 @@ class Modal extends Component {
 
     if (this.el) {
       return ReactDOM.createPortal(
-        <div className={modalStatus ? '' : 'none'}>
-          <div style={{zIndex: 6, position: 'relative'}}>
-            <Backdrop
-              hideBackdrop={modalToggle}
-              isBackdropVisible={modalStatus}
-            />
-          </div>
+        <div
+          style={{zIndex: 6, position: 'relative'}}
+          className={modalStatus ? 'animationShow' : 'animationHide'}
+        >
+          <Backdrop
+            hideBackdrop={modalToggle}
+            isBackdropVisible={modalStatus}
+          />
           <div className="modal">
             <Button className="modal__close close" onClick={modalToggle} />
             <Form formType="order" locale={this.props.locale} />
