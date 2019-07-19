@@ -22,7 +22,17 @@ class SimpleForm extends PureComponent {
     let dataToEmail = '';
     if (formType === 'cartOrder') {
       let {telephone, name, message} = values;
-      message = JSON.stringify(cartData);
+      cartData = cartData.map(product => {
+        return {
+          Цена: product.price,
+          Количество: product.count,
+          Цвет: product.cover.split(' ')[1],
+          Язык: product.lang,
+          Нвзвание: product.title,
+        };
+      });
+
+      message = JSON.stringify(cartData, null, '\t');
       dataToEmail = {telephone, name, message};
     } else {
       dataToEmail = values;
