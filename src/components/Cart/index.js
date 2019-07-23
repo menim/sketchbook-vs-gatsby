@@ -18,7 +18,7 @@ const Cart = ({appInterface, store, locale}) => (
         {store.getProductsInCart()}
       </span>
     </h3>
-    <CartToggleBtn getProductsInCart={store.getProductsInCart} />
+    <CartToggleBtn productsInCart={store.getProductsInCart()} />
     {appInterface.cartIsEmpty() ? (
       <div className="cart__empty center-vs-transform">
         <FormattedMessage id="cart-empty-text" />
