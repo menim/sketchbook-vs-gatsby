@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {FormattedMessage} from 'react-intl';
-import {withIntl} from '../i18n';
-
+// import {FormattedMessage} from 'react-intl';
+// import {withIntl} from '../i18n';
+import {Link} from 'gatsby';
 //import Seo from '../components/shared/seo'
 
 import '../sass/main.scss';
@@ -17,7 +17,7 @@ import Main from '../components/shared/main';
 import Headline from '../components/shared/headline';
 import Form from '../components/shared/form';
 
-const Contact = ({intl}) => {
+const Contact = (/*{intl}*/) => {
   return (
     <>
       <Layout>
@@ -30,47 +30,57 @@ const Contact = ({intl}) => {
         <Main smVerticalOffset>
           <Container>
             <Headline>
-              <FormattedMessage id='contact-page-title' />
+              {/* <FormattedMessage id="contact-page-title" /> */}
+              Контакти
             </Headline>
-            <FlexContainer params='l-flex--center'>
-              <div className='contact'>
-                <section className='contact__main'>
-                  <p className='contact__paragraph'>
-                    <FormattedMessage id='contact-page-description' />
+            <FlexContainer params="l-flex--center">
+              <div className="contact">
+                <section className="contact__main">
+                  <p className="contact__paragraph">
+                    {/* <FormattedMessage id="contact-page-description" /> */}
+                    По питанням співпраці, пропозицій чи замовлення скетчбука
+                    пишіть нам або залишайте телефон и ми передзвонимо Вам
                   </p>
-                  <Form formType='contact' locale={intl.locale} />
+                  <Form formType="contact" /*locale={intl.locale}*/ />
                 </section>
               </div>
-              <aside className='aside-info contact__aside-info'>
-                <section className='aside-info__item'>
-                  <h2 className='aside-info__header'>
-                    <FormattedMessage id='address-title' />
+              <aside className="aside-info contact__aside-info">
+                <section className="aside-info__item">
+                  <h2 className="aside-info__header">
+                    {/* <FormattedMessage id="address-title" /> */}
+                    Адреса
                   </h2>
-                  <address className='aside-info__address'>
-                    <FormattedMessage id='city-title' /> <br />
-                    <FormattedMessage id='street-title' />
+                  <address className="aside-info__address">
+                    {/* <FormattedMessage id="city-title" />
+                    <br/>
+                    <FormattedMessage id="street-title" /> */}
+                    м.Харків
+                    <br />
+                    вул.Пушкінська,7
                   </address>
                 </section>
-                <section className='aside-info__item'>
-                  <h2 className='aside-info__header'>
-                    <FormattedMessage id='contact-page-title' />
+                <section className="aside-info__item">
+                  <h2 className="aside-info__header">
+                    {/* <FormattedMessage id="contact-page-title" /> */}
+                    Контакти
                   </h2>
-                  <a className='telephone' href='tel: +38066-754-95-64'>
+                  <a className="telephone" href="tel: +38066-754-95-64">
                     066-754-95-64
                   </a>
-                  <a className='telephone' href='tel: +38097-025-8-646'>
+                  <a className="telephone" href="tel: +38097-025-8-646">
                     097-025-86-46
                   </a>
-                  <a className='telephone' href='tel: +3093-139-167-04'>
+                  <a className="telephone" href="tel: +3093-139-167-04">
                     093-139-67-04
                   </a>
-                  <a className='telephone' href='tel: +38050-364-26-87'>
+                  <a className="telephone" href="tel: +38050-364-26-87">
                     050-364-26-87
                   </a>
                 </section>
-                <section className='aside-info__item'>
-                  <h2 className='aside-info__header'>
-                    <FormattedMessage id='contact-us-title' />
+                <section className="aside-info__item">
+                  <h2 className="aside-info__header">
+                    {/* <FormattedMessage id="contact-us-title" /> */}
+                    Пишіть нам
                   </h2>
                   mail@okobook.com
                 </section>
@@ -83,8 +93,8 @@ const Contact = ({intl}) => {
   );
 };
 
-export default withIntl(Contact);
+export default Contact; //withIntl(Contact);
 
-Contact.propTypes = {
-  intl: PropTypes.object.isRequired,
-};
+// Contact.propTypes = {
+//   intl: PropTypes.object.isRequired,
+// };

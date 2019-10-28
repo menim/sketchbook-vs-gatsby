@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FormattedMessage} from 'react-intl';
+// import {FormattedMessage} from 'react-intl';
 
 import {StoreContext} from '../../context';
 
@@ -7,35 +7,35 @@ import Button from '../shared/button';
 import QuantityCounter from '../shared/form/quantityCounter';
 
 export default class ProductForm extends Component {
-  constructor (props) {
-    super (props);
+  constructor(props) {
+    super(props);
     this.state = {
       price: this.props.product.price,
       count: 1,
       lang: '',
-      title: `Скетчбук. ${this.props.product[this.props.locale].title}`,
+      title: `Скетчбук. ${this.props.product.uk.title}`,
       cover: '',
     };
   }
 
-  componentDidMount () {
-    const defaultLang = document.querySelector ('input[name="lang"]:checked')
+  componentDidMount() {
+    const defaultLang = document.querySelector('input[name="lang"]:checked')
       .value;
-    const defaultCover = document.querySelector ('input[name="cover"]:checked')
+    const defaultCover = document.querySelector('input[name="cover"]:checked')
       .value;
-    this.setState ({lang: defaultLang, cover: defaultCover});
+    this.setState({lang: defaultLang, cover: defaultCover});
   }
 
   setInput = value => {
-    this.setState ({count: value});
+    this.setState({count: value});
   };
 
   onChange = e => {
-    this.setState ({[e.target.name]: e.target.value});
+    this.setState({[e.target.name]: e.target.value});
   };
 
   resetForm = () => {
-    this.setState (prevState => {
+    this.setState(prevState => {
       return {
         ...prevState,
         count: 1,
@@ -44,20 +44,21 @@ export default class ProductForm extends Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault ();
-    this.context.addItem (this.state);
-    this.resetForm ();
+    e.preventDefault();
+    this.context.addItem(this.state);
+    this.resetForm();
   };
 
-  render () {
-    const {product, locale} = this.props;
+  render() {
+    const {product /*locale*/} = this.props;
     return (
       <form className="form" onSubmit={this.handleSubmit}>
         <fieldset className="form__radio-list">
           <legend className="form__legend form__legend--with-triangle">
-            <FormattedMessage id="lang-option-title" />:
+            {/* <FormattedMessage id="lang-option-title" />: */}
+            Виберіть мову:
           </legend>
-          {product[this.props.locale].lang.map ((lang, index) => (
+          {product.uk.lang.map((lang, index) => (
             <div className="form__item-wrapper" key={index}>
               <input
                 className="form__input sr-only"
@@ -79,9 +80,10 @@ export default class ProductForm extends Component {
         </fieldset>
         <fieldset className="form__radio-list">
           <legend className="form__legend form__legend--with-triangle">
-            <FormattedMessage id="cover-option-title" />:
+            {/* <FormattedMessage id="cover-option-title" />: */}
+            Виберіть обкладинку:
           </legend>
-          {product.cover.map ((cover, index) => (
+          {product.cover.map((cover, index) => (
             <div className="form__item-wrapper" key={index}>
               <input
                 className="form__input sr-only"
@@ -103,7 +105,8 @@ export default class ProductForm extends Component {
         </fieldset>
         <QuantityCounter counter={this.state.count} setInput={this.setInput} />
         <Button theme="primary">
-          <FormattedMessage id="cart-btn-title" />
+          {/* <FormattedMessage id="cart-btn-title" /> */}
+          Додати у кошик
         </Button>
       </form>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {withIntl} from '../i18n';
+// import {withIntl} from '../i18n';
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
@@ -17,7 +17,7 @@ import ProductList from '../components/MainPage/productList';
 import WhtSketch from '../components/MainPage/sketchDescription';
 import YtbVideo from '../components/MainPage/youtubeVideo';
 
-const IndexPage = ({intl}) => (
+const IndexPage = (/*{intl}*/) => (
   <>
     {/* <Seo
     title={intl.messages.mainPageTitle}
@@ -29,13 +29,13 @@ const IndexPage = ({intl}) => (
       <Main>
         <Container>
           <FlexContainer>
-            <ProductList data={intl} />
+            <ProductList /*data={intl}*/ />
           </FlexContainer>
         </Container>
         <Container>
-          <FlexContainer params='l-flex--center vert-lg-margin'>
+          <FlexContainer params="l-flex--center vert-lg-margin">
             <WhtSketch />
-            <YtbVideo id='iMOM4CXQn00' />
+            <YtbVideo id="iMOM4CXQn00" />
           </FlexContainer>
         </Container>
       </Main>
@@ -43,8 +43,8 @@ const IndexPage = ({intl}) => (
   </>
 );
 
-export default withIntl(IndexPage);
+export default IndexPage; //withIntl(IndexPage);
 
-IndexPage.propTypes = {
-  intl: PropTypes.object.isRequired,
-};
+// IndexPage.propTypes = {
+//   intl: PropTypes.object.isRequired,
+// };

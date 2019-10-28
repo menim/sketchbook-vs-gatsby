@@ -3,7 +3,7 @@ import {StaticQuery, graphql} from 'gatsby';
 
 import {encode} from '../../../helpers';
 
-import {FormattedMessage} from 'react-intl';
+// import {FormattedMessage} from 'react-intl';
 import {Formik, Form, Field} from 'formik';
 
 import {schemas} from './schemas';
@@ -38,14 +38,14 @@ class SimpleForm extends PureComponent {
       dataToEmail = values;
     }
 
-    fetch(`/${this.props.locale}/`, {
+    fetch('/' /*`/${this.props.locale}/`*/, {
       method: 'POST',
       headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: encode({'form-name': 'contact', ...dataToEmail}),
     }).then(response => {
       if (response.status === 200) {
         actions.setStatus({
-          success: <FormattedMessage id="success-message" />,
+          success: 'Ваше повідомлення відправлено, дякуємо', //<FormattedMessage id="success-message" />,
         });
         setTimeout(() => {
           if (formType === 'cartOrder') {
@@ -62,7 +62,7 @@ class SimpleForm extends PureComponent {
 
   render() {
     const {
-      locale,
+      //locale,
       formType,
       inputCommonClasses,
       cartData = '',
@@ -80,10 +80,6 @@ class SimpleForm extends PureComponent {
                     title
                     lang
                   }
-                  ru {
-                    title
-                    lang
-                  }
                 }
               }
             }
@@ -91,8 +87,14 @@ class SimpleForm extends PureComponent {
         `}
         render={data => {
           const listSketch = data.allDataJson.edges.map((product, index) => (
-            <option value={product.node[locale].title} key={index}>
-              {product.node[locale].title}
+            <option
+              /*value={product.node[locale].title}*/ value={
+                product.node.uk.title
+              }
+              key={index}
+            >
+              {/* {product.node[locale].title} */}
+              {product.node.uk.title}
             </option>
           ));
           const selectDefaultVal = listSketch[0].props.value; // get default value for select component
@@ -136,7 +138,8 @@ class SimpleForm extends PureComponent {
                           formType === 'order' ? 'form__title' : 'none'
                         }
                       >
-                        <FormattedMessage id="form-order-title" />
+                        {/* <FormattedMessage id="form-order-title" /> */}
+                        Форма замовлення
                       </legend>
                       <label
                         className={
@@ -160,16 +163,16 @@ class SimpleForm extends PureComponent {
                         }
                         htmlFor="quantity"
                       >
-                        <FormattedMessage id="form-quantity-title" />
-                        :
+                        {/* <FormattedMessage id="form-quantity-title" /> */}
+                        Кількість:
                         <QuantityCounter
                           setInput={this.setInput}
                           counter={this.state.count}
                         />
                       </label>
                       <label className="form__label" htmlFor="name">
-                        <FormattedMessage id="form-name-field" />
-                        *:
+                        {/* <FormattedMessage id="form-name-field" /> */}
+                        Им'я *:
                         <Field
                           className={
                             errors.name && touched.name
@@ -190,8 +193,8 @@ class SimpleForm extends PureComponent {
                         }
                         htmlFor="email"
                       >
-                        <FormattedMessage id="form-email-field" />
-                        *:
+                        {/* <FormattedMessage id="form-email-field" /> */}
+                        Email адреса *:
                         <Field
                           className={
                             errors.email && touched.email
@@ -236,8 +239,8 @@ class SimpleForm extends PureComponent {
                         }
                         htmlFor="message"
                       >
-                        <FormattedMessage id="form-message-field" />
-                        *:
+                        {/* <FormattedMessage id="form-message-field" /> */}
+                        Повідомлення *:
                         <Field
                           className={
                             errors.message && touched.message
@@ -255,11 +258,9 @@ class SimpleForm extends PureComponent {
                         className="form__btn btn btn--primary-theme"
                         type="submit"
                       >
-                        {formType === 'order' || formType === 'cartOrder' ? (
-                          <FormattedMessage id="button-order-title" />
-                        ) : (
-                          <FormattedMessage id="button-sent-title" />
-                        )}
+                        {(formType === 'order' || formType === 'cartOrder')
+                          ?  `Замовити`
+                          : `Відправити`}
                       </button>
 
                       {status && status.success ? (

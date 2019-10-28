@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 import {graphql} from 'gatsby';
-import {FormattedMessage} from 'react-intl';
-import {withIntl, Link} from '../i18n';
+// import {FormattedMessage} from 'react-intl';
+// import {withIntl, Link} from '../i18n';
+
+import {Link} from 'gatsby';
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
@@ -19,8 +21,9 @@ import ProductForm from '../components/ProductPage/productForm';
 import ModalToggleBtn from '../components/shared/modalToggleBtn';
 import Button from '../components/shared/button';
 
-const ProductPage = ({data, intl}) => {
+const ProductPage = ({data /*intl*/}) => {
   const product = data.allDataJson.edges[0].node;
+  
   return (
     <Layout>
       {/* <Seo 
@@ -39,7 +42,8 @@ const ProductPage = ({data, intl}) => {
             theme="secondary"
             className="l-container__btn"
           >
-            <FormattedMessage id="return-main-title" />
+            {/* <FormattedMessage id="return-main-title" /> */}
+            Повернутися на головну
           </Button>
           <div className="product">
             <section className="product__view">
@@ -47,15 +51,20 @@ const ProductPage = ({data, intl}) => {
             </section>
             <section className="product__description">
               <h1 className="product__title title title--size-lg">
-                Скетчбук. <FormattedMessage id="title" />
+                Скетчбук. {product.uk.title}
+                {/* <FormattedMessage id="title" /> */}
+          
               </h1>
               <span className="product__price">₴ {product.price}</span>
               <p className="product__overview">
-                <FormattedMessage id="description" />
+                {/* <FormattedMessage id="description" /> */}
+                {product.uk.description}
               </p>
-              <ProductForm product={product} locale={intl.locale} />
+              <ProductForm product={product} /*locale={intl.locale}*/ />
               <p className="product__paragraph">
-                <FormattedMessage id="wholesale-message" />
+                {/* <FormattedMessage id="wholesale-message" /> */}
+                Якщо ви хочете зробити замовлення оптом зв'яжіться з нашим
+                менеджером
               </p>
             </section>
           </div>
@@ -65,7 +74,7 @@ const ProductPage = ({data, intl}) => {
   );
 };
 
-export default withIntl (ProductPage);
+export default ProductPage; //withIntl(ProductPage);
 
 export const query = graphql`
   query($slug: String!) {
@@ -92,13 +101,10 @@ export const query = graphql`
             }
           }
           slug
-          ru {
-            title
-            lang
-          }
           uk {
             title
             lang
+            description
           }
         }
       }
@@ -108,5 +114,5 @@ export const query = graphql`
 
 ProductPage.propTypes = {
   data: PropTypes.object.isRequired,
-  intl: PropTypes.object.isRequired,
+ // intl: PropTypes.object.isRequired,
 };

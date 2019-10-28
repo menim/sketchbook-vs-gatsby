@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+import React, {Component} from 'react';
+//import { FormattedMessage } from 'react-intl';
 import VisibilitySensor from 'react-visibility-sensor';
 
 class whtSketch extends Component {
   constructor(props) {
     super(props);
-    this.state = { visibility: false };
+    this.state = {visibility: false};
   }
 
   onChangeVisibility = isVisible => {
-    this.setState({ visibility: isVisible });
+    this.setState({visibility: isVisible});
   };
 
   render() {
@@ -18,7 +18,7 @@ class whtSketch extends Component {
         onChange={this.onChangeVisibility}
         active={!this.state.visibility}
       >
-        {({ isVisible }) => (
+        {({isVisible}) => (
           <div
             className={
               !isVisible
@@ -27,17 +27,23 @@ class whtSketch extends Component {
             }
           >
             <h3 className="wht-sketch__header">
-              <FormattedMessage id="wth-sketch-title" />
+              {/* <FormattedMessage id="wth-sketch-title" /> */}
+              Що таке навчальний Скетчбук?
             </h3>
             <ul className="wht-sketch__list">
               <li className="wht-sketch__item">
-                <FormattedMessage id="wth-sketch-descript-1" />
+                {/* <FormattedMessage id="wth-sketch-descript-1" /> */}
+                Це навчальний посібник з основ малювання, каліграфії, дудлінгу
               </li>
               <li className="wht-sketch__item">
-                <FormattedMessage id="wth-sketch-descript-2" />
+                {/* <FormattedMessage id="wth-sketch-descript-2" /> */}
+                Це креативний блокнот для нарисів, замальовок, записів і
+                малювання - можна творити, як тільки душі забажається
               </li>
               <li className="wht-sketch__item">
-                <FormattedMessage id="wth-sketch-descript-3" />
+                {/* <FormattedMessage id="wth-sketch-descript-3" /> */}
+                Це комора ідей творчої людини, яку він створює сам, розвиваючи
+                свої таланти і вдосконалюючи навички
               </li>
             </ul>
           </div>

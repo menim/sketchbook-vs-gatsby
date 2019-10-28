@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Parallax from 'react-rellax';
-import {FormattedMessage} from 'react-intl';
+// import {FormattedMessage} from 'react-intl';
 
 import mp4Video from '../../video/sketch-ai.mp4';
 import webpVideo from '../../video/sketch-ai.webm';
@@ -12,7 +12,7 @@ import NavMobile from '../Nav/navMobile';
 import Logo from '../shared/logo';
 import Container from '../shared/container';
 import MultilineBg from '../shared/multilineBg';
-import Language from './language';
+//import Language from './language';
 
 const Header = ({videoEnabled}) =>
   videoEnabled ? (
@@ -26,19 +26,23 @@ const Header = ({videoEnabled}) =>
         <div className="header__top">
           <Logo />
           <Nav isPlace="header" telephone />
-          <Language />
+          {/* <Language /> */}
           <NavMobile />
         </div>
         <div className="header__description">
           <Parallax speed={4}>
             <h1 className="header__title">
               <MultilineBg>
-                <FormattedMessage id="header-title" />
+                {/* <FormattedMessage id="header-title" /> */}
+                Скетчбук - книга для записів та замальовок.
               </MultilineBg>
             </h1>
             <p className="header__content">
               <MultilineBg>
-                <FormattedMessage id="header-subtitle" />
+                {/* <FormattedMessage id="header-subtitle" /> */}
+                Це книга для сучасних людей, що шукають яскравих, креативних
+                форм розвитку особистості, прагнуть збагатити своє життя
+                художніми образами.
               </MultilineBg>
             </p>
           </Parallax>
@@ -51,7 +55,7 @@ const Header = ({videoEnabled}) =>
         <div className="header__top">
           <Logo />
           <Nav isPlace="header" telephone />
-          <Language />
+          {/*  <Language /> */}
           <NavMobile />
         </div>
       </Container>

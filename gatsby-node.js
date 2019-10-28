@@ -16,9 +16,10 @@ exports.onCreateWebpackConfig = ({getConfig, stage}) => {
   }
 };
 
+
 const path = require(`path`);
-const {languages} = require('./src/i18n/locales');
-const redirect = path.resolve('src/i18n/redirect.js');
+//const {languages} = require('./src/i18n/locales');
+//const redirect = path.resolve('src/i18n/redirect.js');
 
 exports.createPages = ({graphql, actions}) => {
   const {createPage} = actions;
@@ -28,10 +29,6 @@ exports.createPages = ({graphql, actions}) => {
         edges {
           node {
             slug
-            ru {
-              title
-              description
-            }
             uk {
               title
               description
@@ -47,52 +44,63 @@ exports.createPages = ({graphql, actions}) => {
       console.log(result.errors);
     }
     result.data.allDataJson.edges.forEach(({node}) => {
-      const redirectPage = {
-        path: node.slug,
-        component: redirect,
-      };
-      createPage(redirectPage);
+      // const redirectPage = {
+      //   path: node.slug,
+      //   component: redirect,
+      // };
+      //createPage(redirectPage);
 
-      languages.forEach(({value}) => {
-        createPage({
-          path: `/${value}/${node.slug}`,
-          component: path.resolve(`./src/templates/product-page.js`),
-          context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            languages,
-            locale: value,
-            originalPath: `/${node.slug}`,
-            slug: node.slug,
-            langRu: node.ru,
-            langUk: node.uk,
-          },
-        });
-      });
-    });
-  });
-};
+      // languages.forEach(({value}) => {
+      //   createPage({
+      //     path: `/${value}/${node.slug}`,
+      //     component: path.resolve(`./src/templates/product-page.js`),
+      //     context: {
+      //       // Data passed to context is available
+      //       // in page queries as GraphQL variables.
+      //       languages,
+      //       locale: value,
+      //       originalPath: `/${node.slug}`,
+      //       slug: node.slug,
+      //       //langRu: node.ru,
+      //       //langUk: node.uk,
+      //     },
+      //   });
+      // });
 
-exports.onCreatePage = ({page, actions}) => {
-  const {createPage} = actions;
-  return new Promise(resolve => {
-    const redirectPage = {
-      path: page.path,
-      component: redirect,
-    };
-    createPage(redirectPage);
-    languages.forEach(({value}) => {
-      const localePage = {
-        component: page.component,
-        path: `/${value}${page.path}`,
+      createPage({
+        path: `/${node.slug}`,
+        component: path.resolve('./src/templates/product-page.js'),
         context: {
-          languages,
-          locale: value,
-          originalPath: page.path,
-        },
-      };
-      createPage(localePage);
+          slug: node.slug,
+          originalPath: `/${node.slug}/`,
+        }
+      })
     });
-    resolve();
   });
 };
+
+  // exports.onCreatePage = ({page, actions}) => {
+  // const {createPage} = actions;
+  // return new Promise(resolve => {
+  //   // const redirectPage = {
+  //   //   path: page.path,
+  //   //   component: redirect,
+  //   // };
+  //   // createPage(redirectPage);
+  //   // languages.forEach(({value}) => {
+  //   //   const localePage = {
+  //   //     component: page.component,
+  //   //     path: `/${value}${page.path}`,
+  //   //     context: {
+  //   //       languages,
+  //   //       locale: value,
+  //   //       originalPath: page.path,
+  //   //     },
+  //   //   };
+  //   //   createPage(localePage);
+  //   // });
+
+
+  //   resolve();
+  // });
+//};

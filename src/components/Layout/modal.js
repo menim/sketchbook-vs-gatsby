@@ -40,7 +40,7 @@ class Modal extends Component {
           />
           <div className="modal">
             <Button className="modal__close close" onClick={modalToggle} />
-            <Form formType="order" locale={this.props.locale} />
+            <Form formType="order" /*locale={this.props.locale}*/ />
           </div>
         </div>,
         this.el
@@ -53,6 +53,6 @@ class Modal extends Component {
 
 export default Modal;
 
-Modal.propTypes = {
-  locale: PropTypes.string.isRequired,
-};
+// Modal.propTypes = {
+//   locale: PropTypes.string.isRequired,
+// };

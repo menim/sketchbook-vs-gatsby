@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 import Product from './product';
 
-const ProductList = ({ data }) => {
-  const locale = data.locale;
+const ProductList = ({/* data*/}) => {
+  //const locale = data.locale;
 
   return (
     <StaticQuery
@@ -40,7 +40,7 @@ const ProductList = ({ data }) => {
       render={data => {
         return data.allDataJson.edges.map((product, index) => {
           return (
-            <Product locale={locale} key={index} productData={product.node} />
+            <Product /*locale={locale}*/ key={index} productData={product.node} />
           );
         });
       }}
@@ -50,6 +50,6 @@ const ProductList = ({ data }) => {
 
 export default ProductList;
 
-ProductList.propTypes = {
-  data: PropTypes.object.isRequired
-};
+// ProductList.propTypes = {
+//   data: PropTypes.object.isRequired
+// };

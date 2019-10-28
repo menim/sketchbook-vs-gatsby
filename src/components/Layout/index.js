@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {injectIntl, FormattedTime} from 'react-intl';
+// import {injectIntl} from 'react-intl';
 
 import Cart from '../Cart';
 import Footer from './footer';
@@ -170,13 +170,13 @@ class Layout extends Component {
           <Cart
             appInterface={this.state.interface}
             store={this.state.store}
-            locale={this.props.intl.locale}
+            //locale={this.props.intl.locale}
           />
           {this.props.children}
           <Footer />
           <Modal
             appInterface={this.state.interface}
-            locale={this.props.intl.locale}
+            //locale={this.props.intl.locale}
           />
           <Backdrop
             isBackdropVisible={this.state.interface.cartStatus}
@@ -188,9 +188,9 @@ class Layout extends Component {
   }
 }
 
-export default injectIntl(Layout);
+export default Layout; //injectIntl(Layout);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  intl: PropTypes.object.isRequired,
+  //intl: PropTypes.object.isRequired,
 };
