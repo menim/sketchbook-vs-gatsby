@@ -34,7 +34,7 @@ const Header = ({videoEnabled}) =>
             <h1 className="header__title">
               <MultilineBg>
                 {/* <FormattedMessage id="header-title" /> */}
-                Скетчбук - книга для записів та замальовок.
+                Скетчбук - книга для&nbps;записів та&nbsp;замальовок.
               </MultilineBg>
             </h1>
             <p className="header__content">
