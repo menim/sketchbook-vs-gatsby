@@ -7,7 +7,8 @@ import Pict from '../shared/pict';
 import Swiper from 'react-id-swiper';
 
 //import {Link} from '../../i18n/';
-import {Link} from 'gatsby';
+//import {Link} from 'gatsby';
+import Link from 'gatsby-plugin-transition-link';
 
 const Product = ({/* locale,*/ productData}) => {
   const params = {

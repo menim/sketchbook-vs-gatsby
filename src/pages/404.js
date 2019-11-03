@@ -3,8 +3,6 @@ import React from 'react';
 // import {FormattedMessage} from 'react-intl';
 // import {withIntl, Link} from '../i18n';
 
-import {Link} from 'gatsby';
-
 //import Seo from '../components/shared/seo'
 
 import Container from '../components/shared/container';
@@ -12,6 +10,8 @@ import Layout from '../components/Layout';
 import Main from '../components/shared/main';
 import Button from '../components/shared/button';
 import Header from '../components/Header';
+
+import {SpringLink} from '../react-spring-animation';
 
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
@@ -39,7 +39,12 @@ const NotFoundPage = (/*{intl}*/) => (
             Спробуйте повернутися назад і повторити ще раз, або виберіть із
             запропонованого нижче
           </p>
-          <Button as={Link} to="/" theme="secondary" className="page-404__btn">
+          <Button
+            as={SpringLink}
+            to="/"
+            theme="secondary"
+            className="page-404__btn"
+          >
             {/* <FormattedMessage id="return-main-title" /> */}
             Повернутися на головну
           </Button>

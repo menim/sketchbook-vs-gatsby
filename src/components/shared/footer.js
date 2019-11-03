@@ -1,9 +1,9 @@
 import React from 'react';
 //import {FormattedMessage} from 'react-intl';
 
-import Container from '../shared/container';
+import Container from './container';
 import Nav from '../Nav/nav';
-import Logo from '../shared/logo';
+import Logo from './logo';
 
 const Footer = () => (
   <footer className="footer">

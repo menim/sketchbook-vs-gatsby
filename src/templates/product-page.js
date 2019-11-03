@@ -5,8 +5,6 @@ import {graphql} from 'gatsby';
 // import {FormattedMessage} from 'react-intl';
 // import {withIntl, Link} from '../i18n';
 
-import {Link} from 'gatsby';
-
 import '../sass/main.scss';
 import '../sass/generic/_swiper.scss';
 
@@ -14,6 +12,7 @@ import '../sass/generic/_swiper.scss';
 
 import Layout from '../components/Layout';
 import Header from '../components/Header';
+import Footer from '../components/shared/footer';
 import Main from '../components/shared/main';
 import Container from '../components/shared/container';
 import ProductItemSlider from '../components/ProductPage/productItemSlider';
@@ -21,9 +20,11 @@ import ProductForm from '../components/ProductPage/productForm';
 import ModalToggleBtn from '../components/shared/modalToggleBtn';
 import Button from '../components/shared/button';
 
+import {SpringLink} from '../react-spring-animation';
+
 const ProductPage = ({data /*intl*/}) => {
   const product = data.allDataJson.edges[0].node;
-  
+
   return (
     <Layout>
       {/* <Seo 
@@ -37,7 +38,7 @@ const ProductPage = ({data /*intl*/}) => {
       <Main smVerticalOffset>
         <Container>
           <Button
-            as={Link}
+            as={SpringLink}
             to="/"
             theme="secondary"
             className="l-container__btn"
@@ -53,7 +54,6 @@ const ProductPage = ({data /*intl*/}) => {
               <h1 className="product__title title title--size-lg">
                 Скетчбук. {product.uk.title}
                 {/* <FormattedMessage id="title" /> */}
-          
               </h1>
               <span className="product__price">₴ {product.price}</span>
               <p className="product__overview">
@@ -70,6 +70,7 @@ const ProductPage = ({data /*intl*/}) => {
           </div>
         </Container>
       </Main>
+      <Footer />
     </Layout>
   );
 };
@@ -114,5 +115,5 @@ export const query = graphql`
 
 ProductPage.propTypes = {
   data: PropTypes.object.isRequired,
- // intl: PropTypes.object.isRequired,
+  // intl: PropTypes.object.isRequired,
 };

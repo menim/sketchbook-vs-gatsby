@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import {FormattedMessage} from 'react-intl';
 // import {Link} from '../../i18n';
-import {Link} from 'gatsby';
+//import {Link} from 'gatsby';
+import {SpringLink} from '../../react-spring-animation';
 import ModalToggleBtn from '../shared/modalToggleBtn';
 import Button from '../shared/button';
 
@@ -12,7 +13,7 @@ const Nav = ({telephone, isPlace, mobile}) =>
       <ul className="menu__list">
         <li className="menu__item">
           <Button
-            as={Link}
+            as={SpringLink}
             to="/delivery"
             className="menu__link menu__link--primary-theme"
           >
@@ -22,7 +23,7 @@ const Nav = ({telephone, isPlace, mobile}) =>
         </li>
         <li className="menu__item">
           <Button
-            as={Link}
+            as={SpringLink}
             to="/contact/"
             className="menu__link menu__link--primary-theme"
           >
@@ -48,7 +49,7 @@ const Nav = ({telephone, isPlace, mobile}) =>
       <ul className="menu__list">
         <li className="menu__item">
           <Button
-            as={Link}
+            as={SpringLink}
             to="/delivery"
             className="menu__link menu__link--primary-theme"
           >
@@ -58,7 +59,7 @@ const Nav = ({telephone, isPlace, mobile}) =>
         </li>
         <li className="menu__item">
           <Button
-            as={Link}
+            as={SpringLink}
             to="/contact/"
             className="menu__link menu__link--primary-theme"
           >

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 // import {injectIntl} from 'react-intl';
 
 import Cart from '../Cart';
-import Footer from './footer';
 
 import {InterfaceContext} from '../../context/interfaceContext';
 import {StoreContext} from '../../context/storeContext';
@@ -16,6 +15,8 @@ import {
   getDataFromLocalStorage,
   getProductItemsInStore,
 } from '../../helpers';
+
+import {MySpring} from '../../react-spring-animation';
 
 class Layout extends Component {
   state = {
@@ -172,8 +173,7 @@ class Layout extends Component {
             store={this.state.store}
             //locale={this.props.intl.locale}
           />
-          {this.props.children}
-          <Footer />
+          <MySpring>{this.props.children}</MySpring>
           <Modal
             appInterface={this.state.interface}
             //locale={this.props.intl.locale}

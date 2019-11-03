@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // import {Link} from '../../i18n';
-import {Link} from 'gatsby';
+//import {Link} from 'gatsby';
+import Link from 'gatsby-plugin-transition-link';
 
 const Logo = ({logoSize}) => (
   <Link className="header__logo" to="/">

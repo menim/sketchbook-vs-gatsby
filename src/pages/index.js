@@ -10,6 +10,7 @@ import '../sass/generic/_swiper.scss';
 
 import Layout from '../components/Layout';
 import Header from '../components/Header';
+import Footer from '../components/shared/footer';
 import Container from '../components/shared/container';
 import FlexContainer from '../components/shared/flexContainer';
 import Main from '../components/shared/main';
@@ -17,13 +18,10 @@ import ProductList from '../components/MainPage/productList';
 import WhtSketch from '../components/MainPage/sketchDescription';
 import YtbVideo from '../components/MainPage/youtubeVideo';
 
-const IndexPage = (/*{intl}*/) => (
-  <>
-    {/* <Seo
-    title={intl.messages.mainPageTitle}
-    description={intl.messages.mainPageDescription}
-    lang={intl.locale}
-  /> */}
+import {SpringLink} from '../react-spring-animation';
+
+const IndexPage = (/*{intl}*/) => {
+  return (
     <Layout>
       <Header videoEnabled />
       <Main>
@@ -39,9 +37,10 @@ const IndexPage = (/*{intl}*/) => (
           </FlexContainer>
         </Container>
       </Main>
+      <Footer />
     </Layout>
-  </>
-);
+  );
+};
 
 export default IndexPage; //withIntl(IndexPage);
 
