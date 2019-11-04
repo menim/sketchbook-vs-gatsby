@@ -116,6 +116,10 @@
       width: 50%;
     }
 
+    &--height-sm {
+      height: 2.25em;
+    }
+
     &--select {
       -webkit-appearance: none;
       appearance: none;
@@ -124,6 +128,7 @@
     }
 
     &--quantity {
+      vertical-align: bottom;
       width: 70%;
     }
 

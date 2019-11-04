@@ -23,7 +23,9 @@ export default class QuantityCounter extends Component {
     return (
       <div>
         <input
-          className="form__input form__input--quantity"
+          className={`form__input form__input--quantity ${
+            this.props.small ? 'form__input--height-sm' : ''
+          }`}
           onChange={this.handleChange}
           value={this.props.counter}
           name="quantity"

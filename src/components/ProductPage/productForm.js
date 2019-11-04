@@ -103,7 +103,11 @@ export default class ProductForm extends Component {
             </div>
           ))}
         </fieldset>
-        <QuantityCounter counter={this.state.count} setInput={this.setInput} />
+        <QuantityCounter
+          counter={this.state.count}
+          setInput={this.setInput}
+          small
+        />
         <Button theme="primary">
           {/* <FormattedMessage id="cart-btn-title" /> */}
           Додати у кошик
