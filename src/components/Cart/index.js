@@ -1,44 +1,44 @@
-import React from 'react';
-import CartToggleBtn from './cartToggleBtn';
-import CartList from './cartList';
-import CartTotal from './total';
-import CheckoutForm from '../shared/form';
+import React, {useState} from 'react';
+
+import CartHeader from './cartHeader';
+import CartEmptyView from './cartEmptyView';
+import CartViewWithProducts from './cartViewWithProducts';
+
+import {useSpring, useTransition, animated, config} from 'react-spring';
 
 // import {FormattedMessage} from 'react-intl';
 
-const Cart = ({appInterface, store /*locale*/}) => (
-  <article
-    className={`cart ${
-      appInterface.cartStatus ? 'cart--is-open' : 'cart--is-hide'
-    } `}
-  >
-    <h3 className="cart__header">
-      {/* <FormattedMessage id="cart-title" /> */}
-      Ваші скетчбуки
-      <span className="cart__products-quantity cart__products-quantity--size-lg">
-        {store.getProductsInCart()}
-      </span>
-    </h3>
-    <CartToggleBtn productsInCart={store.getProductsInCart()} />
-    {appInterface.cartIsEmpty() ? (
-      <div className="cart__empty center-vs-transform">
-        {/* <FormattedMessage id="cart-empty-text" /> */}
-        Ваша корзина на даний момент порожня
-      </div>
-    ) : (
-      <>
-        <CartList />
-        <CartTotal totalPrice={store.totalPrice} />
-        <CheckoutForm
-          /*locale={locale}*/
-          formType="cartOrder"
-          inputCommonClasses="form__input--size-md"
-          cartData={store.productItems}
-          removeAll={store.removeAllItems}
-        />
-      </>
-    )}
-  </article>
-);
+const Cart = ({appInterface /*locale*/}) => {
+  const transitions = useTransition (appInterface.cartIsEmpty (), null, {
+    from: {opacity: 0},
+    enter: {opacity: 1},
+    leave: {opacity: 0},
+  });
+
+  const cartStyles = useSpring ({
+    config: {tension: 0},
+    transform: appInterface.cartStatus ? 'translateX(0%)' : 'translateX(100%)',
+  });
+
+  return (
+    <animated.article style={cartStyles} className="cart">
+      <CartHeader />
+      {transitions.map (
+        ({item, key, props}) =>
+          item
+            ? <animated.div
+                key={key}
+                style={props}
+                className="center-vs-transform"
+              >
+                <CartEmptyView />
+              </animated.div>
+            : <animated.div className="cart__view" key={key} style={props}>
+                <CartViewWithProducts />
+              </animated.div>
+      )}
+    </animated.article>
+  );
+};
 
 export default Cart;

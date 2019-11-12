@@ -3,10 +3,10 @@ import {StoreContext} from '../../context';
 
 import CartItem from './cartItem';
 
-const CartList = () => (
-  <StoreContext.Consumer>
-    {store => {
-      return (
+const CartList = () => {
+  return (
+    <StoreContext.Consumer>
+      {store => (
         <ul className="cart__list">
           {store.productItems.map((product, index) => (
             <CartItem
@@ -16,8 +16,8 @@ const CartList = () => (
             />
           ))}
         </ul>
-      );
-    }}
-  </StoreContext.Consumer>
-);
+      )}
+    </StoreContext.Consumer>
+  );
+};
 export default CartList;
