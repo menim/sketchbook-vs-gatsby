@@ -9,7 +9,7 @@
     "autoprefixer": "^9.5.0",
     "body-scroll-lock": "^2.6.1",
     "formik": "^1.5.1",
-    "gatsby": "^2.3.30",
+    "gatsby": "^2.32.13",
     "gatsby-plugin-manifest": "^2.0.17",
     "gatsby-plugin-netlify": "^2.0.15",
     "gatsby-plugin-netlify-cache": "^1.2.0",
